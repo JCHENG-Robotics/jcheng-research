@@ -16,6 +16,14 @@ gripper control strategies, adapting learned policies to the 5-DoF platform.
 | [vla-robustness-and-alternatives.md](vla-robustness-and-alternatives.md) | LIBERO-Plus, RTC, SAM2Act, DP3, π0 | 2026-11-25 | — |
 | [fine-tuning-and-judge-bias.md](fine-tuning-and-judge-bias.md) | ULMFiT; LLM-as-a-judge bias | 2026-11-25 | — |
 | [sst-repo-audit.md](sst-repo-audit.md) | `YzmYalier/Lingbot-Challenge-SST` audit | 2026-11-25 | — |
+| [coal-gangue-residual-grasp.md](coal-gangue-residual-grasp.md) | Coal gangue bounded residual grasp (Sensors 2026, 26, 7230) | 2026-11-25 | — |
+| [ros2smolvla.md](ros2smolvla.md) | ROS2SmolVLA (arXiv:2608.23320) | 2026-11-25 | — |
+| [cracking-mobile-manipulation.md](cracking-mobile-manipulation.md) | Cracking Mobile Manipulation (arXiv:2610.19600) | 2026-11-25 | — |
+| [panovla.md](panovla.md) | PanoVLA (arXiv:2608.02257) | 2026-11-25 | — |
+| [visibility-aware-mobile-grasping.md](visibility-aware-mobile-grasping.md) | Visibility-Aware Mobile Grasping (arXiv:2605.02487) | 2026-11-25 | — |
+| [pickalo-bin-picking.md](pickalo-bin-picking.md) | Pickalo (Robotics 2026, 15(10), 197) | 2026-11-25 | — |
+| [lightweight-grocery-mobile-manipulator.md](lightweight-grocery-mobile-manipulator.md) | Grocery pick-and-pack (Sensors 2026, 26(9), 2860) | 2026-11-25 | — |
+| [3d-bin-picking-review.md](3d-bin-picking-review.md) | 3D vision bin-picking review (Appl. Sci. 2026, 16(22), 11254) | 2026-11-25 | — |
 
 Cross-theme records used by this theme:
 [SAM 3](../perception/sam3.md) (perception),

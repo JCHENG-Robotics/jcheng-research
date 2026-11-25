@@ -10,6 +10,8 @@ themes.
 | Record | Source | Access | Local copy |
 |---|---|---|---|
 | [sam3.md](sam3.md) | SAM 3 — Segment Anything with Concepts (arXiv:2511.16719) | 2026-11-25 | — |
+| [dynamic-localization-coal-sorting.md](dynamic-localization-coal-sorting.md) | Dynamic visual localization for coal-gangue sorting (Sci. Rep. 2026, 16, 38110) | 2026-11-25 | — |
+| [gld-yolo-ore-segmentation.md](gld-yolo-ore-segmentation.md) | GLD-YOLO ore instance segmentation (Machines 2026, 14(7), 731) | 2026-11-25 | — |
 
 Used by the VLA work in [manipulation/](../manipulation/).
 Filing and naming rules: [references/README.md](../README.md).
