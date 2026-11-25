@@ -11,10 +11,10 @@ runtime owner.
 | Theme | Owner | Scope | Records |
 |---|---|---|---|
 | [system/](system/) | [`jcheng-system`](https://github.com/JCHENG-Robotics/jcheng-system) (L2) | Safety state machine, leases, arbiter, `ExecuteMotion`, MoveIt plan-only, hardware bridge, gateways, telemetry, DDS domains | 0 |
-| [perception/](perception/) | [`jcheng-perception`](https://github.com/JCHENG-Robotics/jcheng-perception) (L3) | Acquisition, depth/TF timestamps, back-projection, two-view fusion, Kalman, detection and segmentation, calibration | 1 |
+| [perception/](perception/) | [`jcheng-perception`](https://github.com/JCHENG-Robotics/jcheng-perception) (L3) | Acquisition, depth/TF timestamps, back-projection, two-view fusion, Kalman, detection and segmentation, calibration | 3 |
 | [mobile/](mobile/) | [`jcheng-mobile`](https://github.com/JCHENG-Robotics/jcheng-mobile) (L3) | LiDAR, ICP odometry, SLAM, Nav2, `/cmd_vel` chassis intent | 0 |
 | [ops/](ops/) | [`jcheng-ops`](https://github.com/JCHENG-Robotics/jcheng-ops) (OPS) | Health probes, hardware watchdog, systemd self-healing, deployment and recovery | 0 |
-| [manipulation/](manipulation/) | [`jcheng-manipulation`](https://github.com/JerichoCheng/jcheng-manipulation) (frozen v1.0.0 baseline) + the ArmPi Ultra arm | VLA models and training, action chunking, grasp and handoff, arm and gripper control | 6 |
+| [manipulation/](manipulation/) | [`jcheng-manipulation`](https://github.com/JerichoCheng/jcheng-manipulation) (frozen v1.0.0 baseline) + the ArmPi Ultra arm | VLA models and training, action chunking, grasp and handoff, arm and gripper control | 14 |
 | [datasets-benchmarks/](datasets-benchmarks/) | Cross-cutting — no runtime repository | Datasets, data integrity, benchmarks, competition rules, evaluation protocol | 3 |
 
 ## Filing rules

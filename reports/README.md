@@ -12,6 +12,7 @@ draft is never upgraded by appearing here. Themes follow
 |---|---|---|---|---|
 | [LingBot-VLA 2.0 / SST foreground-prompting evaluation](20261125-lingbot-vla-sst-foreground-prompting.md) | manipulation | whether to adopt the RoboTwin post-training recipe: foreground prompting, module learning rates, data repair | draft; review pending | [MVE-0 desk re-analysis](../experiments/20261125-lingbot-sst-reanalysis/result.md) |
 | [GloVLA factorization assessment](20261125-glovla-hybrid-factorization-eval.md) | manipulation | whether to adopt the geometry-move + local-VLA factorization; GPU and demo prerequisites | reviewed (self-review only); independent review pending | [MVE-0 handoff budget](../experiments/20261125-glovla-handoff-budget/result.md) |
+| [10-paper mobile-manipulation batch assessment](20261125-paper-batch-mobile-manipulation.md) | manipulation (cross: perception, mobile) | which segmentation/6D-pose/VLA components to prototype offline; what to reject or defer | reviewed (self-review only); independent review pending | MVE-0…3 designed in §11; not run |
 
 Chinese edition: [GloVLA report DOCX](20261125-glovla-hybrid-factorization-eval.zh-CN.docx);
 the Markdown report remains the traceable version.

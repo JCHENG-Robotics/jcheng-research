@@ -20,6 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Chinese DOCX edition of the GloVLA report and a compressed local copy of the
   paper (`references/manipulation/papers/20261125-glovla.pdf`, CC BY-NC-SA 4.0),
   with the source record `references/manipulation/glovla.md`.
+- Batch investigation `reports/20261125-paper-batch-mobile-manipulation.md`
+  (ten 2026 papers on industrial vision, bin picking, mobile grasping and
+  lightweight VLA), with ten per-paper source records under
+  `references/manipulation/` and `references/perception/`; four offline MVEs
+  are designed but not run. Papers 02/05/12 could not be obtained and are
+  outside the batch boundary.
 - Thematic source-record index `references/README.md` and a README per theme
   (`system/`, `perception/`, `mobile/`, `ops/`, `manipulation/`,
   `datasets-benchmarks/`) stating the theme scope, owner and filing rules.
