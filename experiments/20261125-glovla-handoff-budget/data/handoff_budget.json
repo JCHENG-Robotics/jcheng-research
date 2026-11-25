@@ -1,0 +1,277 @@
+{
+  "source": "GloVLA arXiv:2609.06256v1, Fig. 2 and Eq. (12)",
+  "note": "Desk calculation only; eta is a cross-view proxy, not a calibrated object-centre error.",
+  "phases": [
+    {
+      "phase": "grasp",
+      "r_m": 0.12,
+      "delta_m": [
+        0.04,
+        0.0,
+        0.08
+      ],
+      "delta_norm_m": 0.08944271909999159,
+      "slack_eps_plus_eta_m": 0.030557280900008407,
+      "source": "GloVLA Fig. 2: r_o=0.12, rho_o=(0.04,0.0), z_g=0.08"
+    },
+    {
+      "phase": "place",
+      "r_m": 0.18,
+      "delta_m": [
+        0.005,
+        0.005,
+        0.12
+      ],
+      "delta_norm_m": 0.12020815280171307,
+      "slack_eps_plus_eta_m": 0.059791847198286924,
+      "source": "GloVLA Fig. 2: r_b=0.18, rho_b=(0.005,0.005), z_p=0.12"
+    }
+  ],
+  "matrix": [
+    {
+      "phase": "grasp",
+      "eta_case": "static cross-view 1.55 mm (2026-11-24 split-edge)",
+      "eta_m": 0.00155,
+      "epsilon_m": 0.005,
+      "margin_m": 0.024007280900008407,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "static cross-view 1.55 mm (2026-11-24 split-edge)",
+      "eta_m": 0.00155,
+      "epsilon_m": 0.005,
+      "margin_m": 0.053241847198286923,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "static cross-view 1.55 mm (2026-11-24 split-edge)",
+      "eta_m": 0.00155,
+      "epsilon_m": 0.01,
+      "margin_m": 0.019007280900008406,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "static cross-view 1.55 mm (2026-11-24 split-edge)",
+      "eta_m": 0.00155,
+      "epsilon_m": 0.01,
+      "margin_m": 0.04824184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "static cross-view 1.55 mm (2026-11-24 split-edge)",
+      "eta_m": 0.00155,
+      "epsilon_m": 0.02,
+      "margin_m": 0.009007280900008408,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "static cross-view 1.55 mm (2026-11-24 split-edge)",
+      "eta_m": 0.00155,
+      "epsilon_m": 0.02,
+      "margin_m": 0.03824184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "run 9 cross-view 3.37 mm (2026-11-24 tag verify)",
+      "eta_m": 0.00337,
+      "epsilon_m": 0.005,
+      "margin_m": 0.022187280900008405,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "run 9 cross-view 3.37 mm (2026-11-24 tag verify)",
+      "eta_m": 0.00337,
+      "epsilon_m": 0.005,
+      "margin_m": 0.05142184719828693,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "run 9 cross-view 3.37 mm (2026-11-24 tag verify)",
+      "eta_m": 0.00337,
+      "epsilon_m": 0.01,
+      "margin_m": 0.017187280900008404,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "run 9 cross-view 3.37 mm (2026-11-24 tag verify)",
+      "eta_m": 0.00337,
+      "epsilon_m": 0.01,
+      "margin_m": 0.046421847198286924,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "run 9 cross-view 3.37 mm (2026-11-24 tag verify)",
+      "eta_m": 0.00337,
+      "epsilon_m": 0.02,
+      "margin_m": 0.007187280900008407,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "run 9 cross-view 3.37 mm (2026-11-24 tag verify)",
+      "eta_m": 0.00337,
+      "epsilon_m": 0.02,
+      "margin_m": 0.03642184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "run 9 fused max 10.03 mm (transient)",
+      "eta_m": 0.01003,
+      "epsilon_m": 0.005,
+      "margin_m": 0.015527280900008406,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "run 9 fused max 10.03 mm (transient)",
+      "eta_m": 0.01003,
+      "epsilon_m": 0.005,
+      "margin_m": 0.04476184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "run 9 fused max 10.03 mm (transient)",
+      "eta_m": 0.01003,
+      "epsilon_m": 0.01,
+      "margin_m": 0.010527280900008405,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "run 9 fused max 10.03 mm (transient)",
+      "eta_m": 0.01003,
+      "epsilon_m": 0.01,
+      "margin_m": 0.03976184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "run 9 fused max 10.03 mm (transient)",
+      "eta_m": 0.01003,
+      "epsilon_m": 0.02,
+      "margin_m": 0.0005272809000084061,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "run 9 fused max 10.03 mm (transient)",
+      "eta_m": 0.01003,
+      "epsilon_m": 0.02,
+      "margin_m": 0.02976184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "translation error-budget RSS 13.33 mm (not eta)",
+      "eta_m": 0.01333,
+      "epsilon_m": 0.005,
+      "margin_m": 0.012227280900008406,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "translation error-budget RSS 13.33 mm (not eta)",
+      "eta_m": 0.01333,
+      "epsilon_m": 0.005,
+      "margin_m": 0.041461847198286925,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "translation error-budget RSS 13.33 mm (not eta)",
+      "eta_m": 0.01333,
+      "epsilon_m": 0.01,
+      "margin_m": 0.0072272809000084055,
+      "pass": true
+    },
+    {
+      "phase": "place",
+      "eta_case": "translation error-budget RSS 13.33 mm (not eta)",
+      "eta_m": 0.01333,
+      "epsilon_m": 0.01,
+      "margin_m": 0.03646184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "translation error-budget RSS 13.33 mm (not eta)",
+      "eta_m": 0.01333,
+      "epsilon_m": 0.02,
+      "margin_m": -0.002772719099991593,
+      "pass": false
+    },
+    {
+      "phase": "place",
+      "eta_case": "translation error-budget RSS 13.33 mm (not eta)",
+      "eta_m": 0.01333,
+      "epsilon_m": 0.02,
+      "margin_m": 0.02646184719828692,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "hypothetical 30 mm object-centre error",
+      "eta_m": 0.03,
+      "epsilon_m": 0.005,
+      "margin_m": -0.004442719099991593,
+      "pass": false
+    },
+    {
+      "phase": "place",
+      "eta_case": "hypothetical 30 mm object-centre error",
+      "eta_m": 0.03,
+      "epsilon_m": 0.005,
+      "margin_m": 0.024791847198286927,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "hypothetical 30 mm object-centre error",
+      "eta_m": 0.03,
+      "epsilon_m": 0.01,
+      "margin_m": -0.009442719099991594,
+      "pass": false
+    },
+    {
+      "phase": "place",
+      "eta_case": "hypothetical 30 mm object-centre error",
+      "eta_m": 0.03,
+      "epsilon_m": 0.01,
+      "margin_m": 0.019791847198286923,
+      "pass": true
+    },
+    {
+      "phase": "grasp",
+      "eta_case": "hypothetical 30 mm object-centre error",
+      "eta_m": 0.03,
+      "epsilon_m": 0.02,
+      "margin_m": -0.019442719099991592,
+      "pass": false
+    },
+    {
+      "phase": "place",
+      "eta_case": "hypothetical 30 mm object-centre error",
+      "eta_m": 0.03,
+      "epsilon_m": 0.02,
+      "margin_m": 0.009791847198286921,
+      "pass": true
+    }
+  ],
+  "eps_cases_m": [
+    0.005,
+    0.01,
+    0.02
+  ]
+}

@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   (LingBot-VLA 2.0 / SST foreground-prompting evaluation), eight source records
   under `references/`, and the MVE-0 desk re-analysis under
   `experiments/20261125-lingbot-sst-reanalysis/` (design, data, script, log, result).
+- Draft investigation report `reports/20261125-glovla-hybrid-factorization-eval.md`
+  (GloVLA geometry + local-VLA factorization assessment), self-reviewed, and the
+  MVE-0 handoff-budget desk calculation under
+  `experiments/20261125-glovla-handoff-budget/` (design, script, data, log, result).
+- Chinese DOCX edition of the GloVLA report and a compressed local copy of the
+  paper (`references/papers/20261125-glovla.pdf`, CC BY-NC-SA 4.0), with the
+  source record `references/glovla.md`.
 
 ## [0.1.0] — 2026-11-25
 

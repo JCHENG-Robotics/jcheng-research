@@ -1,0 +1,23 @@
+GloVLA Eq. (12) containment: epsilon + eta <= r - ||delta||
+Desk calculation; no policy, simulator or robot was run.
+
+phase    r (m)  ||delta|| (m)  slack (mm)
+grasp    0.120         0.0894       30.56
+place    0.180         0.1202       59.79
+
+Pass/fail matrix (P = epsilon + eta <= slack):
+                                 eta \ epsilon     5mm    10mm    20mm
+static cross-view 1.55 mm (2026-11-24 split-edge)  P   P   P   [grasp]
+run 9 cross-view 3.37 mm (2026-11-24 tag verify)  P   P   P   [grasp]
+        run 9 fused max 10.03 mm (transient)  P   P   P   [grasp]
+translation error-budget RSS 13.33 mm (not eta)  P   P   F   [grasp]
+      hypothetical 30 mm object-centre error  F   F   F   [grasp]
+
+Maximum epsilon allowed for each eta (grasp phase):
+  static cross-view 1.55 mm (2026-11-24 split-edge): 29.0 mm
+  run 9 cross-view 3.37 mm (2026-11-24 tag verify): 27.2 mm
+          run 9 fused max 10.03 mm (transient): 20.5 mm
+  translation error-budget RSS 13.33 mm (not eta): 17.2 mm
+        hypothetical 30 mm object-centre error: 0.6 mm
+
+Wrote /home/jerichocheng/jcheng/jcheng-research/experiments/20261125-glovla-handoff-budget/data/handoff_budget.json
