@@ -7,28 +7,29 @@
 | Item | State | Evidence |
 |---|---|---|
 | Repository skeleton, protocol, report template, gate | Complete | `scripts/check_repo_gate.sh`; CI `research-gate` |
-| First investigation report | Not started | — |
-| First minimum viable experiment | Not started | — |
+| First investigation report | In progress — draft, not reviewed (2026-11-25) | [report](reports/20261125-lingbot-vla-sst-foreground-prompting.md) |
+| First minimum viable experiment | In progress — MVE-0 desk re-analysis run; MVE-1/2 designed, not run | [experiment](experiments/20261125-lingbot-sst-reanalysis/result.md) |
 
 ## Milestones
 
 | Milestone | Scope | State | Exit criterion | Evidence |
 |---|---|---|---|---|
 | R0 | Protocol, report template, output contract, repository gate | Complete (2026-11-25) | Gate passes locally and in CI | `ACCEPTANCE.md` |
-| R1 | First investigation report | Not started | `reports/` contains a 13-section report whose key conclusions carry S–D grades, whose sources are recorded in `references/`, and which ends in a decision or a minimum viable experiment | — |
-| R2 | First minimum viable experiment | Not started | `experiments/<id>/` contains design, data, logs and result, with the rollback statement and the actual run date | — |
+| R1 | First investigation report | In progress | `reports/` contains a 13-section report whose key conclusions carry S–D grades, whose sources are recorded in `references/`, and which ends in a decision or a minimum viable experiment | — |
+| R2 | First minimum viable experiment | In progress | `experiments/<id>/` contains design, data, logs and result, with the rollback statement and the actual run date | — |
 
 ## Next
 
-1. **R1 — pick the first question.** Candidate open risks in the ecosystem, not
-   yet prioritised:
+1. **R1 — review the first draft.** The LingBot-VLA 2.0 / SST report is a draft;
+   review its grades and decide whether to cite it. Candidate open risks for the
+   next report, not yet prioritised:
    - the constant 10–14 mm cross-view offset in the perception fixed-point run
      (external extrinsic suspect);
    - LiDAR mount pose and `/scan` quality before any mobile navigation;
    - the unverified S7 stale-state injection and S9 runtime publisher detection;
    - replay-vs-hardware gap for MoveIt plan-only and the full G8 sequence.
-2. **R2 — execute one experiment** for whichever R1 question produces a testable
-   hypothesis. Hardware execution still needs the separate per-session operator
+2. **R2 — run MVE-2 (data-integrity gate) on the next demo set**, or MVE-1 if a
+   learned-policy track is approved. Hardware execution still needs the separate per-session operator
    authorization defined in the ecosystem root `AGENTS.md`.
 
 ## Out of scope

@@ -1,0 +1,42 @@
+Table 1. Main chain, published counts
+stage    scene             success  total   rate%         Wilson95
+N0       demo_clean           3857   5000   77.14 [75.96,78.28]
+N0       demo_randomized      1810   5000   36.20 [34.88,37.54]
+N1       demo_clean           1951   2500   78.04 [76.37,79.62]
+N1       demo_randomized      1196   2500   47.84 [45.89,49.80]
+N2       demo_clean           1899   2500   75.96 [74.25,77.59]
+N2       demo_randomized      1271   2500   50.84 [48.88,52.80]
+N3       demo_clean           1913   2500   76.52 [74.82,78.14]
+N3       demo_randomized      1328   2500   53.12 [51.16,55.07]
+N4       demo_clean           1955   2500   78.20 [76.54,79.77]
+N4       demo_randomized      1384   2500   55.36 [53.40,57.30]
+N4_30k   demo_clean           2022   2500   80.88 [79.29,82.37]
+N4_30k   demo_randomized      1356   2500   54.24 [52.28,56.18]
+N5       demo_clean           4093   5000   81.86 [80.77,82.90]
+N5       demo_randomized      2911   5000   58.22 [56.85,59.58]
+
+Table 2. Unpaired two-proportion z-tests (optimistic: ignores task clustering)
+  scene: demo_randomized
+    N0    ->N1  foreground replacement (single->multi) d=+11.64pp  p=0.0000
+    N1    ->N2  mask review + 0.1 rendering            d= +3.00pp  p=0.0338
+    N2    ->N3  raw teachers + foreground weighting    d= +2.28pp  p=0.1066
+    N3    ->N4  module-wise learning rates             d= +2.24pp  p=0.1118
+    N4_30k->N5  data repair at equal 30k steps         d= +3.98pp  p=0.0011
+  scene: demo_clean
+    N0    ->N1  foreground replacement (single->multi) d= +0.90pp  p=0.3771
+    N1    ->N2  mask review + 0.1 rendering            d= -2.08pp  p=0.0805
+    N2    ->N3  raw teachers + foreground weighting    d= +0.56pp  p=0.6418
+    N3    ->N4  module-wise learning rates             d= +1.68pp  p=0.1557
+    N4_30k->N5  data repair at equal 30k steps         d= +0.98pp  p=0.3057
+
+Table 3. Per-task delta, clean (N0 15k -> N5 30k, n=100/task)
+  tasks=50 mean=+4.72pp median=+1.00pp improved=29 worse=16 same=5
+  top +5: [('click_bell', 93.0, '5->98'), ('click_alarmclock', 62.0, '34->96'), ('pick_dual_bottles', 31.0, '51->82'), ('place_a2b_left', 22.0, '48->70'), ('pick_diverse_bottles', 18.0, '50->68')]
+  top -5: [('place_fan', -8.0, '76->68'), ('place_mouse_pad', -9.0, '68->59'), ('beat_block_hammer', -10.0, '91->81'), ('move_stapler_pad', -10.0, '32->22'), ('stack_blocks_three', -13.0, '96->83')]
+  click tasks contribute +155.0pp of the +4.72pp mean (66% of all extra successes)
+
+Table 3. Per-task delta, randomized (N0 15k -> N5 30k, n=100/task)
+  tasks=50 mean=+22.02pp median=+19.00pp improved=46 worse=3 same=1
+  top +5: [('stack_bowls_two', 57.0, '31->88'), ('open_laptop', 48.0, '5->53'), ('place_fan', 47.0, '14->61'), ('stack_bowls_three', 46.0, '24->70'), ('handover_mic', 43.0, '7->50')]
+  top -5: [('shake_bottle', 1.0, '92->93'), ('click_alarmclock', 0.0, '44->44'), ('click_bell', -1.0, '66->65'), ('move_playingcard_away', -3.0, '43->40'), ('place_burger_fries', -11.0, '87->76')]
+  click tasks contribute -1.0pp of the +22.02pp mean (-0% of all extra successes)

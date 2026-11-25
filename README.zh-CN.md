@@ -112,7 +112,7 @@ mkdir -p experiments/$(date +%Y%m%d)-<slug>/{data,logs}
 |---|---|---|
 | 必需的文档集、规范、模板与产出目录齐备 | Verified（L0，2026-11-25） | `scripts/check_repo_gate.sh`、CI `research-gate` |
 | 未跟踪密钥、模型权重、录制数据或 > 5 MB 的文件 | Verified（L0，2026-11-25） | 同一门禁 |
-| 任何调研结论 | Unverified — 尚未产出 | — |
+| 任何调研结论 | 草案已产出，未经评审（2026-11-25） | [报告](reports/20261125-lingbot-vla-sst-foreground-prompting.md) |
 
 本仓库没有硬件通路，因此不可能产生 L1–L5 结果。细节与限制见
 [ACCEPTANCE.md](ACCEPTANCE.md)。

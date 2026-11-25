@@ -123,7 +123,7 @@ firmware, third-party confidential material, secrets, and the private plan.
 |---|---|---|
 | Required document set, protocol, template and output directories exist | Verified (L0, 2026-11-25) | `scripts/check_repo_gate.sh`, CI `research-gate` |
 | No secrets, model weights, recorded data or files > 5 MB are tracked | Verified (L0, 2026-11-25) | same gate |
-| Any research conclusion | Unverified — none produced | — |
+| Any research conclusion | Draft produced, not reviewed (2026-11-25) | [report](reports/20261125-lingbot-vla-sst-foreground-prompting.md) |
 
 There is no hardware path in this repository, so no L1–L5 result can originate
 here. Details and limitations: [ACCEPTANCE.md](ACCEPTANCE.md).
