@@ -40,7 +40,7 @@ repository's own rules.
 |---|---|
 | Layer | **Research** — outside L0–L4 and OPS; no runtime repository depends on it |
 | Inputs | the ecosystem repositories, their evidence, published literature, the owner's questions |
-| Outputs | `reports/*.md`, `experiments/*/`, `references/*.md` |
+| Outputs | `reports/*.md`, `experiments/*/`, `references/<theme>/*.md` |
 | Executes on the robot | No |
 | Hardware access | `none` — no device, DDS, serial, camera or bus access |
 | Runtime dependency | None, in either direction; product repositories must not import from here |
@@ -60,9 +60,16 @@ jcheng-research/
 ├── VERSION
 ├── templates/
 │   └── research-report.md     # 13-section report skeleton
-├── reports/                   # one report per investigation
+├── reports/                   # one report per investigation (index: reports/README.md)
 ├── experiments/               # one directory per minimum viable experiment
-├── references/                # source records: URL/DOI/commit, version, access date
+├── references/                # source records by theme (index: references/README.md)
+│   ├── system/                # jcheng-system: safety, arbitration, motion
+│   ├── perception/            # jcheng-perception: vision, depth/TF, fusion
+│   ├── mobile/                # jcheng-mobile: LiDAR, SLAM, Nav2
+│   ├── ops/                   # jcheng-ops: probes, watchdog, self-healing
+│   ├── manipulation/          # jcheng-manipulation: VLA, grasp, arm control
+│   │   └── papers/            # local PDF copies
+│   └── datasets-benchmarks/   # cross-cutting: datasets, benchmarks, rules
 ├── scripts/
 │   └── check_repo_gate.sh     # local and CI gate
 └── .github/workflows/ci.yml   # research-gate
@@ -92,7 +99,8 @@ mkdir -p experiments/$(date +%Y%m%d)-<slug>/{data,logs}
 
 ## 6. Output contract
 
-**Reports** — `reports/YYYYMMDD-<slug>.md`, one per investigation.
+**Reports** — `reports/YYYYMMDD-<slug>.md`, one per investigation. The themed
+view is [reports/README.md](reports/README.md); files stay flat and date-named.
 
 1. Start from the template; keep the 13-section order.
 2. Every key conclusion carries an evidence grade: **S** reproduced on this
@@ -110,9 +118,16 @@ mkdir -p experiments/$(date +%Y%m%d)-<slug>/{data,logs}
 (hypothesis, baseline, variables, environment, metrics, acceptance and failure
 criteria, logging, rollback), `data/`, `logs/`, and `result.md` when run.
 
-**References** — `references/<slug>.md`; one file per source group, with DOI or
-URL, version, publication or commit date, and what was actually read (full text,
-abstract only, code at a given SHA). Record when access was partial.
+**References** — `references/<theme>/<slug>.md`; one file per source group, with
+DOI or URL, version, publication or commit date, and what was actually read
+(full text, abstract only, code at a given SHA). Record when access was partial.
+Themes mirror the product repositories — `system/`, `perception/`, `mobile/`,
+`ops/`, `manipulation/` — plus the cross-cutting `datasets-benchmarks/`. File a
+source under the theme of its primary consumer and cross-link it from the other
+theme's README instead of duplicating it. Local PDF copies go to
+`references/<theme>/papers/YYYYMMDD-<slug>.pdf`; check the license and keep the
+5 MB gate in mind. Index and filing rules:
+[references/README.md](references/README.md).
 
 **What never enters git**: raw recordings, model weights, vendor source or
 firmware, third-party confidential material, secrets, and the private plan.

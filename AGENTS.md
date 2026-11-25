@@ -11,8 +11,10 @@
 
 - **适用**：文献调研、技术选型、根因分析、方案评估、实验设计与验证。
 - **不适用**：常规代码修改、构建、测试、部署——按生态根目录 `AGENTS.md` 执行。
-- **产出**：`reports/`（正式报告）、`experiments/`（实验设计与数据）、
-  `references/`（来源记录）。命名、证据标注和准入规则见 `README.md` 第 6 节。
+- **产出**：`reports/`（正式报告，索引见 `reports/README.md`）、
+  `experiments/`（实验设计与数据）、`references/`（按主题归档的来源记录，
+  索引见 `references/README.md`）。命名、证据标注和准入规则见 `README.md`
+  第 6 节。
 - **禁止**：提交私有计划内容（`MASTER_PLAN_V3_PRIVATE.md`）、厂商源码或固件、
   模型权重、录制数据、第三方保密材料、密钥。
 

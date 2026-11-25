@@ -4,7 +4,7 @@
 - **访问日期**：2026-11-25
 - **阅读范围**：**PDF 全文 9 页**，包括 Table I–VI、Fig. 2/3/5/6/7；arXiv abs
   页；项目页；GitHub API 搜索。**没有代码可审计**（截至访问日无方法代码发布）。
-- **本地副本**：`references/papers/20261125-glovla.pdf`（9 页，291,316 字节）
+- **本地副本**：`references/manipulation/papers/20261125-glovla.pdf`（9 页，291,316 字节）
 - **许可**：arXiv abs 页标注 **CC BY-NC-SA 4.0**（Attribution–NonCommercial–
   ShareAlike 4.0）。本副本仅供私有研究使用，不得商用；转载/再分发需遵守
   CC BY-NC-SA 4.0。该许可不改变 `jcheng-research` 自身的许可状态。
@@ -64,7 +64,7 @@
 
 ## 对本仓库的意义
 
-用于 [GloVLA 评估报告](../reports/20261125-glovla-hybrid-factorization-eval.md)
-与 [MVE-0 桌面复算](../experiments/20261125-glovla-handoff-budget/result.md)。
+用于 [GloVLA 评估报告](../../reports/20261125-glovla-hybrid-factorization-eval.md)
+与 [MVE-0 桌面复算](../../experiments/20261125-glovla-handoff-budget/result.md)。
 结论：现在不引入 GloVLA 运行时；采纳 Eq. 12 门禁、分级扰动评测与阶段标注
 schema；若扩物体/语言条件，先用 ACT/DP3 量级小策略做仿真 MVE。
