@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Local configuration and secrets
+.env
+*.local
+
+# Raw material that must stay outside the repository
+raw/
+*.bag
+*.db3
+*.mcap
+*.mp4
+*.avi
+*.pt
+*.onnx
+*.engine
