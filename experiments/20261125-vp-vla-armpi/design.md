@@ -9,7 +9,7 @@
 >
 > **研究边界**：桌面研究 + 只读代码审计 + 允许的离线/仿真实验；不默认获得 GPU 训练资源或实机运动授权。**未运行 VP-VLA 代码、未访问机器人。**
 >
-> **一手材料**：[论文 PDF](../../references/papers/20261125-vp-vla.pdf) · [来源记录](../../references/vp-vla.md) · [arXiv](https://arxiv.org/abs/2603.22003) · [代码仓库](https://github.com/JIA-Lab-research/VP-VLA)
+> **一手材料**：[论文 PDF](../../references/manipulation/papers/20261125-vp-vla.pdf) · [来源记录](../../references/manipulation/vp-vla.md) · [arXiv](https://arxiv.org/abs/2603.22003) · [代码仓库](https://github.com/JIA-Lab-research/VP-VLA)
 >
 > **相关报告**：[LingBot-VLA 2.0 / SST 前景提示配方评估](../../reports/20261125-lingbot-vla-sst-foreground-prompting.md)
 
@@ -188,7 +188,7 @@ E0/E1 可立即做；E2/E3 必须单独授权，且先通过 `jcheng-system` 的
 ### 5.6 交付物
 
 1. `reports/20261125-vp-vla-armpi.md`：13 节报告，含推荐/备选/拒绝理由。
-2. `references/vp-vla.md`：论文/代码/权重/许可的来源记录（本任务书已附）。
+2. `references/manipulation/vp-vla.md`：论文/代码/权重/许可的来源记录（本任务书已附）。
 3. `experiments/20261125-vp-vla-armpi/design.md` + `data/` + `logs/` + `result.md`（未运行则写“未执行”）。
 4. 一页决策摘要：推荐路线、三条支撑事实、主要风险、下一步。
 
@@ -274,4 +274,4 @@ E0/E1 可立即做；E2/E3 必须单独授权，且先通过 `jcheng-system` 的
 | starVLA | GitHub `starVLA/starVLA` | NOASSERTION | 仅许可元数据；条款未读 |
 | 项目文档 | 本工作区 | — | `AGENTS.md`、`jcheng-perception/evidence/README.md`、`jcheng-interfaces` 契约 |
 
-论文 PDF 的本地副本在 [`references/papers/20261125-vp-vla.pdf`](../../references/papers/20261125-vp-vla.pdf)（ghostscript 压缩，原始 9.6 MB，压缩后 1.1 MB；页数与文字可读性已核对）。
+论文 PDF 的本地副本在 [`references/manipulation/papers/20261125-vp-vla.pdf`](../../references/manipulation/papers/20261125-vp-vla.pdf)（ghostscript 压缩，原始 9.6 MB，压缩后 1.1 MB；页数与文字可读性已核对）。

@@ -509,14 +509,14 @@ SST checkpoints 未发布；若发布，用相同 seeds、100 episodes/task 对 
 
 ### 本仓库的来源记录与实验
 
-- [LingBot-VLA 2.0 来源记录](../references/lingbot-vla-v2.md)
-- [RoboTwin 2.0 来源记录](../references/robotwin-2.md)
-- [SAM 3 来源记录](../references/sam3.md)
-- [VLA 鲁棒性与替代路线](../references/vla-robustness-and-alternatives.md)
-- [微调策略与 judge 偏差](../references/fine-tuning-and-judge-bias.md)
-- [LeRobot v3.0 数据完整性](../references/lerobot-v3-data-integrity.md)
-- [SST 仓库审计](../references/sst-repo-audit.md)
-- [赛事规则来源](../references/competition-rules.md)
+- [LingBot-VLA 2.0 来源记录](../references/manipulation/lingbot-vla-v2.md)
+- [RoboTwin 2.0 来源记录](../references/datasets-benchmarks/robotwin-2.md)
+- [SAM 3 来源记录](../references/perception/sam3.md)
+- [VLA 鲁棒性与替代路线](../references/manipulation/vla-robustness-and-alternatives.md)
+- [微调策略与 judge 偏差](../references/manipulation/fine-tuning-and-judge-bias.md)
+- [LeRobot v3.0 数据完整性](../references/datasets-benchmarks/lerobot-v3-data-integrity.md)
+- [SST 仓库审计](../references/manipulation/sst-repo-audit.md)
+- [赛事规则来源](../references/datasets-benchmarks/competition-rules.md)
 - [复算实验设计](../experiments/20261125-lingbot-sst-reanalysis/design.md)
 - [复算结果](../experiments/20261125-lingbot-sst-reanalysis/result.md)
 - [复算脚本](../experiments/20261125-lingbot-sst-reanalysis/analysis.py)

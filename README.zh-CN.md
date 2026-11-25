@@ -33,7 +33,7 @@
 |---|---|
 | 层级 | **Research** — 在 L0–L4 与 OPS 之外；没有运行时仓库依赖它 |
 | 输入 | 生态各仓库及其证据、公开文献、Owner 提出的问题 |
-| 输出 | `reports/*.md`、`experiments/*/`、`references/*.md` |
+| 输出 | `reports/*.md`、`experiments/*/`、`references/<主题>/*.md` |
 | 在机器人上执行 | 否 |
 | 硬件访问 | `none` — 不访问设备、DDS、串口、相机或总线 |
 | 运行时依赖 | 双向都无；产品仓库不得从本仓库导入 |
@@ -53,9 +53,16 @@ jcheng-research/
 ├── VERSION
 ├── templates/
 │   └── research-report.md     # 13 节报告骨架
-├── reports/                   # 每次调研一份报告
+├── reports/                   # 每次调研一份报告（索引：reports/README.md）
 ├── experiments/               # 每个最小可行实验一个目录
-├── references/                # 来源记录：URL/DOI/commit、版本、访问日期
+├── references/                # 按主题归档的来源记录（索引：references/README.md）
+│   ├── system/                # jcheng-system：安全、仲裁、运动
+│   ├── perception/            # jcheng-perception：视觉、深度/TF、融合
+│   ├── mobile/                # jcheng-mobile：LiDAR、SLAM、Nav2
+│   ├── ops/                   # jcheng-ops：探针、看门狗、自愈
+│   ├── manipulation/          # jcheng-manipulation：VLA、抓取、机械臂
+│   │   └── papers/            # 本地 PDF 副本
+│   └── datasets-benchmarks/   # 跨仓库：数据集、基准、赛事规则
 ├── scripts/
 │   └── check_repo_gate.sh     # 本地与 CI 共用的门禁
 └── .github/workflows/ci.yml   # research-gate
@@ -84,7 +91,8 @@ mkdir -p experiments/$(date +%Y%m%d)-<slug>/{data,logs}
 
 ## 6. 产出约定
 
-**报告** — `reports/YYYYMMDD-<slug>.md`，每次调研一份。
+**报告** — `reports/YYYYMMDD-<slug>.md`，每次调研一份。按主题的索引见
+[reports/README.md](reports/README.md)；文件名保持平铺与日期前缀。
 
 1. 从模板开始，保持 13 节顺序。
 2. 每条关键结论标注证据等级：**S** 在本系统完成可复现实测，**A** 直接的一手
@@ -99,9 +107,14 @@ mkdir -p experiments/$(date +%Y%m%d)-<slug>/{data,logs}
 自变量与控制变量、环境、指标、验收与失败判据、记录方式、回退策略）、`data/`、
 `logs/`，执行后补 `result.md`。
 
-**来源** — `references/<slug>.md`，一组来源一个文件，记录 DOI 或 URL、版本、
-发表或提交日期，以及实际阅读范围（全文、仅摘要、指定 SHA 的代码）。访问受限时
-如实记录。
+**来源** — `references/<主题>/<slug>.md`，一组来源一个文件，记录 DOI 或 URL、
+版本、发表或提交日期，以及实际阅读范围（全文、仅摘要、指定 SHA 的代码）。
+访问受限时如实记录。主题与产品仓库一一对应：`system/`、`perception/`、
+`mobile/`、`ops/`、`manipulation/`，另有跨仓库的 `datasets-benchmarks/`。按
+主要使用方归档；被多个主题使用时只保留一份，并在其他主题 README 中交叉链接。
+本地 PDF 副本放在 `references/<主题>/papers/YYYYMMDD-<slug>.pdf`，需核对许可
+并受 5 MB 门禁约束。索引与归档规则见
+[references/README.md](references/README.md)。
 
 **永不入库**：原始录制数据、模型权重、厂商源码或固件、第三方保密材料、密钥、
 私有计划内容。
