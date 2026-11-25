@@ -3,7 +3,8 @@
 > Status: **pass (L0 only)** — v0.1.0, 2026-11-25.
 > Operator: `JerichoCheng`. Reviewer: `pending`.
 > This report covers repository structure and document gates only. It accepts no
-> research or hardware claim, because none exists yet.
+> research or hardware claim, because the first report is a draft and has not been
+> reviewed.
 
 ## 1. Scope
 
@@ -35,9 +36,9 @@ hardware behaviour.
 
 | Item | Reason | Risk |
 |---|---|---|
-| Any research conclusion | No investigation completed | None yet; risk begins with the first report |
+| Any research conclusion | A draft report exists; not reviewed; conclusions are author-assigned grades | The draft must be reviewed before its conclusions are cited. |
 | Any hardware claim | The repository has no hardware path | Cannot arise here; must be accepted by the owning repository |
-| Report accuracy | No report exists | The first report must be reviewed before its conclusions are cited elsewhere |
+| Report accuracy | Draft report only; reviewer pending | The draft must be reviewed before its conclusions are cited elsewhere |
 
 ## 5. Limitations
 

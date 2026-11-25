@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Draft investigation report `reports/20261125-lingbot-vla-sst-foreground-prompting.md`
+  (LingBot-VLA 2.0 / SST foreground-prompting evaluation), eight source records
+  under `references/`, and the MVE-0 desk re-analysis under
+  `experiments/20261125-lingbot-sst-reanalysis/` (design, data, script, log, result).
+
 ## [0.1.0] — 2026-11-25
 
 ### Added
