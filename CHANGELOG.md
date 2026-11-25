@@ -18,8 +18,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   MVE-0 handoff-budget desk calculation under
   `experiments/20261125-glovla-handoff-budget/` (design, script, data, log, result).
 - Chinese DOCX edition of the GloVLA report and a compressed local copy of the
-  paper (`references/papers/20261125-glovla.pdf`, CC BY-NC-SA 4.0), with the
-  source record `references/glovla.md`.
+  paper (`references/manipulation/papers/20261125-glovla.pdf`, CC BY-NC-SA 4.0),
+  with the source record `references/manipulation/glovla.md`.
+- Thematic source-record index `references/README.md` and a README per theme
+  (`system/`, `perception/`, `mobile/`, `ops/`, `manipulation/`,
+  `datasets-benchmarks/`) stating the theme scope, owner and filing rules.
+- Themed report index `reports/README.md` covering the investigation reports,
+  task books and experiments, with status and related artefacts.
+
+### Changed
+
+- Reorganized `references/` by ecosystem theme, mirroring the product
+  repositories, with `datasets-benchmarks/` for cross-cutting material; source
+  records and their local PDF copies moved into the theme directories. Report,
+  experiment and source-record links updated to the new paths.
 
 ## [0.1.0] — 2026-11-25
 

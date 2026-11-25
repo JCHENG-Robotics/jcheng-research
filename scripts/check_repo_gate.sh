@@ -28,12 +28,16 @@ for f in \
   .gitignore \
   templates/research-report.md \
   scripts/check_repo_gate.sh \
+  references/README.md \
+  reports/README.md \
   .github/workflows/ci.yml
 do
   require_file "$f"
 done
 
-for d in reports experiments references; do
+for d in reports experiments references \
+  references/system references/perception references/mobile \
+  references/ops references/manipulation references/datasets-benchmarks; do
   if [[ ! -d "$d" ]]; then
     echo "MISSING DIR: $d" >&2
     fail=1

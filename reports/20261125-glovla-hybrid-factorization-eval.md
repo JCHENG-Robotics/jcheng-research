@@ -246,7 +246,7 @@ VLA 而不是标定/抓取搜索完成。论文的真实价值是**为这个架�
 | GR00T 官方 repo（N1.6 branch / main） | 仓库 | README | N1.6 3B/37 ms@5090；N1.7 16 GB+/40 GB+ |
 | openpi 官方 repo | 仓库 | README | >8 GB / >22.5 GB / >70 GB |
 | ACT 官方 repo | 仓库 | README | MIT、50 episodes、chunk 100 |
-| SAM 3 arXiv:2511.16719 + 本仓库 `references/sam3.md` | 论文/来源记录 | 已有全文记录 | 边缘部署限制 |
+| SAM 3 arXiv:2511.16719 + 本仓库 `references/perception/sam3.md` | 论文/来源记录 | 已有全文记录 | 边缘部署限制 |
 | JCHENG 内部文档/代码 | 一手 | 相关章节 + 行号 | 当前系统事实 |
 
 ### 4.3 纳入/排除
@@ -424,7 +424,7 @@ contact-rich interaction”。前者视觉多样但几何等价，后者需要�
   with Transformers；chunk 100；仿真 50 episodes/任务；README 没有 VRAM 数字，
   只给 `--batch_size 8`、`hidden_dim 512`；真实数据建议训练到 loss plateau 后
   3–4 倍时长。**6 GB 是否够训练未验证**；推理量级上比 3B VLA 现实得多。
-- **DP3**（arXiv:2403.03954；本仓库 `references/vla-robustness-and-alternatives.md`
+- **DP3**（arXiv:2403.03954；本仓库 `references/manipulation/vla-robustness-and-alternatives.md`
   已记录）：稀疏点云 + 点编码器 + 扩散策略；仿真多数任务 10 条演示；真实 4 任务
   40 条/任务、85%；对空间/视角/外观/实例泛化。警告：仿真优势部分来自完美点云
   与干净背景分割；真实 D435i 点云有空洞/噪声。
@@ -912,7 +912,7 @@ SAM3 η 标定；5-DoF 仿真；实机授权与预注册评测；独立评审。
   VLA Interact for Robust Object-Centric Manipulation in Unstructured
   Environments*. arXiv:2609.06256v1, 2026-09-05; submitted to IEEE RA-L.
   <https://arxiv.org/abs/2609.06256>（全文 9 页已读；2026-11-25 访问）。
-  本地副本：[`references/papers/20261125-glovla.pdf`](../references/papers/20261125-glovla.pdf)
+  本地副本：[`references/manipulation/papers/20261125-glovla.pdf`](../references/manipulation/papers/20261125-glovla.pdf)
   （CC BY-NC-SA 4.0；Ghostscript `/ebook` 压缩版，文本未变、图分辨率降低）。
 - Liu, B., Zhu, Y., Gao, C., Feng, Y., Liu, Q., Zhu, Y., Stone, P.
   *LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning*.
@@ -946,10 +946,10 @@ SAM3 η 标定；5-DoF 仿真；实机授权与预注册评测；独立评审。
 - Ze, Y., Zhang, G., Zhang, K., Hu, C., Wang, M., Xu, H. *3D Diffusion Policy:
   Generalizable Visuomotor Policy Learning via Simple 3D Representations*.
   arXiv:2403.03954, 2024. <https://arxiv.org/abs/2403.03954>（见本仓库
-  `references/vla-robustness-and-alternatives.md`）
+  `references/manipulation/vla-robustness-and-alternatives.md`）
 - Carion, N., Gustafson, L., Hu, et al. *SAM 3: Segment Anything with
   Concepts*. arXiv:2511.16719, 2025. <https://arxiv.org/abs/2511.16719>
-  （见本仓库 `references/sam3.md`）
+  （见本仓库 `references/perception/sam3.md`）
 - Garrett, C. R., Chitnis, R., Holladay, R., Kim, B., Silver, T., Kaelbling,
   L. P., Lozano-Pérez, T. *Integrated Task and Motion Planning*. Annual
   Review of Control, Robotics, and Autonomous Systems, 4:265–293, 2021.
@@ -970,13 +970,13 @@ SAM3 η 标定；5-DoF 仿真；实机授权与预注册评测；独立评审。
 - Physical Intelligence openpi：<https://github.com/Physical-Intelligence/openpi>
   （>8 GB 推理、>22.5 GB LoRA、>70 GB full；Ubuntu 22.04）
 - ACT：<https://github.com/tonyzhaozh/act>（MIT；chunk 100；50 episodes 仿真）
-- SAM 3 官方 repo（经 `references/sam3.md`）：<https://github.com/facebookresearch/sam3>
+- SAM 3 官方 repo（经 `references/perception/sam3.md`）：<https://github.com/facebookresearch/sam3>
 
 ### 本仓库来源记录与实验
 
-- `references/glovla.md`（论文来源记录与本地副本说明；2026-11-25）
-- `references/vla-robustness-and-alternatives.md`（2026-11-25）
-- `references/sam3.md`（2026-11-25）
+- `references/manipulation/glovla.md`（论文来源记录与本地副本说明；2026-11-25）
+- `references/manipulation/vla-robustness-and-alternatives.md`（2026-11-25）
+- `references/perception/sam3.md`（2026-11-25）
 - `experiments/20261125-glovla-handoff-budget/design.md`
 - `experiments/20261125-glovla-handoff-budget/result.md`
 - `experiments/20261125-glovla-handoff-budget/analysis.py`
