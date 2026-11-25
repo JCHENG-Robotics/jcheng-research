@@ -1,14 +1,13 @@
-# Result — MVE-0 re-analysis (run 2026-11-25)
+# 结果 — MVE-0 复算（2026-11-25 运行）
 
-**This is a desk re-analysis of published counts, not a robot experiment and not a
-re-evaluation of the checkpoints.** Inputs: `data/main_chain_counts.csv` and
-`data/per_task_n0_n5.csv`, derived from the SST report's `data/results.csv` and
-`data/evidence.json` at commit `8797aa31`. Reproduce with
-`python3 -I analysis.py`; raw output in `logs/analysis.txt`.
+**这是对已发布计数的桌面复算，不是机器人实验，也不是 checkpoint 重评。** 输入：
+`data/main_chain_counts.csv` 与 `data/per_task_n0_n5.csv`，派生自 SST 报告在
+commit `8797aa31` 的 `data/results.csv` 与 `data/evidence.json`。复现命令：
+`python3 -I analysis.py`；原始输出见 `logs/analysis.txt`。
 
-## Main chain
+## 主线
 
-| Stage | Clean (95% Wilson) | Randomized (95% Wilson) |
+| 阶段 | Clean（95% Wilson） | Randomized（95% Wilson） |
 |---|---|---|
 | N0 15k | 77.14 [75.96, 78.28] | 36.20 [34.88, 37.54] |
 | N1 15k | 78.04 [76.37, 79.62] | 47.84 [45.89, 49.80] |
@@ -18,51 +17,46 @@ re-evaluation of the checkpoints.** Inputs: `data/main_chain_counts.csv` and
 | N4 30k | 80.88 [79.29, 82.37] | 54.24 [52.28, 56.18] |
 | N5 30k | 81.86 [80.77, 82.90] | 58.22 [56.85, 59.58] |
 
-## Stage tests (unpaired, optimistic)
+## 阶段检验（不配对，乐观）
 
-| Comparison | Δ randomized | p | Verdict |
+| 比较 | Δ randomized | p | 判断 |
 |---|---:|---:|---|
-| N0→N1 foreground replacement | +11.64 pp | < 0.0001 | established |
-| N1→N2 review + 0.1 rendering | +3.00 pp | 0.034 | marginal |
-| N2→N3 raw teachers + FG weight | +2.28 pp | 0.107 | not established |
-| N3→N4 module-wise LR | +2.24 pp | 0.112 | not established |
-| N4@30k→N5 data repair | +3.98 pp | 0.001 | established |
+| N0→N1 前景替换 | +11.64 pp | < 0.0001 | 成立 |
+| N1→N2 复核 + 0.1 渲染 | +3.00 pp | 0.034 | 边缘 |
+| N2→N3 raw teacher + 前景加权 | +2.28 pp | 0.107 | 未成立 |
+| N3→N4 分模块 LR | +2.24 pp | 0.112 | 未成立 |
+| N4@30k→N5 数据修复 | +3.98 pp | 0.001 | 成立 |
 
-The same N3→N4 effect appears at 25k (53.00% → 55.24%, +2.24 pp, p ≈ 0.11). Two
-checkpoints with the same direction and magnitude are suggestive (Stouffer
-Z ≈ 2.25, p ≈ 0.02 if treated as independent), but this is not a paired test and
-the two runs are not independent samples of the same checkpoint.
+N3→N4 在 25k 复现了同样的 +2.24 pp（53.00% → 55.24%，p ≈ 0.11）。两个
+checkpoint 同方向同幅度是**提示性**证据（若视为独立，Stouffer Z ≈ 2.25，
+p ≈ 0.02），但这不是配对检验，两个 run 也不是同一 checkpoint 的独立样本。
 
-Clean scene: no stage change is significant at p < 0.05; N1→N2 is −2.08 pp
-(p = 0.081).
+Clean 场景：没有任何阶段变化在 p<0.05 下显著；N1→N2 为 −2.08 pp（p = 0.081）。
 
-## Per-task structure
+## 逐任务结构
 
-**Clean (N0 15k → N5 30k)**: mean +4.72 pp, median +1.0 pp; 29 tasks improved,
-16 worse, 5 unchanged. `click_bell` 5→98 and `click_alarmclock` 34→96 contribute
-155 of 236 extra successes (**66% of the clean gain**). Worst: `stack_blocks_three`
-−13, `beat_block_hammer` −10, `move_stapler_pad` −10, `place_mouse_pad` −9,
-`place_fan` −8.
+**Clean（N0 15k → N5 30k）**：均值 +4.72 pp，中位数 +1.0 pp；29 个任务变好，
+16 个变差，5 个不变。`click_bell` 5→98、`click_alarmclock` 34→96，贡献了 236 个
+新增成功中的 155 个（**clean 增益的 66%**）。最差：`stack_blocks_three` −13、
+`beat_block_hammer` −10、`move_stapler_pad` −10、`place_mouse_pad` −9、
+`place_fan` −8。
 
-**Randomized**: mean +22.02 pp, median +19.0 pp; 46 tasks improved, 3 worse, 1
-unchanged. Top: `stack_bowls_two` +57, `open_laptop` +48, `place_fan` +47,
-`stack_bowls_three` +46, `handover_mic` +43. Worst: `place_burger_fries` −11.
+**Randomized**：均值 +22.02 pp，中位数 +19.0 pp；46 个任务变好，3 个变差，1 个
+不变。最高：`stack_bowls_two` +57、`open_laptop` +48、`place_fan` +47、
+`stack_bowls_three` +46、`handover_mic` +43。最差：`place_burger_fries` −11。
 
-## Interpretation
+## 解释
 
-1. The foreground-replacement gain is large enough to survive clustering concerns
-   (z ≈ 9.6); it is the one robust result.
-2. The intermediate +2–3 pp steps are at or below the noise floor at 50
-   episodes/task. The report's narrative "each stage adds a few points" is not
-   statistically established.
-3. The clean headline is not a broad improvement; it is dominated by two click
-   tasks that the padding/frame repair fixes. The randomized improvement is broad.
-4. These numbers cannot settle causality for N5: the repair combined two changes
-   (padding mask, frame alignment) and changed the data pipeline; the 30k N4 vs
-   30k N5 comparison is the cleanest available, but still not paired.
+1. 前景替换的增益大到足以经受聚类担忧（z ≈ 9.6）；这是唯一稳健的结果。
+2. 中间阶段的 +2–3 pp 在 50 episodes/task 下处于或低于噪声底。报告“每一阶段
+   加几个点”的叙事在统计上没有成立。
+3. clean 的头条不是全面提升，而是被两个 click 任务主导的修复；randomized 的
+   提升才是广谱的。
+4. 这些数字不能判定 N5 的因果：修复合并了两个改动（padding mask、帧对齐），
+   并更换了数据管线；30k N4 vs 30k N5 是现有最干净的对照，但仍不配对。
 
-## What this does not establish
+## 这不能证明什么
 
-- No statement about the real robot; the data are simulation only.
-- No statement about SST's checkpoints; they are not released.
-- No correction for multiple comparisons across the 77 published runs.
+- 不能对真实机器人作任何断言；数据全部来自仿真。
+- 不能对 SST 的 checkpoints 作任何断言；它们未发布。
+- 没有对 77 个已发布 run 做多重比较校正。

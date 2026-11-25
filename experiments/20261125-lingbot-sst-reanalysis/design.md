@@ -1,78 +1,64 @@
-# Experiment design — LingBot/SST re-analysis and follow-ups
+# 实验设计 — LingBot/SST 复算与后续实验
 
-- **Date**: 2026-11-25
-- **Status**: MVE-0 **run** (desk re-analysis); MVE-1 and MVE-2 **not run**
-- **Owner**: J. Cheng (decision), ZCode (analysis)
-- **Related report**: `reports/20261125-lingbot-vla-sst-foreground-prompting.md`
+- **日期**：2026-11-25
+- **状态**：MVE-0 **已运行**（桌面复算）；MVE-1 与 MVE-2 **未运行**
+- **负责人**：J. Cheng（决策），ZCode（分析）
+- **相关报告**：`reports/20261125-lingbot-vla-sst-foreground-prompting.md`
 
-## MVE-0 — Are the SST stage gains distinguishable from noise? (run)
+## MVE-0 — SST 各阶段增益能否与噪声区分？（已运行）
 
-1. **Hypothesis**: at 50 episodes/task, the intermediate stage gains (+2–3 pp) are
-   within sampling noise; only the foreground-replacement jump and the data-repair
-   gain at equal steps survive a two-proportion test.
-2. **Baseline**: the previous stage in the N0→N5 chain, and N4 at 30k for the
-   data-repair comparison at equal training steps.
-3. **Variables**: stage (N0…N5), scene (clean/randomized). Controlled: published
-   counts, same benchmark, same evaluation harness.
-4. **Environment**: no GPU, no robot; Python 3.12 stdlib only; inputs are the
-   derived counts in `data/`.
-5. **Metrics**: success rate, Wilson 95% CI, unpaired two-proportion z-test
-   (optimistic: ignores task clustering), per-task delta distribution.
-6. **Acceptance**: the direction and magnitude of the published stage deltas are
-   reproduced; a stage is called "established" only if p < 0.05.
-7. **Failure criteria**: if the counts do not reconcile with the published rates,
-   or the test contradicts the published direction, stop and re-check the input.
-8. **Recording**: `analysis.py`, `logs/analysis.txt`, `data/*.csv`, `result.md`.
-9. **Rollback**: none needed (read-only desk analysis).
+1. **假设**：在 50 episodes/task 下，中间阶段的 +2–3 pp 在采样噪声内；只有前景
+   替换的跳变和等步数的数据修复能通过两比例检验。
+2. **基线**：N0→N5 链中的前一阶段；数据修复用 30k 的 N4 作等步数对照。
+3. **变量**：阶段（N0…N5）、场景（clean/randomized）。控制：发布计数、同一
+   基准、同一评测器。
+4. **环境**：无 GPU、无机器人；Python 3.12 标准库；输入是 `data/` 中的派生计数。
+5. **指标**：成功率、Wilson 95% CI、两比例 z 检验（乐观：忽略 task 聚类）、
+   逐任务差值分布。
+6. **验收**：复现发布阶段差值的方向与幅度；只有 p<0.05 才称为“成立”。
+7. **失败判据**：计数与发布成功率对不上，或检验与发布方向相反 → 停止并复查输入。
+8. **记录**：`analysis.py`、`logs/analysis.txt`、`data/*.csv`、`result.md`。
+9. **回退**：不需要（只读桌面分析）。
 
-## MVE-1 — Does foreground conditioning help a small policy? (not run)
+## MVE-1 — 前景条件对小策略是否有帮助？（未运行）
 
-1. **Hypothesis**: on a 2-task RoboTwin subset, a small BC policy trained with
-   instruction-conditioned foreground dimming beats the same policy trained on raw
-   images in `demo_randomized`, and is not worse than photometric domain
-   randomization.
-2. **Baseline**: raw images; second control: photometric augmentation only.
-3. **Variables**: input pipeline (raw / foreground-dim / photometric DR);
-   controlled: policy, data, seeds, training steps, evaluation protocol.
-4. **Environment**: RoboTwin 2.0 simulation, 2 tasks, 50 clean demos/task, 100
-   trials/task, fixed seeds; a small ACT or DP3 policy (~10–30M parameters) on one
-   consumer GPU. **Not executed.**
-5. **Metrics**: success rate per scene; paired McNemar test on identical seeds;
-   clean-scene regression; mask-service latency (if used online).
-6. **Acceptance**: foreground ≥ +5 pp over raw in randomized with p < 0.05, and
-   clean drop ≤ 2 pp. A secondary acceptance: foreground ≥ DR (non-inferior).
-7. **Failure criteria**: no randomized gain, or clean drop > 2 pp, or the gain
-   disappears when the mask is made instruction-independent (which would indicate
-   that the effect is augmentation, not instruction conditioning).
-8. **Recording**: fixed seeds, per-episode CSV, raw `stats` files, config hashes.
-9. **Rollback**: keep the raw-image policy; do not add a mask service.
+1. **假设**：在 2 个 RoboTwin 任务上，小 BC 策略 + 指令条件前景变暗，在
+   `demo_randomized` 上优于 raw，且不劣于光度域随机化。
+2. **基线**：raw 图像；第二对照：仅光度增强。
+3. **变量**：输入管线（raw / 前景变暗 / 光度 DR）；控制：策略、数据、seeds、
+   训练步数、评测协议。
+4. **环境**：RoboTwin 2.0 仿真，2 个任务，每任务 50 条 clean 演示，每任务 100
+   trials，固定 seeds；ACT 或 DP3 量级的小策略（约 10–30M 参数），单张消费级
+   GPU。**未执行。**
+5. **指标**：各场景成功率；相同 seeds 上的配对 McNemar；clean 回退；在线掩码
+   延迟（若使用）。
+6. **验收**：random 比 raw 高 ≥5 pp 且 p<0.05；clean 回退 ≤2 pp。次级验收：
+   前景 ≥ DR（非劣）。
+7. **失败判据**：random 无增益；或 clean 回退 >2 pp；或把 mask 改成指令无关后
+   增益消失（说明是指令条件，而不是前景本身）。
+8. **记录**：固定 seeds、逐 episode CSV、原始 `stats` 文件、配置哈希。
+9. **回退**：保留 raw 策略；不引入掩码服务。
 
-**Critical ablation not run by SST**: replace the instruction-conditioned mask with
-(a) the same mask for every instruction, and (b) a random-object mask. If the gain
-survives (a), it is a foreground/augmentation effect; if it disappears, the gain is
-instruction conditioning through pixels. SST's `single` vs `multi` comparison is
-consistent with both explanations.
+**SST 没有做的关键消融**：把指令条件 mask 换成（a）所有指令共用同一 mask，
+（b）随机物体 mask。如果（a）仍有增益，就是前景/增强效应；如果增益消失，就是
+通过像素实现的指令条件。SST 的 `single` vs `multi` 对比对两种解释都成立。
 
-## MVE-2 — Data-integrity gate for a future JCHENG demo set (not run)
+## MVE-2 — 未来 JCHENG 演示集的数据完整性门禁（未运行）
 
-1. **Hypothesis**: a 10-episode sample from any future LeRobot-style demo set can
-   be validated for frame/row alignment, PTS monotonicity, first/last-frame decode
-   and padding masks before training.
-2. **Baseline**: the dataset as delivered.
-3. **Variables**: none (validation only).
-4. **Environment**: CPU; `ffmpeg`/PyAV; no robot.
-5. **Metrics**: number of episodes with frame-count ≠ parquet rows; PTS violations;
-   decode failures; padded-action count.
-6. **Acceptance**: zero mismatches on the sample; all padded positions masked in
-   the loader.
-7. **Failure criteria**: any mismatch → do not train; repair or drop the episode.
-8. **Recording**: per-episode JSON + a summary; keep the checker in the data repo,
-   not in `jcheng-research`.
-9. **Rollback**: n/a (read-only check).
+1. **假设**：任何未来 LeRobot 风格演示集的 10 episode 抽样，都能在训练前发现
+   帧/行错位、PTS 违规、首末帧解码失败、padding 未掩。
+2. **基线**：交付时的数据集。
+3. **变量**：无（只验证）。
+4. **环境**：CPU；`ffmpeg`/PyAV；无机器人。
+5. **指标**：帧数 ≠ parquet 行数的 episode 数；PTS 违规；解码失败；padding 动作数。
+6. **验收**：抽样零 mismatch；所有 padding 位置在 loader 中被掩。
+7. **失败判据**：任一 mismatch → 不训练；修复或丢弃该 episode。
+8. **记录**：逐 episode JSON + 汇总；检查器放在数据仓库，不放在
+   `jcheng-research`。
+9. **回退**：不适用（只读检查）。
 
-## MVE-3 — Paired re-evaluation of SST checkpoints (blocked)
+## MVE-3 — SST checkpoints 的配对重评（阻塞）
 
-If the SST checkpoints are released, re-evaluate N4 and N5 at 30k on identical
-seeds, 100 episodes/task, and use McNemar's test on paired outcomes. This is the
-only way to settle whether the +3.98 pp data-repair gain is real at the per-episode
-level. Blocked: checkpoints are not released as of 2026-11-25.
+如果 SST 发布 checkpoints，用相同 seeds、每任务 100 episodes 重评 30k 的 N4 与
+N5，并对配对结果做 McNemar。这是唯一能在逐 episode 层面判定 +3.98 pp 数据修复
+增益是否真实的方法。阻塞原因：截至 2026-11-25 checkpoints 未发布。

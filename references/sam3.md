@@ -1,49 +1,41 @@
-# SAM 3 — promptable concept segmentation
+# SAM 3 — 可提示概念分割
 
-- **Type**: primary paper + official repository
-- **Accessed**: 2026-11-25
-- **Read scope**: arXiv HTML body, including the Limitations section (Appendix B)
-  and the latency/tracking discussion; repository README not audited line by line.
-  Claims below are A-grade for the paper's own statements.
+- **类型**：一手论文 + 官方仓库
+- **访问日期**：2026-11-25
+- **阅读范围**：arXiv HTML 正文，包括 Limitations（附录 B）与延迟/跟踪讨论；
+  仓库 README 未逐行审计。下文对论文自述为 A 级。
 
-## Paper
+## 论文
 
-- Carion, Gustafson, Hu, et al. *SAM 3: Segment Anything with Concepts*.
-  arXiv:2511.16719, v1 2025-11-20, v2 2026-03-28. Meta Superintelligence Labs.
+- Carion, Gustafson, Hu 等。*SAM 3: Segment Anything with Concepts*。
+  arXiv:2511.16719，v1 2025-11-20，v2 2026-03-28。Meta Superintelligence Labs。
   <https://arxiv.org/abs/2511.16719>
-- Promptable Concept Segmentation (PCS): short noun phrases, image exemplars, or
-  both; returns masks plus identities for **all** matching instances in images and
-  video. DETR-style detector + SAM 2-style memory tracker share a Perception
-  Encoder; a presence head decouples recognition from localization.
-- Numbers quoted in the paper: 48.8 zero-shot mask AP on LVIS; video PCS cgF1 /
-  pHOTA: SA-V 30.3 / 58.0, YT-Temporal-1B 50.8 / 69.9, SmartGlasses 36.4 / 63.6;
-  VOS J&F 78.4 on MOSEv1, 92.2 on DAVIS17. It reaches >80% of human pHOTA.
+- Promptable Concept Segmentation（PCS）：名词短语、图像 exemplar 或两者组合；
+  返回图像与视频中**所有**匹配实例的 mask 与 identity。DETR 式检测器 + SAM 2 式
+  记忆跟踪器共享 Perception Encoder；presence head 将识别与定位解耦。
+- 论文报告的数字：LVIS 零样本 mask AP 48.8；视频 PCS cgF1 / pHOTA：SA-V
+  30.3 / 58.0，YT-Temporal-1B 50.8 / 69.9，SmartGlasses 36.4 / 63.6；VOS J&F：
+  MOSEv1 78.4，DAVIS17 92.2。达到人类 pHOTA 的 80% 以上。
 
-## Limitations relevant to the SST pipeline
+## 与 SST 管线相关的局限
 
-- **Prompt scope**: "constrained to simple noun phrase prompts"; does not support
-  multi-attribute queries beyond one or two attributes. Fine-grained out-of-domain
-  concepts (aircraft types, medical terms, thermal imagery) are hard.
-- **Ambiguity**: polysemy, subjective descriptors, ungroundable phrases, boundary
-  ambiguity, occlusion and blur; mitigated by an ambiguity module (15% reduction
-  in overlapping instances), not eliminated.
-- **Tracking drift**: errors from mask propagation, false detector predictions,
-  and IoU matching in crowded scenes; no shared object-level context across
-  masklets; periodic re-prompting is the mitigation.
-- **Latency/cost**: 30 ms per image on an H200 with 100+ objects; video cost
-  scales linearly with object count; ~5 concurrent objects near real-time; 64
-  objects at 30 FPS requires 8 H200s; a 15-frame confirmation delay adds ~0.5 s.
+- **提示范围**："constrained to simple noun phrase prompts"；不支持超过一两个
+  属性的多属性查询。细粒度 OOD 概念（航空器型号、医学术语、热成像）困难。
+- **歧义**：多义词、主观描述、不可落地短语、边界歧义、遮挡与模糊；用歧义模块
+  缓解（重叠实例减少 15%），但未消除。
+- **跟踪漂移**：mask 传播、检测器误检、拥挤场景 IoU 匹配都会导致错误；masklet
+  之间没有共享的物体级上下文；缓解手段是周期性重新提示。
+- **延迟/成本**：H200 上 100+ 物体的单图 30 ms；视频成本随物体数线性增长；约 5
+  个并发物体可近实时；64 个物体 30 FPS 需要 8×H200；15 帧确认延迟约 0.5 s。
 
-## Why this matters for SST
+## 为什么这对 SST 重要
 
-SST runs SAM 3 as an HTTP service during evaluation, with a memory window and a
-27B Qwen judge. The paper's own limitations predict exactly the failure modes the
-SST prompt tries to patch by hand ("MISSED" vocabulary, color backup phrases):
-ambiguous nouns, small/occluded objects, and drift over long episodes. The prompt
-is therefore part of the method, not an implementation detail.
+SST 在评测时把 SAM 3 作为 HTTP 服务运行，带 memory window 和 27B Qwen judge。
+论文自述的局限正好预测了 SST 词表手工修补的失败模式（`MISSED` 词、颜色备份）：
+歧义名词、小/遮挡物体、长 episode 漂移。因此**词表是方法的一部分**，不是实现
+细节。
 
-## Relevance to JCHENG
+## 对 JCHENG 的相关性
 
-A SAM 3 service is not deployable on a Pi 5 or a 3060 laptop alongside the rest of
-the stack. The paper's 30 ms/image figure is an H200 number and excludes the Qwen
-judge and the video tracker.
+SAM 3 服务无法与其余栈一起部署在 Pi 5 或 3060 笔记本上。论文的 30 ms/图是 H200
+数字，且不含 Qwen judge 与视频跟踪器。

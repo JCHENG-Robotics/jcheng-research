@@ -1,36 +1,32 @@
-# Competition rules — Robbyant Embodied AI Challenge (preliminary, RoboTwin track)
+# 赛事规则 — Robbyant 具身智能挑战赛（初赛，RoboTwin 赛道）
 
-- **Type**: secondary source (Tianchi forum post), read via search summary
-- **Accessed**: 2026-11-25
-- **Read scope**: the forum page body was **not retrievable** (JavaScript-rendered;
-  only title/metadata returned). The rules below are from a search-engine summary
-  of the post and are therefore **B-grade**, not A-grade. The rulebook PDF was not
-  accessed.
-- **URL**: <https://tianchi.aliyun.com/forum/post/1081761>
+- **类型**：二手来源（天池论坛帖），通过检索摘要阅读
+- **访问日期**：2026-11-25
+- **阅读范围**：论坛页面正文**未能取得**（JavaScript 渲染，只返回标题/元数据）。
+  下列规则来自搜索引擎对该帖的摘要，因此是 **B 级**，不是 A 级。未访问规则
+  PDF 原文。
+- **URL**：<https://tianchi.aliyun.com/forum/post/1081761>
 
-## Rules as summarized
+## 规则（按摘要）
 
-| Item | Rule |
+| 项目 | 规则 |
 |---|---|
-| Training data | RoboTwin 2.0 Aloha-AgileX 50 tasks, **clean** data only: 50 trajectories per task, 2,500 demos |
-| `demo_randomized` | Evaluation only; **prohibited** for training |
-| External data | Prohibited (real-robot, third-party robot datasets, etc.) |
-| Supervision | Must come from official clean demonstrations |
-| Evaluation | 100 trials/task, `demo_clean` (easy) and `demo_randomized` (hard) |
-| Allowed techniques | training parameters, training strategy, pixel-level augmentation (brightness/color/noise/blur/cutout/JPEG), state perturbation, data filtering, instruction replacement within the seen pool, statistical reweighting, model structure, inference strategy |
-| Blacklisted | background swapping, object-level CutMix/Copy-Paste, geometry changes, re-lighting, generative models creating new observations, semantic tampering |
-| Compliance test | data must come from RoboTwin release assets; learning must stay within behavior cloning with supervision from demonstrations |
+| 训练数据 | RoboTwin 2.0 Aloha-AgileX 50 任务，**只用 clean** 数据：每任务 50 条轨迹，共 2,500 条 |
+| `demo_randomized` | 仅用于评测；**禁止**训练 |
+| 外部数据 | 禁止（真机自采、第三方机器人数据集等） |
+| 监督来源 | 必须来自官方 clean 演示 |
+| 评测 | 每任务 100 trials，`demo_clean`（easy）与 `demo_randomized`（hard） |
+| 允许的技术 | 训练参数、训练策略、像素级增强（亮度/颜色/噪声/模糊/cutout/JPEG）、状态扰动、数据过滤、seen pool 内指令替换、统计重加权、模型结构、推理策略 |
+| 黑名单 | 背景替换、物体级 CutMix/Copy-Paste、几何改变、重新打光、生成模型造新观测、语义篡改 |
+| 合规检验 | 数据必须来自 RoboTwin 发布资产；学习必须停留在行为克隆框架内，监督来自演示 |
 
-## Consequences
+## 后果
 
-1. The SST recipe is a **clean-only** solution. Its 58.22% randomized result is not
-   comparable to the official clean+randomized 92.80%; the latter uses at least
-   500 randomized demos per task and is forbidden in the competition.
-2. SAM foreground replacement is pixel-level processing of the official demos and
-   uses no new environment data. Whether it counts as allowed "data processing"
-   or as blacklisted "semantic tampering" is a gray area; the team's result was
-   accepted by the organizers, but this review found no written ruling. Treat
-   compliance as **C-grade inference**.
-3. For JCHENG the rule is irrelevant except as an explanation of why SST chose a
-   clean-only budget. A real project is not bound by it and should compare against
-   the clean+randomized recipe before investing in input masking.
+1. SST 配方是一套 **clean-only** 方案。它的 58.22% randomized 结果不能与官方
+   clean+randomized 的 92.80% 直接比较；后者每任务至少用 500 条 randomized
+   演示，在竞赛中是被禁止的。
+2. SAM 前景替换是对官方演示的像素级处理，不使用新的环境数据。它算不算允许的
+   “数据处理”，还是黑名单里的“语义篡改”，是一个灰色地带；队伍的结果被主办方
+   接受，但本次调研没有找到书面裁定。合规性按 **C 级推断**处理。
+3. 对 JCHENG 来说，这条规则唯一的用处是解释 SST 为什么选择 clean-only 预算。
+   真实项目不受它约束，应该在投入输入掩码之前先比较 clean+randomized 配方。

@@ -1,16 +1,16 @@
 # LingBot-VLA 2.0 / SST 前景提示配方评估：是否引入 JCHENG？
 
-> Report status: **draft** (draft | reviewed | superseded). Date: 2026-11-25.
-> Author: ZCode（研究代理），for J. Cheng. Reviewer: pending.
-> Decision this informs: 是否、以及以何种形式，把 LingBot-VLA 2.0 / SST 的 RoboTwin 后训练配方纳入 JCHENG 技术路线。
+> 报告状态：**draft**（draft | reviewed | superseded）。日期：2026-11-25。
+> 作者：ZCode（研究代理），for J. Cheng。评审：pending。
+> 本报告影响的决策：是否、以及以何种形式，把 LingBot-VLA 2.0 / SST 的 RoboTwin 后训练配方纳入 JCHENG 技术路线。
 > 研究主题：LingBot-VLA 2.0 / SST 的 RoboTwin 后训练配方（前景视觉提示、分模块学习率、数据修复）及其对 JCHENG 的可迁移性。
-> Research boundary: 无机器人访问；无 GPU 训练/评测（SST checkpoints 未发布）；代码审计为静态分析，pin 在 `8797aa31`；文献以公开摘要/HTML 为主，部分论文未读全文；赛事规则读到的是论坛摘要而非规则原文；统计部分是对已发布计数的桌面复算（S），不是实机或 checkpoint 复现。
+> 研究边界：无机器人访问；无 GPU 训练/评测（SST checkpoints 未发布）；代码审计为静态分析，pin 在 `8797aa31`；文献以公开摘要/HTML 为主，部分论文未读全文；赛事规则读到的是论坛摘要而非规则原文；统计部分是对已发布计数的桌面复算（S），不是实机或 checkpoint 复现。
 
 **证据等级**：**S** 在本机复现（本报告仅指桌面统计复算）· **A** 一手论文/源码/官方文档 · **B** 可信二手证据 · **C** 基于现有证据的推断 · **D** 未验证假设。
 
 ---
 
-## 01. Executive Summary
+## 01. Executive Summary（执行摘要）
 
 **推荐：现在不引入运行时 VLA，也不把 SST 的前景掩码管线放进 JCHENG。吸收三件事——数据完整性门禁、评测协议、预训练模型的分模块学习率；如果未来真的上学习型操作策略，先做小的 3D/BC 策略（DP3/ACT 量级），不要从 6B VLA 起步。**
 
@@ -26,7 +26,7 @@
 
 ---
 
-## 02. Research Questions
+## 02. Research Questions（研究问题）
 
 **主问题**：JCHENG 是否应该、以及以什么形式，采用 LingBot-VLA 2.0 / SST 的 RoboTwin 后训练配方？
 
@@ -57,7 +57,7 @@
 
 ---
 
-## 03. Current System Analysis
+## 03. Current System Analysis（当前系统分析）
 
 ### 3.1 生态现状（按仓库）
 
@@ -81,7 +81,7 @@
 
 ---
 
-## 04. Research Methodology
+## 04. Research Methodology（研究方法）
 
 ### 4.1 检索策略
 
@@ -119,7 +119,7 @@
 
 ---
 
-## 05. Literature Review
+## 05. Literature Review（文献综述）
 
 ### 5.1 LingBot-VLA 2.0：架构与官方 RoboTwin 协议
 
@@ -188,7 +188,7 @@ PCS 支持名词短语/图像 exemplar，返回所有匹配实例的 mask + iden
 
 ---
 
-## 06. Repository Investigation
+## 06. Repository Investigation（仓库调查）
 
 ### 6.1 交付物
 
@@ -253,7 +253,7 @@ SST 发现两个问题：（1）episode 末尾不足 50 步时，复制最后动
 
 ---
 
-## 07. Comparative Analysis
+## 07. Comparative Analysis（横向比较）
 
 比较对象：在“外观偏移下让操作策略更稳”这个问题上，JCHENG 可选的路线。
 
@@ -283,7 +283,7 @@ SST 发现两个问题：（1）episode 末尾不足 50 步时，复制最后动
 
 ---
 
-## 08. Critical Findings
+## 08. Critical Findings（关键发现）
 
 ### F1. 头条增益稳健，但适用范围窄 [S/A]
 
@@ -355,7 +355,7 @@ LeRobot v3.0 的帧错位有独立 issue 佐证；SST 的修复保留 v3.0 ID �
 
 ---
 
-## 09. Engineering Applicability
+## 09. Engineering Applicability（工程适配）
 
 ### 9.1 适配矩阵
 
@@ -396,7 +396,7 @@ SST 的动作标签来自仿真器的绝对关节目标；JCHENG 的 `/joint_sta
 
 ---
 
-## 10. Recommended Approach
+## 10. Recommended Approach（推荐方案）
 
 ### 推荐（现在）
 
@@ -426,7 +426,7 @@ SST 的动作标签来自仿真器的绝对关节目标；JCHENG 的 `/joint_sta
 
 ---
 
-## 11. Experimental Design
+## 11. Experimental Design（实验设计）
 
 完整设计见 [design.md](../experiments/20261125-lingbot-sst-reanalysis/design.md)。这里给出结论级摘要。
 
@@ -463,7 +463,7 @@ SST checkpoints 未发布；若发布，用相同 seeds、100 episodes/task 对 
 
 ---
 
-## 12. Limitations & Uncertainties
+## 12. Limitations & Uncertainties（局限与不确定性）
 
 | 不确定性 | 影响 | 关闭方式 |
 |---|---|---|
@@ -479,7 +479,7 @@ SST checkpoints 未发布；若发布，用相同 seeds、100 episodes/task 对 
 
 ---
 
-## 13. References
+## 13. References（参考文献）
 
 ### 论文
 
