@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Validated the fixed judge policy on the Orin: T1 + SAM3 score≥0.8 over
+  18 cases (7 easy, 7 hard negatives, 4 partials) gave **15 judged / 15
+  correct**, with 3 low-score masks skipped (clear/right-edge). CSV
+  `experiments/20261126-agx-orin-stack-probe/data/ds_t1gate.csv`.
 - Draft investigation report `reports/20261126-sam3-sst-open-source-attempt-route.md`
   (SAM 3 in the SST post-competition repository: vendored SAM3, offline data
   chain, online stream server, prompt/judge contracts, gated weights, SAM

@@ -232,6 +232,14 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 
 **建议**：固定 **T1**（最简单、硬负例最稳）并加 **SAM3 score ≥0.8** 门禁；低分掩码跳过或标记 `uncertain`，不要送 judge 硬判；judge 只作为候选复核，不作为通用细粒度验证器。
 
+### T1 + score≥0.8 策略验证（2026-11-26 15:24，S）
+
+- 18 个案例：7 易分、7 硬负例、4 局部；SAM3 score≥0.8 才送 judge，其余标 SKIP。
+- **15 judged / 15 correct = 100%**；3 个 SKIP：easy_clear（0.754）、hard_clear_cola（0.754）、part_right_wrist（0.762）。
+- ambig f21（左边缘绿瓶局部，0.91）判 no，符合"太局部不可辨认"。
+- 代价：低分 clear bottle 与右边缘透明瓶被跳过，覆盖率 15/18；低分/强局部仍需人工或第二视角兜底。
+- CSV：[data/ds_t1gate.csv](data/ds_t1gate.csv)。
+
 ## 结论与下一步
 
 1. **Qwen3-VL-8B 已部署成功**（llama.cpp CUDA 12.6/sm_87，Q4_K_M + Q8_0 mmproj），1 图 1.95–2.03 s、2 图 2.64 s、2 图 yes/no 1.18 s；`logprobs` 可用（S）。
@@ -242,4 +250,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 6. **100 帧 front+wrist**：part-aware 措辞下 77/79 = 97.5%（S）。
 7. **Wrist 100 帧多 episode**：88/89 = 98.9%；25 no-mask；唯一错误是顶边局部（S）。
 8. **Judge 模板敏感性**：12 掩码 × 3 模板，无一对全对；措辞可翻转判决；之前数字均为特定模板结果（S）。建议 T1 + SAM3 score≥0.8 门禁，低分跳过/标 uncertain。
-9. **下一步**：固定模板与门禁后重新校准（不跨模板比较），再决定是否值得进 200+ 帧；目前不建议把 judge 当作通用验证器。
+9. **T1+score≥0.8 策略验证**：18 案例 **15 judged / 15 correct**、3 skipped（低分 clear/right-edge）；当前推荐策略（S）。
+10. **下一步**：固定模板与门禁后重新校准（不跨模板比较），再决定是否值得进 200+ 帧；目前不建议把 judge 当作通用验证器。

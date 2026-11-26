@@ -40,6 +40,7 @@
 13. **100 帧 + wrist（S）**：front 50 + wrist_left 50；4 px 硬边框过滤误杀 34 个合法边缘/近距离掩码（front chip bag 10、wrist 瓶 23）；改用 SST 的 "object, or a part of it?" 重测 34 个 partial：**32/34 yes（94.1%）**；合计 **79 judged / 77 yes = 97.5%**；front p50 1.46 s、wrist p50 3.84 s；wrist no-mask 18/50。**不要用硬边框过滤。**
 14. **Wrist 100 帧多 episode（S）**：file000/file001 各 50，提示 `bottle`，part-aware，无边框过滤；**89 valid / 88 correct = 98.9%**；25 no-mask；唯一错误是顶边被裁掉的橙瓶上半部（score 0.973，p_yes 0.037）；e2e p50 3.76–3.83 s、Qwen p50 2.52–2.59 s；`bottle` 14/15 是最佳 wrist 提示（`gripper`/`black gripper` 0）。
 15. **Judge 模板敏感性（S）**：12 掩码 × 3 模板，T1 9/11、T2 8/11、T3 7/11（不含 ambig）；f19 T1 yes / T2/T3 no；hard1 T1/T2 no / T3 yes；低分掩码（0.754–0.762）最易翻转。**之前 40/40、60/60、98.9% 都是特定模板 + 特定样本的结果**，不能跨模板比较。建议固定 **T1 + SAM3 score≥0.8** 门禁，低分跳过/标 uncertain。
+16. **T1+score≥0.8 策略验证（S）**：18 案例 **15 judged / 15 correct**、3 skipped（easy_clear 0.754、hard_clear 0.754、right wrist 0.762）；覆盖率 15/18，低分/强局部仍需人工或第二视角兜底。
 
 ---
 
@@ -312,6 +313,8 @@
 
 **F16. Judge 模板措辞可翻转判决。** 12 个掩码 × T1/T2/T3：T1 **9/11**、T2 **8/11**、T3 **7/11**（不含 ambig）；f19 T1 yes / T2/T3 no；hard1 T1/T2 no / T3 yes；低分掩码（0.754–0.762）最易翻转。**之前 40/40、60/60、98.9% 都是特定模板 + 特定样本的结果，不能跨模板比较。** 建议固定 T1 + SAM3 score≥0.8，低分跳过或标 uncertain；不要把 judge 当作通用细粒度验证器 [S]。
 
+**F17. T1 + score≥0.8 在 18 个案例上 15/15。** 7 易分 + 7 硬负例 + 4 局部：15 judged 全对，3 skipped（clear 0.754、hard_clear 0.754、right wrist 0.762）；ambig f21 判 no。低分掩码被跳过，覆盖率 15/18；这是当前最稳的简单策略，但仍需人工/第二视角兜底，不能当通用验证器 [S]。
+
 ---
 
 ## 09. Engineering Applicability（工程适用性）
@@ -434,6 +437,7 @@ df -h / | tail -1
 11. **许可证**：SAM3 从魔搭第三方镜像取得（SAM License，README 仍带 HF gated 字段）；Embedl 额外限制；SST 代码无授权（A）。
 12. **数据集试点范围**：100 帧 front+wrist + 100 帧 wrist 多 episode + 30 掩码 × 60 对 × 2 组，640×480，无逐像素真值；硬边框过滤会误杀合法边缘目标；"part of it" 提升 partial 接受率但顶边局部仍会漏；数字不代表通用准确率（B/C）。
 13. **模板敏感性**：12 个掩码 × 3 模板；T1 9/11、T2 8/11、T3 7/11；低分掩码最易翻转；需要固定模板 + 更大校准集，当前数字不代表通用准确率（S/D）。
+14. **T1+gate 策略验证**：18 案例 15 judged/15 correct、3 skipped；低分/强局部被跳过；样本仍小（S/D）。
 
 ---
 
