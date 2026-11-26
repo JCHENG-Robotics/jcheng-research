@@ -251,6 +251,13 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - 结论：固定策略在 200 帧上稳定；唯一失败模式是**高分边缘局部**（f21），score 门禁抓不到。
 - CSV：[data/ds_stability200.csv](data/ds_stability200.csv)。
 
+### MVE-4 顾问式 HTTP 服务（2026-11-26 16:57，S）
+
+- 本地服务 `127.0.0.1:8090`：`/health`、`/infer`；SAM3 只加载一次；T1 + score≥0.8；Qwen 走 `8080`；只返回 mask/bbox/judge。
+- 60 请求（20 front 轮换 + 20 wrist `bottle` + 20 soak，5 s 间隔）：**58 JUDGE / 2 NO_MASK / 0 SKIP**；p50 **2.04 s**、p95 2.08 s；`/health` model/qwen true；无崩溃。
+- RSS 1,386 → 2,088 MB（+702 MB / 220 s）；可能是 PyTorch/Qwen 缓存，未证明泄漏，需要更长 soak。
+- 服务代码在 Orin `/opt/jcheng/sam3_advisor/server.py`（不入 git）；结果 JSON：[data/ds_advisor_service.json](data/ds_advisor_service.json)。
+
 ## 结论与下一步
 
 1. **Qwen3-VL-8B 已部署成功**（llama.cpp CUDA 12.6/sm_87，Q4_K_M + Q8_0 mmproj），1 图 1.95–2.03 s、2 图 2.64 s、2 图 yes/no 1.18 s；`logprobs` 可用（S）。
@@ -263,4 +270,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 8. **Judge 模板敏感性**：12 掩码 × 3 模板，无一对全对；措辞可翻转判决；之前数字均为特定模板结果（S）。建议 T1 + SAM3 score≥0.8 门禁，低分跳过/标 uncertain。
 9. **T1+score≥0.8 策略验证**：18 案例 **15 judged / 15 correct**、3 skipped（低分 clear/right-edge）；当前推荐策略（S）。
 10. **200 帧稳定性**：**183 judged / 182 correct = 99.45%**，16/16 反例全对；1 个高分边缘局部假阴性（f21）；30 NO_MASK + 3 低分跳过；无重启（S）。
-11. **下一步**：边缘/局部处理（双视角或 top-edge/上下文提示）后再扩 500+ 帧；当前策略可用于离线/顾问式，不建议直接进运动链。
+11. **顾问式 HTTP 服务**：60 请求 **58 judge / 2 no-mask**，p50 2.04 s / p95 2.08 s，health model/qwen true，无崩溃；RSS 1.39→2.09 GB/220 s（S）。
+12. **下一步**：30 min soak 确认 RSS 平台；服务只发 advisory，不接运动；或先做 500 帧离线稳定性。

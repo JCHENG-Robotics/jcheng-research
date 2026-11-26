@@ -1,0 +1,16 @@
+{
+  "service": "sam3_advisor",
+  "bind": "127.0.0.1:8090",
+  "policy": "T1 + SAM3 score>=0.8",
+  "requests": 60,
+  "judge": 58,
+  "skip": 0,
+  "no_mask": 2,
+  "p50_s": 2.04,
+  "p95_s": 2.08,
+  "rss_start_mb": 1386,
+  "rss_end_mb": 2088,
+  "duration_s": 220,
+  "crashes": 0,
+  "health": {"model": true, "qwen": true}
+}
