@@ -9,6 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Draft investigation report
+  `reports/20261126-ultralytics-repository-review.md` (Ultralytics at
+  `v8.4.219` / `3a31e32`: 233 files / 83.6k LOC, 230 tests, AGPL-3.0 +
+  Enterprise dual licensing, the vendor's public position that even private
+  internal use requires publishing the whole app, default Google Analytics /
+  Sentry / auto-install / `weights_only=False`, YOLO26 paper and Pi 5/Orin
+  numbers, YOLO27 unreleased, and the fit with the existing five-backend
+  perception stack). Adds the source record
+  `references/perception/ultralytics-repository.md` and the pre-registered
+  `experiments/20261126-ultralytics-runtime-audit/design.md` (MVE-1…3; not run).
+- Draft investigation report
+  `reports/20261126-rlinf-piper-pico-data-collection.md` (RLinf at
+  `ed0e1b83`: the PICO VR chain is implemented, but `PiperEnv` rejects every
+  teleop device (`TELEOP = ()`) and lacks the kinematics that `PicoJoint`
+  requires; the vendor `pyAgxArm` layer does support `piper_x`, `move_p()` and
+  TCP/flange conversion, so the route is a CARTESIAN_POSE environment rather
+  than hand-written IK; includes community implementations and their licences).
+  Adds the source record `references/manipulation/rlinf-piper-pico.md` and the
+  pre-registered `experiments/20261126-rlinf-piper-pico-mve/design.md` (MVE-0…3;
+  not run).
 - Ran a 500-request advisory-service test on the Orin (200-frame pool
   cycled 2.5×): 0 errors, 427 judge / 8 skip / 65 no-mask, p50 2.11 s /
   p95 **3.77 s** / max 4.02 s; service RSS +3 MB and Qwen RSS +12 MB, no
