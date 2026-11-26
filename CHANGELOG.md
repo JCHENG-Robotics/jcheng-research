@@ -29,6 +29,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Adds the source record `references/manipulation/rlinf-piper-pico.md` and the
   pre-registered `experiments/20261126-rlinf-piper-pico-mve/design.md` (MVE-0…3;
   not run).
+- Ran a 500-request advisory-service test on the Orin (200-frame pool
+  cycled 2.5×): 0 errors, 427 judge / 8 skip / 65 no-mask, p50 2.11 s /
+  p95 **3.77 s** / max 4.02 s; service RSS +3 MB and Qwen RSS +12 MB, no
+  crash; the 3.77 s p95 rules out synchronous 1–2 Hz calls and misses the
+  G4 p95 <1.5 s gate. Data
+  `experiments/20261126-agx-orin-stack-probe/data/ds_advisor_svc500.{json,csv}`.
+- Installed the experimental advisor service at
+  `/opt/jcheng/sam3_advisor/server.py` on the Orin (manual start, no systemd)
+  and drafted the advisory integration contract (§9.5 of the deployment
+  report); no product repository was touched.
 - Ran a 30-minute advisory-service soak on the Orin: 1,800 s / 180
   requests / 0 errors, 162 judge / 18 no-mask, p50 1.04 s / p95 2.32 s;
   service RSS +3 MB and Qwen RSS +7 MB (plateau), no crash. Data
