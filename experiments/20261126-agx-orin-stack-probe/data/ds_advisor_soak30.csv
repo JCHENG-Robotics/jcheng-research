@@ -1,0 +1,181 @@
+i,elapsed,file,prompt,gate,score,answer,p_yes,wall,svc_rss_mb,qwen_rss_mb,free_mb
+0,1.8,f_01.png,green soda bottle,JUDGE,0.977,yes,1.0,1.81,2106,9279,33378
+1,11.0,f_02.png,orange soda bottle,JUDGE,0.973,yes,0.9978,1.01,2106,9279,33376
+2,21.0,f_03.png,cola bottle,JUDGE,0.965,yes,1.0,0.95,2107,9279,33380
+3,31.0,f_04.png,transparent empty bottle,JUDGE,0.953,yes,1.0,1.03,2107,9279,33379
+4,41.0,f_05.png,chip bag,JUDGE,0.883,yes,0.9838,0.97,2107,9279,33375
+5,51.0,f_06.png,green soda bottle,JUDGE,0.98,yes,1.0,1.0,2107,9279,33367
+6,61.0,f_07.png,orange soda bottle,JUDGE,0.953,yes,1.0,1.0,2107,9279,33369
+7,71.0,f_08.png,cola bottle,JUDGE,0.906,yes,0.9986,0.98,2107,9279,33374
+8,81.0,f_09.png,transparent empty bottle,JUDGE,0.957,yes,1.0,1.0,2107,9279,33380
+9,91.1,f_10.png,chip bag,JUDGE,0.859,yes,0.9715,1.02,2107,9279,33381
+10,101.1,f_11.png,green soda bottle,JUDGE,0.98,yes,1.0,1.02,2107,9279,33381
+11,111.1,f_12.png,orange soda bottle,JUDGE,0.969,yes,1.0,1.0,2107,9279,33376
+12,121.1,f_13.png,cola bottle,JUDGE,0.973,yes,0.9999,0.99,2107,9279,33375
+13,131.0,f_14.png,transparent empty bottle,JUDGE,0.961,yes,1.0,0.95,2107,9279,33365
+14,141.1,f_15.png,chip bag,JUDGE,0.875,yes,0.819,1.01,2107,9279,33368
+15,151.1,f_16.png,green soda bottle,JUDGE,0.953,yes,1.0,1.02,2107,9279,33363
+16,161.1,f_17.png,orange soda bottle,JUDGE,0.965,yes,0.9999,0.95,2107,9279,33365
+17,171.1,f_18.png,cola bottle,JUDGE,0.961,yes,0.9999,1.01,2107,9279,33368
+18,181.1,f_19.png,transparent empty bottle,JUDGE,0.965,yes,1.0,0.96,2107,9279,33373
+19,191.1,f_20.png,chip bag,JUDGE,0.855,yes,0.9356,0.99,2107,9279,33366
+20,202.3,f_21.png,green soda bottle,JUDGE,0.91,no,0.0045,2.12,2107,9279,33362
+21,212.3,f_22.png,orange soda bottle,JUDGE,0.938,yes,1.0,2.14,2107,9279,33363
+22,222.3,f_23.png,cola bottle,JUDGE,0.973,yes,1.0,2.18,2107,9279,33360
+23,232.3,f_24.png,transparent empty bottle,JUDGE,0.961,yes,0.9999,2.16,2107,9280,33356
+24,242.3,f_25.png,chip bag,JUDGE,0.867,yes,0.9224,2.17,2107,9280,33366
+25,250.8,f_26.png,green soda bottle,NO_MASK,0,,,0.6,2107,9280,33362
+26,262.4,f_27.png,orange soda bottle,JUDGE,0.938,yes,1.0,2.18,2107,9280,33364
+27,272.3,f_28.png,cola bottle,JUDGE,0.973,yes,1.0,2.15,2107,9280,33364
+28,282.3,f_29.png,transparent empty bottle,JUDGE,0.965,yes,1.0,2.11,2107,9280,33370
+29,292.4,f_30.png,chip bag,JUDGE,0.875,yes,0.9486,2.16,2107,9281,33374
+30,302.4,f_31.png,green soda bottle,JUDGE,0.969,yes,1.0,2.2,2107,9281,33384
+31,312.4,f_32.png,orange soda bottle,JUDGE,0.953,yes,0.9999,2.16,2107,9281,33382
+32,322.4,f_33.png,cola bottle,JUDGE,0.953,yes,0.9999,2.16,2107,9281,33369
+33,332.4,f_34.png,transparent empty bottle,JUDGE,0.953,yes,0.9999,2.19,2107,9282,33195
+34,342.4,f_35.png,chip bag,JUDGE,0.859,yes,0.947,2.19,2107,9282,33373
+35,352.4,f_36.png,green soda bottle,JUDGE,0.977,yes,1.0,2.18,2107,9282,33361
+36,362.4,f_37.png,orange soda bottle,JUDGE,0.949,yes,0.9998,2.15,2107,9282,33358
+37,372.4,f_38.png,cola bottle,JUDGE,0.969,yes,0.9998,2.16,2107,9282,33357
+38,382.4,f_39.png,transparent empty bottle,JUDGE,0.961,yes,1.0,2.16,2107,9283,33363
+39,392.4,f_40.png,chip bag,JUDGE,0.875,yes,0.9768,2.17,2107,9283,33364
+40,402.4,f_41.png,green soda bottle,JUDGE,0.977,yes,1.0,2.16,2107,9283,33347
+41,412.4,f_42.png,orange soda bottle,JUDGE,0.969,yes,0.9994,2.15,2107,9283,33348
+42,420.9,f_43.png,cola bottle,NO_MASK,0,,,0.62,2107,9283,33346
+43,432.5,f_44.png,transparent empty bottle,JUDGE,0.953,yes,0.9999,2.17,2107,9284,33357
+44,442.5,f_45.png,chip bag,JUDGE,0.879,yes,0.882,2.16,2107,9284,33351
+45,452.5,f_46.png,green soda bottle,JUDGE,0.973,yes,1.0,2.18,2107,9284,33362
+46,462.5,f_47.png,orange soda bottle,JUDGE,0.969,yes,1.0,2.18,2107,9284,33308
+47,470.9,f_48.png,cola bottle,NO_MASK,0,,,0.63,2107,9284,33293
+48,482.5,f_49.png,transparent empty bottle,JUDGE,0.949,yes,0.9998,2.19,2107,9285,33096
+49,492.5,f_50.png,chip bag,JUDGE,0.832,yes,0.7518,2.15,2107,9285,33355
+50,501.4,w_01.png,bottle,JUDGE,0.98,yes,1.0,1.03,2107,9285,33346
+51,511.3,w_02.png,bottle,JUDGE,0.98,yes,0.9733,1.0,2107,9285,33346
+52,521.4,w_03.png,bottle,JUDGE,0.977,yes,1.0,1.03,2107,9285,33382
+53,531.3,w_04.png,bottle,JUDGE,0.984,yes,1.0,0.95,2107,9285,33378
+54,541.4,w_05.png,bottle,JUDGE,0.973,yes,0.9998,1.02,2107,9285,33378
+55,551.0,w_06.png,bottle,NO_MASK,0,,,0.67,2107,9285,33374
+56,561.4,w_07.png,bottle,JUDGE,0.98,yes,1.0,1.01,2108,9285,33371
+57,571.4,w_08.png,bottle,JUDGE,0.965,yes,1.0,1.05,2108,9285,33365
+58,581.4,w_09.png,bottle,JUDGE,0.98,yes,1.0,1.03,2108,9285,33370
+59,591.5,w_10.png,bottle,JUDGE,0.973,yes,1.0,1.09,2108,9285,33163
+60,601.4,w_11.png,bottle,JUDGE,0.984,yes,0.9996,1.03,2108,9285,31185
+61,611.4,w_12.png,bottle,JUDGE,0.977,yes,1.0,0.99,2108,9285,26727
+62,621.5,w_13.png,bottle,JUDGE,0.969,yes,1.0,1.11,2108,9285,29202
+63,631.4,w_14.png,bottle,JUDGE,0.988,yes,1.0,0.98,2109,9285,27156
+64,641.0,w_15.png,bottle,NO_MASK,0,,,0.62,2109,9285,24496
+65,651.5,w_16.png,bottle,JUDGE,0.988,yes,1.0,1.11,2109,9285,28282
+66,661.5,w_17.png,bottle,JUDGE,0.98,yes,1.0,1.04,2109,9285,27358
+67,671.5,w_18.png,bottle,JUDGE,0.984,yes,1.0,1.08,2109,9285,24989
+68,681.5,w_19.png,bottle,JUDGE,0.973,yes,0.9801,1.06,2109,9285,28285
+69,691.6,w_20.png,bottle,JUDGE,0.988,yes,1.0,1.15,2109,9285,27999
+70,702.8,w_21.png,bottle,JUDGE,0.984,yes,1.0,2.37,2109,9285,25565
+71,712.7,w_22.png,bottle,JUDGE,0.988,yes,1.0,2.19,2109,9285,28280
+72,722.6,w_23.png,bottle,JUDGE,0.984,yes,1.0,2.1,2109,9285,26164
+73,732.8,w_24.png,bottle,JUDGE,0.969,yes,1.0,2.35,2109,9285,22256
+74,742.8,w_25.png,bottle,JUDGE,0.977,yes,1.0,2.29,2109,9285,28277
+75,751.2,w_26.png,bottle,NO_MASK,0,,,0.66,2109,9285,27855
+76,762.8,w_27.png,bottle,JUDGE,0.977,yes,1.0,2.27,2109,9285,24724
+77,772.7,w_28.png,bottle,JUDGE,0.98,yes,1.0,2.23,2109,9286,28286
+78,782.8,w_29.png,bottle,JUDGE,0.988,yes,1.0,2.29,2109,9286,28274
+79,792.8,w_30.png,bottle,JUDGE,0.98,yes,0.995,2.27,2109,9286,28002
+80,802.8,w_31.png,bottle,JUDGE,0.984,yes,1.0,2.31,2109,9286,26099
+81,813.3,w_32.png,bottle,JUDGE,0.98,yes,1.0,2.77,2109,9286,26851
+82,821.3,w_33.png,bottle,NO_MASK,0,,,0.8,2109,9286,27877
+83,832.9,w_34.png,bottle,JUDGE,0.98,yes,1.0,2.31,2109,9286,27876
+84,841.3,w_35.png,bottle,NO_MASK,0,,,0.77,2109,9286,27880
+85,852.9,w_36.png,bottle,JUDGE,0.98,yes,1.0,2.32,2109,9286,27875
+86,862.9,w_37.png,bottle,JUDGE,0.957,yes,0.9995,2.33,2109,9286,27886
+87,872.8,w_38.png,bottle,JUDGE,0.977,yes,1.0,2.25,2109,9286,27882
+88,881.4,w_39.png,bottle,NO_MASK,0,,,0.78,2109,9286,27881
+89,892.9,w_40.png,bottle,JUDGE,0.984,yes,1.0,2.3,2109,9286,27875
+90,901.4,w_41.png,bottle,NO_MASK,0,,,0.78,2109,9286,27877
+91,912.9,w_42.png,bottle,JUDGE,0.977,yes,1.0,2.32,2109,9286,27881
+92,923.0,w_43.png,bottle,JUDGE,0.973,yes,1.0,2.34,2109,9286,27878
+93,933.0,w_44.png,bottle,JUDGE,0.98,yes,1.0,2.34,2109,9286,27875
+94,943.0,w_45.png,bottle,JUDGE,0.977,yes,1.0,2.37,2109,9286,27874
+95,952.8,w_46.png,bottle,JUDGE,0.98,yes,1.0,2.19,2109,9286,27882
+96,961.4,w_47.png,bottle,NO_MASK,0,,,0.79,2109,9286,27876
+97,973.0,w_48.png,bottle,JUDGE,0.98,yes,1.0,2.37,2109,9286,27878
+98,981.4,w_49.png,bottle,NO_MASK,0,,,0.78,2109,9286,27876
+99,993.0,w_50.png,bottle,JUDGE,0.984,yes,1.0,2.33,2109,9286,27880
+100,1001.7,f_01.png,green soda bottle,JUDGE,0.977,yes,1.0,1.02,2109,9285,27888
+101,1011.7,f_02.png,orange soda bottle,JUDGE,0.973,yes,0.9978,1.04,2109,9285,27894
+102,1021.6,f_03.png,cola bottle,JUDGE,0.965,yes,1.0,0.96,2109,9286,27890
+103,1031.6,f_04.png,transparent empty bottle,JUDGE,0.953,yes,1.0,0.97,2109,9285,27889
+104,1041.7,f_05.png,chip bag,JUDGE,0.883,yes,0.9838,1.03,2109,9286,27886
+105,1051.7,f_06.png,green soda bottle,JUDGE,0.98,yes,1.0,1.0,2109,9285,27883
+106,1061.7,f_07.png,orange soda bottle,JUDGE,0.953,yes,1.0,0.98,2109,9285,27882
+107,1071.7,f_08.png,cola bottle,JUDGE,0.906,yes,0.9986,1.02,2109,9286,27885
+108,1081.7,f_09.png,transparent empty bottle,JUDGE,0.957,yes,1.0,0.97,2109,9285,27882
+109,1091.7,f_10.png,chip bag,JUDGE,0.859,yes,0.9715,0.98,2109,9286,27888
+110,1101.7,f_11.png,green soda bottle,JUDGE,0.98,yes,1.0,1.0,2109,9285,27882
+111,1111.7,f_12.png,orange soda bottle,JUDGE,0.969,yes,1.0,0.98,2109,9285,27880
+112,1121.7,f_13.png,cola bottle,JUDGE,0.973,yes,0.9999,1.0,2109,9286,27878
+113,1131.8,f_14.png,transparent empty bottle,JUDGE,0.961,yes,1.0,1.01,2109,9285,27878
+114,1141.8,f_15.png,chip bag,JUDGE,0.875,yes,0.819,1.08,2109,9286,27869
+115,1151.8,f_16.png,green soda bottle,JUDGE,0.953,yes,1.0,0.99,2109,9285,27884
+116,1161.8,f_17.png,orange soda bottle,JUDGE,0.965,yes,0.9999,1.07,2109,9285,27882
+117,1171.8,f_18.png,cola bottle,JUDGE,0.961,yes,0.9999,0.99,2109,9286,27884
+118,1181.7,f_19.png,transparent empty bottle,JUDGE,0.965,yes,1.0,0.96,2109,9285,27885
+119,1191.8,f_20.png,chip bag,JUDGE,0.855,yes,0.9356,0.98,2109,9286,27862
+120,1201.8,f_21.png,green soda bottle,JUDGE,0.91,no,0.0044,0.96,2109,9285,27882
+121,1211.8,f_22.png,orange soda bottle,JUDGE,0.938,yes,1.0,0.97,2109,9285,27883
+122,1221.8,f_23.png,cola bottle,JUDGE,0.973,yes,1.0,0.98,2109,9286,27874
+123,1231.8,f_24.png,transparent empty bottle,JUDGE,0.961,yes,0.9999,0.99,2109,9285,27871
+124,1241.8,f_25.png,chip bag,JUDGE,0.867,yes,0.9256,0.98,2109,9286,27252
+125,1251.5,f_26.png,green soda bottle,NO_MASK,0,,,0.63,2109,9286,26491
+126,1261.8,f_27.png,orange soda bottle,JUDGE,0.938,yes,1.0,0.96,2109,9285,27891
+127,1272.2,f_28.png,cola bottle,JUDGE,0.973,yes,1.0,1.34,2109,9286,26987
+128,1281.8,f_29.png,transparent empty bottle,JUDGE,0.965,yes,1.0,0.98,2109,9285,27884
+129,1291.8,f_30.png,chip bag,JUDGE,0.875,yes,0.9457,0.96,2109,9286,27892
+130,1301.8,f_31.png,green soda bottle,JUDGE,0.969,yes,1.0,0.97,2109,9285,27890
+131,1311.9,f_32.png,orange soda bottle,JUDGE,0.953,yes,0.9999,0.99,2109,9286,27878
+132,1321.9,f_33.png,cola bottle,JUDGE,0.953,yes,0.9998,0.97,2109,9286,27881
+133,1332.2,f_34.png,transparent empty bottle,JUDGE,0.953,yes,0.9999,1.34,2109,9286,26951
+134,1342.0,f_35.png,chip bag,JUDGE,0.859,yes,0.9447,1.07,2109,9286,27881
+135,1351.9,f_36.png,green soda bottle,JUDGE,0.977,yes,1.0,1.0,2109,9286,27875
+136,1361.9,f_37.png,orange soda bottle,JUDGE,0.949,yes,0.9998,0.96,2109,9286,27876
+137,1371.9,f_38.png,cola bottle,JUDGE,0.969,yes,0.9998,1.03,2109,9286,27874
+138,1381.9,f_39.png,transparent empty bottle,JUDGE,0.961,yes,1.0,0.99,2109,9285,27675
+139,1392.4,f_40.png,chip bag,JUDGE,0.875,yes,0.9779,1.48,2109,9286,26964
+140,1402.0,f_41.png,green soda bottle,JUDGE,0.977,yes,1.0,1.09,2109,9285,26459
+141,1411.9,f_42.png,orange soda bottle,JUDGE,0.969,yes,0.9994,0.98,2109,9286,26127
+142,1421.9,f_43.png,cola bottle,NO_MASK,0,,,0.9,2109,9286,26123
+143,1432.4,f_44.png,transparent empty bottle,JUDGE,0.953,yes,0.9999,1.41,2109,9286,26117
+144,1442.0,f_45.png,chip bag,JUDGE,0.879,yes,0.8931,1.0,2109,9286,27880
+145,1452.0,f_46.png,green soda bottle,JUDGE,0.973,yes,1.0,0.99,2109,9285,27876
+146,1461.9,f_47.png,orange soda bottle,JUDGE,0.969,yes,1.0,0.95,2109,9286,27879
+147,1471.6,f_48.png,cola bottle,NO_MASK,0,,,0.62,2109,9286,27878
+148,1482.0,f_49.png,transparent empty bottle,JUDGE,0.949,yes,0.9998,1.02,2109,9286,27879
+149,1492.0,f_50.png,chip bag,JUDGE,0.832,yes,0.7581,1.0,2109,9286,27879
+150,1502.1,w_01.png,bottle,JUDGE,0.98,yes,1.0,1.04,2109,9286,27628
+151,1512.5,w_02.png,bottle,JUDGE,0.98,yes,0.9733,1.49,2109,9286,26944
+152,1522.4,w_03.png,bottle,JUDGE,0.977,yes,1.0,1.36,2109,9286,26832
+153,1532.4,w_04.png,bottle,JUDGE,0.984,yes,1.0,1.38,2109,9286,26826
+154,1542.6,w_05.png,bottle,JUDGE,0.973,yes,0.9998,1.53,2109,9286,26776
+155,1552.0,w_06.png,bottle,NO_MASK,0,,,0.97,2109,9286,26608
+156,1562.5,w_07.png,bottle,JUDGE,0.98,yes,1.0,1.42,2109,9286,26760
+157,1572.5,w_08.png,bottle,JUDGE,0.965,yes,1.0,1.41,2109,9286,26723
+158,1582.6,w_09.png,bottle,JUDGE,0.98,yes,1.0,1.49,2109,9286,26771
+159,1592.5,w_10.png,bottle,JUDGE,0.973,yes,1.0,1.46,2109,9286,26732
+160,1602.1,w_11.png,bottle,JUDGE,0.984,yes,0.9996,0.96,2109,9286,27880
+161,1612.1,w_12.png,bottle,JUDGE,0.977,yes,1.0,1.02,2109,9286,27879
+162,1622.1,w_13.png,bottle,JUDGE,0.969,yes,1.0,0.97,2109,9286,27883
+163,1632.1,w_14.png,bottle,JUDGE,0.988,yes,1.0,0.97,2109,9286,27882
+164,1641.7,w_15.png,bottle,NO_MASK,0,,,0.63,2109,9286,27627
+165,1652.5,w_16.png,bottle,JUDGE,0.988,yes,1.0,1.43,2109,9286,26929
+166,1662.4,w_17.png,bottle,JUDGE,0.98,yes,1.0,1.28,2109,9286,26854
+167,1672.6,w_18.png,bottle,JUDGE,0.984,yes,1.0,1.46,2109,9286,26877
+168,1682.2,w_19.png,bottle,JUDGE,0.973,yes,0.9801,1.08,2109,9286,26739
+169,1692.5,w_20.png,bottle,JUDGE,0.988,yes,1.0,1.36,2109,9286,26798
+170,1702.5,w_21.png,bottle,JUDGE,0.984,yes,1.0,1.34,2109,9286,26631
+171,1712.3,w_22.png,bottle,JUDGE,0.988,yes,1.0,1.18,2109,9286,26235
+172,1722.3,w_23.png,bottle,JUDGE,0.984,yes,1.0,1.16,2109,9286,25990
+173,1732.6,w_24.png,bottle,JUDGE,0.969,yes,1.0,1.46,2109,9286,25973
+174,1742.7,w_25.png,bottle,JUDGE,0.977,yes,1.0,1.5,2109,9286,26049
+175,1751.9,w_26.png,bottle,NO_MASK,0,,,0.72,2109,9286,27869
+176,1762.2,w_27.png,bottle,JUDGE,0.977,yes,1.0,1.04,2109,9286,27864
+177,1772.3,w_28.png,bottle,JUDGE,0.98,yes,1.0,1.09,2109,9286,27862
+178,1782.2,w_29.png,bottle,JUDGE,0.988,yes,1.0,1.06,2109,9286,27867
+179,1792.2,w_30.png,bottle,JUDGE,0.98,yes,0.9956,1.05,2109,9286,27874

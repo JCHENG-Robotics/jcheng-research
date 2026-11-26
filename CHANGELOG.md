@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Ran a 30-minute advisory-service soak on the Orin: 1,800 s / 180
+  requests / 0 errors, 162 judge / 18 no-mask, p50 1.04 s / p95 2.32 s;
+  service RSS +3 MB and Qwen RSS +7 MB (plateau), no crash. Data
+  `experiments/20261126-agx-orin-stack-probe/data/ds_advisor_soak30.{json,csv}`.
 - Ran a local advisory HTTP service on the Orin (SAM3 + Qwen, T1 +
   score≥0.8): 60 requests, 58 judge / 2 no-mask, p50 **2.04 s** / p95 2.08 s,
   no crash; RSS grew 1.39→2.09 GB over 220 s (longer soak needed). Summary

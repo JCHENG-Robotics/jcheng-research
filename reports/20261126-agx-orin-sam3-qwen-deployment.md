@@ -43,6 +43,7 @@
 16. **T1+score≥0.8 策略验证（S）**：18 案例 **15 judged / 15 correct**、3 skipped（easy_clear 0.754、hard_clear 0.754、right wrist 0.762）；覆盖率 15/18，低分/强局部仍需人工或第二视角兜底。
 17. **200 帧固定策略稳定性（S）**：frontA/B+wristA/B 各 50；**183 judged / 182 correct = 99.45%**；16 个反例全对；唯一错误是 f21 左边缘绿瓶（score 0.91，T1 no）；30 NO_MASK + 3 低分跳过；e2e p50 3.93 s；无重启。
 18. **顾问式 HTTP 服务（S）**：127.0.0.1:8090；60 请求 58 judge / 2 no-mask；p50 **2.04 s** / p95 2.08 s；health model/qwen true；RSS 1.39→2.09 GB/220 s；无崩溃；只发 advisory，无 DDS/运动。
+19. **30 min soak（S）**：180 请求 / 0 error / 162 judge / 18 no-mask；p50 1.04 s、p95 2.32 s；服务 RSS 2,106→2,109 MB、Qwen 9,279→9,286 MB（平台化）；无崩溃；free 下降来自其它进程/缓存。
 
 ---
 
@@ -321,6 +322,8 @@
 
 **F19. 顾问式服务可跑，但 RSS 需观察。** 本地 HTTP 服务（127.0.0.1:8090）60 请求：58 judge / 2 no-mask / 0 skip，p50 **2.04 s**、p95 2.08 s；`/health` model/qwen true；无崩溃。RSS 1,386→2,088 MB（+702 MB / 220 s），可能是 PyTorch/Qwen 缓存，未证明泄漏；需要 30 min soak。服务只返回 mask/bbox/judge，不发 DDS、不接运动；代码在 Orin，不入 git [S]。
 
+**F20. 30 min soak 无泄漏迹象。** 1,800 s / 180 请求 / 0 error：162 judge / 18 no-mask；p50 **1.04 s**、p95 2.32 s、max 2.77 s；服务 RSS 2,106→2,109 MB（+3 MB），Qwen 9,279→9,286 MB（+7 MB），health model/qwen true，无崩溃。free 33.4→27.9 GB（min 22.3）但两个进程 RSS 未涨，下降来自其它进程/缓存。30 min 单服务 soak 不等于 24 h 稳定性 [S]。
+
 ---
 
 ## 09. Engineering Applicability（工程适用性）
@@ -406,7 +409,7 @@
 | **MVE-1** | SAM3 3.0 在 Orin 上 ≤2 s/帧 | Orin；PyTorch 1008 + autocast | 延迟、RAM、掩码 | G1 | OOM/掩码空 | **完成 2026-11-26（S）**：load 16.07 s、encode 0.69 s、prompt 0.202 s、VRAM 5.34 GB；20 次稳定；`orange can` 0.902 |
 | **MVE-2** | 8B 评审 ≤1.5 s；logprobs 可用 | Orin；llama.cpp（Qwen3-VL-8B GGUF） | 延迟、RAM、一致率 | G2 延迟/接口 | 一致率 <75% | **已运行 2026-11-26（S）**：1 图 1.95 s、2 图 2.64 s、yes/no 1.18 s；logprobs 可用；RAM 12.1 GB；质量校准未做 |
 | **MVE-3** | 试点端到端 ≥1 fps | Orin；固定短语 | 吞吐、可用率 | G3 | <0.5 fps | **部分完成（S/B）**：易分 40/40；无歧义硬负例 60/60；歧义硬负例 47/60；50 帧 56/57；100 帧 front+wrist 97.5%；wrist 100 帧多 episode 88/89（`bottle`）；**judge 模板敏感（12 掩码 × 3 模板：T1 9/11、T2 8/11、T3 7/11），建议 T1+score≥0.8**；吞吐/长期稳定性未测 |
-| **MVE-4** | 顾问服务 30 min 稳定 | Orin + 笔记本 | p95、内存增长 | G4 | 泄漏/崩溃 | **部分运行（S）**：60 请求 / 220 s，p50 2.04 s、58 judge、2 no-mask、无崩溃；RSS +702 MB，30 min soak 未做 |
+| **MVE-4** | 顾问服务 30 min 稳定 | Orin + 笔记本 | p95、内存增长 | G4 | 泄漏/崩溃 | **完成（S）**：30 min / 180 请求 / 0 error；162 judge / 18 no-mask；p50 1.04 s、p95 2.32 s；服务 RSS +3 MB、Qwen +7 MB；无崩溃 |
 
 **探测命令（复现用，只读）**：
 
@@ -445,7 +448,7 @@ df -h / | tail -1
 13. **模板敏感性**：12 个掩码 × 3 模板；T1 9/11、T2 8/11、T3 7/11；低分掩码最易翻转；需要固定模板 + 更大校准集，当前数字不代表通用准确率（S/D）。
 14. **T1+gate 策略验证**：18 案例 15 judged/15 correct、3 skipped；低分/强局部被跳过；样本仍小（S/D）。
 15. **200 帧稳定性**：183 judged/182 correct = 99.45%；16 反例全对；1 个高分边缘局部假阴性；无重启，但不代表通用准确率（S/B）。
-16. **顾问服务 soak 短**：60 请求/220 s，RSS +702 MB 未证明泄漏；30 min soak 未做（S/D）。
+16. **顾问服务 30 min soak**：180 请求/0 error，服务 RSS +3 MB、Qwen +7 MB；无泄漏迹象；仍非 24 h 稳定性（S/D）。
 
 ---
 
