@@ -1,0 +1,5 @@
+domain 0: 2 topics; /sim/piper_x matches: none
+domain 41: 2 topics; /sim/piper_x matches: none
+domain 42: 2 topics; /sim/piper_x matches: none
+domain 43: /sim/piper_x/joint_states visible=1
+domain isolation result: pass

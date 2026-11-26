@@ -1,0 +1,2 @@
+gz survivors after shutdown: 0
+0

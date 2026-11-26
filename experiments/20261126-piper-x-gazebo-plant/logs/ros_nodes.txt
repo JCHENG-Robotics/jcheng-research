@@ -1,0 +1,11 @@
+/robot_state_publisher
+/ros_gz_bridge
+/ros_gz_bridge
+/ros_gz_bridge
+/ros_gz_bridge
+/sim/piper_x/arm_controller
+/sim/piper_x/controller_manager
+/sim/piper_x/gripper_controller
+/sim/piper_x/gz_ros_control
+/sim/piper_x/joint_state_broadcaster
+/sim/piper_x/robot_state_publisher

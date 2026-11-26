@@ -1,0 +1,1 @@
+generated URDF sha256: f42b4fae580fb27041a1ec74b05cd347e7e00da90e100deab6c5dcb3366f22e2

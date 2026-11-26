@@ -31,6 +31,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `datasets-benchmarks/`) stating the theme scope, owner and filing rules.
 - Themed report index `reports/README.md` covering the investigation reports,
   task books and experiments, with status and related artefacts.
+- Piper X simulation data map (`reports/20261126-piper-x-simulation-data-map.md`),
+  the source record `references/manipulation/piper-x-assets.md`, and MVE-1
+  (`experiments/20261126-piper-x-gazebo-plant/`): a Gazebo Harmonic 8.15 plant
+  generated from `agx_arm_urdf@680fa925` on domain 43 under `/sim/piper_x`.
+  MVE-1 passes URDF load, 22 mesh paths, joint limits, controller activation and
+  domain isolation; the added joint-tracking check fails for joint2/joint3, and
+  neither DART nor bullet-featherstone implements SDF mimic. MVE-2…4 not run.
 
 ### Changed
 

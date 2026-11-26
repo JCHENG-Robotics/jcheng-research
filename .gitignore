@@ -24,3 +24,6 @@ raw/
 *.pt
 *.onnx
 *.engine
+
+# Generated experiment artifacts (host-absolute paths, not tracked)
+experiments/*/generated/

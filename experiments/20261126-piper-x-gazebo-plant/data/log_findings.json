@@ -1,0 +1,35 @@
+{
+  "log_lines": 188,
+  "patterns": {
+    "mimic": {
+      "count": 3,
+      "examples": [
+        "[gazebo-1] [INFO] [1795659838.493551655] [sim.piper_x.gz_ros_control]: Joint 'gripper_joint1'is mimicking joint 'gripper' with multiplier: 0.5 and offset: 0",
+        "[gazebo-1] [INFO] [1795659838.493642251] [sim.piper_x.gz_ros_control]: Joint 'gripper_joint2'is mimicking joint 'gripper' with multiplier: -0.5 and offset: 0",
+        "[gazebo-1] \u001b[1;31m[Err] [Physics.cc:1906] \u001b[0m\u001b[1;31mAttempting to create a mimic constraint for joint [\u001b[0m\u001b[1;31mgripper_joint1\u001b[0m\u001b[1;31m] but the chosen physics engine does not support \u001b[0m\u001b[1;31mmimic constraints, so no constraint will be \u001b[0m\u001b[1;31mcreated.\u001b[0m\u001b[1;31m\u001b[0m"
+      ]
+    },
+    "mesh_error": {
+      "count": 0,
+      "examples": []
+    },
+    "physics": {
+      "count": 1,
+      "examples": [
+        "[gazebo-1] \u001b[1;31m[Err] [Physics.cc:1906] \u001b[0m\u001b[1;31mAttempting to create a mimic constraint for joint [\u001b[0m\u001b[1;31mgripper_joint1\u001b[0m\u001b[1;31m] but the chosen physics engine does not support \u001b[0m\u001b[1;31mmimic constraints, so no constraint will be \u001b[0m\u001b[1;31mcreated.\u001b[0m\u001b[1;31m\u001b[0m"
+      ]
+    },
+    "command_limits": {
+      "count": 1,
+      "examples": [
+        "[gazebo-1] [INFO] [1795659838.488915888] [sim.piper_x.controller_manager]: Enforcing command limits is disabled. Command limits from URDF will be ignored."
+      ]
+    },
+    "errors": {
+      "count": 1,
+      "examples": [
+        "[gazebo-1] \u001b[1;31m[Err] [Physics.cc:1906] \u001b[0m\u001b[1;31mAttempting to create a mimic constraint for joint [\u001b[0m\u001b[1;31mgripper_joint1\u001b[0m\u001b[1;31m] but the chosen physics engine does not support \u001b[0m\u001b[1;31mmimic constraints, so no constraint will be \u001b[0m\u001b[1;31mcreated.\u001b[0m\u001b[1;31m\u001b[0m"
+      ]
+    }
+  }
+}
