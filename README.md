@@ -1,5 +1,7 @@
 # jcheng-research
 
+**English** | [简体中文](README.zh-CN.md)
+
 **Investigation workspace for the JCHENG Robotics ecosystem.** Literature review,
 technology selection, root-cause analysis and pre-registered experiment design for
 the ArmPi Ultra platform. This repository produces **reports and decisions, not
@@ -9,8 +11,7 @@ runtime code**: nothing here is imported by, shipped to, or executed on the robo
 > investigation protocol, the report template and the output-directory contract;
 > **no investigation is complete**, so it makes no technical claim. It is private
 > and sits outside the runtime dependency graph.
-> English canonical; see [README.zh-CN.md](README.zh-CN.md) for the Chinese
-> translation.
+> English canonical; the Chinese README is a translation.
 
 ---
 
