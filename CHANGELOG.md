@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   ≤0.04 s; service RSS 1,387→2,086 MB then plateau, Qwen plateau; G4
   p95 <1.5 s still not met. Data
   `experiments/20261126-agx-orin-stack-probe/data/ds_uniq500_*`.
+- Recorded the first perception-side advisory client: `jcheng-perception`
+  branch `feat/advisor-client-20261126` (`d0563e1`) adds the `sam3_advisor`
+  backend (only JUDGE -> box, SKIP/NO_MASK empty, errors fail closed), 107
+  tests, repository gate ok, and a two-frame live HTTP smoke (0.961/3.39 s,
+  0.973/2.24 s). Not merged and not deployed; the report §9.5 now says so.
 - Draft investigation report
   `reports/20261126-ultralytics-repository-review.md` (Ultralytics at
   `v8.4.219` / `3a31e32`: 233 files / 83.6k LOC, 230 tests, AGPL-3.0 +

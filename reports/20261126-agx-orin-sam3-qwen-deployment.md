@@ -379,11 +379,11 @@
 ### 9.5 顾问式接入契约（提案，未在产品仓库实施）
 
 - **路径**：笔记本 GPU 节点（与现有 YOLO 同侧）→ Orin `http://192.168.5.31:8090/infer`。Orin 只返回 mask/bbox/score/judge，不加入 41/42/43 域、不打开设备、不调用 `ExecuteMotion`。
-- **服务位置**：Orin `/opt/jcheng/sam3_advisor/server.py`（root 644，手动启动，无 systemd/自启；`client.py` 同目录）；**Orin 回环和笔记本→Orin Wi-Fi 直连都已验证**（2026-11-26，500 唯一帧：p50 2.15 s、p95 3.74 s，与回环差异 ≤0.04 s）。
+- **服务位置**：Orin `/opt/jcheng/sam3_advisor/server.py`（root 644，手动启动，无 systemd/自启；`client.py` 同目录）；**已扩展为同时接受 `{image_b64}`（旧 path 模式备份 `server_pathmode.py`）**；**Orin 回环和笔记本→Orin Wi-Fi 直连都已验证**（2026-11-26，500 唯一帧：p50 2.15 s、p95 3.74 s，与回环差异 ≤0.04 s）。
 - **请求**：实验用 `{image_path}`；生产用 `{image_b64, prompt}`。**响应**：`gate`（JUDGE / SKIP / NO_MASK）、`score`、`bbox`、`mask_rle`、`judge`（answer/p_yes）、`timings`。
 - **接入点**：新增 L3 节点订阅相机 image，**异步** 按 1–2 Hz 取最新帧调用（单 worker，忙时丢帧）；结果转成 `Detection2DArray` / `FusedTarget` 的 advisory 字段。超时、非 200、`gate=SKIP` → 丢弃该帧并降级到 YOLO，**绝不阻塞主链路**。500 唯一帧 p95 **3.74 s**、max 4.03 s，同步 1–2 Hz 不可行（S）。
 - **网络**：Orin `192.168.5.x` 与机器人 `10.42.0.x` 不同子网；笔记本中转已实测可行（Wi-Fi 直连），机器人侧仍需单独路由/双网口。
-- **状态**：`jcheng-perception` 当前在 `feat/ore-scene-s0s1` 有未提交的 ore-scene 工作，本提案**不改产品仓库**；落地需要单独 PR、配置项和一次单独授权的硬件会话。
+- **状态**：2026-11-26 已在 `jcheng-perception` 的独立 worktree/branch `feat/advisor-client-20261126` 实现 `sam3_advisor` 客户端（`jcheng_perception_gpu`；107 tests；离线 fake transport + 2 帧跨机冒烟 0.961/3.39 s、0.973/2.24 s；**未合并、未部署**）。主 checkout 的 `feat/ore-scene-s0s1` 未提交工作未被触碰；落地仍需单独 PR、配置项和一次单独授权的硬件会话。
 
 ## 10. Recommended Approach（推荐方案）
 
