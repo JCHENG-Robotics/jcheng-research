@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Ran a local advisory HTTP service on the Orin (SAM3 + Qwen, T1 +
+  score≥0.8): 60 requests, 58 judge / 2 no-mask, p50 **2.04 s** / p95 2.08 s,
+  no crash; RSS grew 1.39→2.09 GB over 220 s (longer soak needed). Summary
+  `experiments/20261126-agx-orin-stack-probe/data/ds_advisor_service.json`.
 - Ran the 200-frame fixed-policy stability test on the Orin (T1 + SAM3
   score≥0.8, frontA/B + wristA/B): **183 judged / 182 correct = 99.45%**,
   16/16 wrong pairs, one high-score edge false negative (f21), 30 NO_MASK +
