@@ -1,0 +1,222 @@
+[INFO] [launch]: All log files can be found below /home/jerichocheng/.ros/log/2026-11-26-10-13-20-758645-jerichocheng-Lenovo-Legion-R9000P2021H-1860059
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Piper X plant built: commit=680fa925 links=13 joints=12 movable=9 mass_kg=4.906554081 mesh_refs=22 adaptations=['mesh_uri_rewrite', 'joint_limits_from_joint_map', 'gripper_link_placeholder_inertial', 'gz_ros2_control_plugin', 'ros2_control_system'] urdf_out=/home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/generated/piper_x_gazebo.urdf world=/home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/worlds/piper_x_lab.sdf headless=True namespace=/sim/piper_x
+[INFO] [gazebo-1]: process started with pid [1860091]
+[INFO] [robot_state_publisher-2]: process started with pid [1860092]
+[robot_state_publisher-2] [INFO] [1795659201.122796593] [sim.piper_x.robot_state_publisher]: Robot initialized
+[gazebo-1] [1;32m[Msg] [0m[1;32mGazebo Sim Server v[0m[1;32m8.15.0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/worlds/piper_x_lab.sdf[0m[1;32m].[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/create_multiple[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/create_multiple/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/remove[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/remove/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_pose[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_pose/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_pose_vector[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_pose_vector/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/light_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/light_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_physics[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_physics/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_spherical_coordinates[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/set_spherical_coordinates/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/enable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/enable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/disable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/disable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/visual_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/visual_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/wheel_slip[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/piper_x_lab/wheel_slip/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32mdefault[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/piper_x_lab[0m[1;32m/control], [[0m[1;32m/world/piper_x_lab[0m[1;32m/control/state] and [[0m[1;32m/world/piper_x_lab[0m[1;32m/playback/control][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[INFO] [create-3]: process started with pid [1860153]
+[INFO] [parameter_bridge-4]: process started with pid [1860154]
+[create-3] [INFO] [1795659204.138716645] [sim.piper_x.ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-4] [INFO] [1795659204.155306749] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[create-3] [INFO] [1795659204.573308761] [sim.piper_x.ros_gz_sim]: Waiting messages on topic [/sim/piper_x/robot_description].
+[create-3] [INFO] [1795659204.584982309] [sim.piper_x.ros_gz_sim]: Entity creation successful.
+[INFO] [create-3]: process has finished cleanly [pid 1860153]
+[INFO] [spawner-5]: process started with pid [1860206]
+[gazebo-1] [INFO] [1795659204.755497992] [sim.piper_x.gz_ros_control]: [gz_ros2_control] Fixed joint ['world_to_base_link'] (Entity='43') is skipped.
+[gazebo-1] [INFO] [1795659204.756142410] [sim.piper_x.gz_ros_control]: Loading controller_manager
+[gazebo-1] [INFO] [1795659204.767851506] [sim.piper_x.controller_manager]: Using ROS clock for triggering controller manager cycles.
+[gazebo-1] [WARN] [1795659204.767882935] [sim.piper_x.controller_manager]: The resource manager is not yet initialized, will wait for the robot description to initialize it..
+[gazebo-1] [INFO] [1795659204.773666351] [sim.piper_x.controller_manager]: Subscribing to '/sim/piper_x/robot_description' topic for robot description.
+[gazebo-1] [WARN] [1795659204.773717823] [sim.piper_x.gz_ros_control]: Waiting RM to load and initialize hardware...
+[spawner-5] [INFO] [1795659205.589187170] [spawner_joint_state_broadcaster]: waiting for service /sim/piper_x/controller_manager/list_controllers to become available...
+[gazebo-1] [INFO] [1795659205.605627814] [sim.piper_x.controller_manager]: Received robot description from topic.
+[gazebo-1] [INFO] [1795659205.605710715] [sim.piper_x.controller_manager]: Enforcing command limits is disabled. Command limits from URDF will be ignored.
+[gazebo-1] [INFO] [1795659205.609172635] [sim.piper_x.gz_ros_control]: The position_proportional_gain has been set to: 0.1
+[gazebo-1] [INFO] [1795659205.609234583] [sim.piper_x.gz_ros_control]: Loading joint: joint1
+[gazebo-1] [INFO] [1795659205.609249040] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609262240] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609277116] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609291363] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609302887] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609322792] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609343394] [sim.piper_x.gz_ros_control]: Loading joint: joint2
+[gazebo-1] [INFO] [1795659205.609355267] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609365813] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609377197] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609388162] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609399267] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609414841] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609433139] [sim.piper_x.gz_ros_control]: Loading joint: joint3
+[gazebo-1] [INFO] [1795659205.609444384] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609455698] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609467221] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609478466] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609488383] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609503259] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609521767] [sim.piper_x.gz_ros_control]: Loading joint: joint4
+[gazebo-1] [INFO] [1795659205.609532871] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609543767] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609554732] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609565696] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609576173] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609590071] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609607671] [sim.piper_x.gz_ros_control]: Loading joint: joint5
+[gazebo-1] [INFO] [1795659205.609618636] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609629670] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609641962] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609652997] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609662984] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609680584] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609698254] [sim.piper_x.gz_ros_control]: Loading joint: joint6
+[gazebo-1] [INFO] [1795659205.609709707] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609729263] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609739599] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609750564] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609760691] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609774869] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609813560] [sim.piper_x.gz_ros_control]: Loading joint: gripper
+[gazebo-1] [INFO] [1795659205.609825503] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609836817] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609847922] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609858398] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609869293] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609883750] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609900791] [sim.piper_x.gz_ros_control]: Loading joint: gripper_joint1
+[gazebo-1] [INFO] [1795659205.609914270] [sim.piper_x.gz_ros_control]: Joint 'gripper_joint1'is mimicking joint 'gripper' with multiplier: 0.5 and offset: 0
+[gazebo-1] [INFO] [1795659205.609926981] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.609937527] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.609948562] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.609959387] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.609976498] [sim.piper_x.gz_ros_control]: Loading joint: gripper_joint2
+[gazebo-1] [INFO] [1795659205.609988720] [sim.piper_x.gz_ros_control]: Joint 'gripper_joint2'is mimicking joint 'gripper' with multiplier: -0.5 and offset: 0
+[gazebo-1] [INFO] [1795659205.610000523] [sim.piper_x.gz_ros_control]: 	State:
+[gazebo-1] [INFO] [1795659205.610011558] [sim.piper_x.gz_ros_control]: 		 position
+[gazebo-1] [INFO] [1795659205.610024408] [sim.piper_x.gz_ros_control]: 		 velocity
+[gazebo-1] [INFO] [1795659205.610035862] [sim.piper_x.gz_ros_control]: 	Command:
+[gazebo-1] [INFO] [1795659205.610135105] [sim.piper_x.controller_manager]: Initialize hardware 'PiperXSystem' 
+[gazebo-1] [WARN] [1795659205.610157454] [sim.piper_x.controller_manager.hardware_component.system.PiperXSystem]: Executor is not available during hardware component initialization for 'PiperXSystem'. Skipping node creation!
+[gazebo-1] [INFO] [1795659205.610229111] [sim.piper_x.controller_manager]: Successful initialization of hardware 'PiperXSystem'
+[gazebo-1] [INFO] [1795659205.610373191] [sim.piper_x.controller_manager]: Activating component 'PiperXSystem'.
+[gazebo-1] [INFO] [1795659205.610392258] [resource_manager]: 'configure' hardware 'PiperXSystem' 
+[gazebo-1] [INFO] [1795659205.610400290] [sim.piper_x.gz_ros_control]: System Successfully configured!
+[gazebo-1] [INFO] [1795659205.610412651] [resource_manager]: Successful 'configure' of hardware 'PiperXSystem'
+[gazebo-1] [INFO] [1795659205.610424245] [resource_manager]: 'activate' hardware 'PiperXSystem' 
+[gazebo-1] [INFO] [1795659205.610440308] [resource_manager]: Successful 'activate' of hardware 'PiperXSystem'
+[gazebo-1] [WARN] [1795659205.610507006] [sim.piper_x.controller_manager]: Component 'PiperXSystem' does not have read or write statistics initialized, skipping registration.
+[gazebo-1] [INFO] [1795659205.610520345] [sim.piper_x.controller_manager]: Resource Manager has been successfully initialized. Starting Controller Manager services...
+[gazebo-1] [INFO] [1795659205.841887622] [sim.piper_x.controller_manager]: Loading controller : 'joint_state_broadcaster' of type 'joint_state_broadcaster/JointStateBroadcaster'
+[gazebo-1] [INFO] [1795659205.841950618] [sim.piper_x.controller_manager]: Loading controller 'joint_state_broadcaster'
+[gazebo-1] [INFO] [1795659205.847288800] [sim.piper_x.controller_manager]: Controller 'joint_state_broadcaster' node arguments: --ros-args --params-file /home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/config/piper_x_controllers.yaml --ros-args -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-5] [INFO] [1795659205.858948798] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[gazebo-1] [INFO] [1795659205.859829486] [sim.piper_x.controller_manager]: Configuring controller: 'joint_state_broadcaster'
+[gazebo-1] [INFO] [1795659205.860009046] [sim.piper_x.joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[gazebo-1] [INFO] [1795659205.869288393] [sim.piper_x.controller_manager]: Activating controllers: [ joint_state_broadcaster ]
+[gazebo-1] [1;31m[Err] [Physics.cc:1906] [0m[1;31mAttempting to create a mimic constraint for joint [[0m[1;31mgripper_joint1[0m[1;31m] but the chosen physics engine does not support [0m[1;31mmimic constraints, so no constraint will be [0m[1;31mcreated.[0m[1;31m[0m
+[gazebo-1] [WARN] [1795659207.090928964] [sim.piper_x.gz_ros_control]:  Desired controller update period (0.01 s) is slower than the gazebo simulation period (0.001 s).
+[gazebo-1] [INFO] [1795659207.091913085] [sim.piper_x.controller_manager]: Successfully switched controllers!
+[spawner-5] [INFO] [1795659207.102402277] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[INFO] [spawner-5]: process has finished cleanly [pid 1860206]
+[INFO] [spawner-6]: process started with pid [1860295]
+[spawner-6] [INFO] [1795659207.658299867] [spawner_arm_controller]: waiting for service /sim/piper_x/controller_manager/list_controllers to become available...
+[gazebo-1] [INFO] [1795659208.103471209] [sim.piper_x.controller_manager]: Loading controller : 'arm_controller' of type 'joint_trajectory_controller/JointTrajectoryController'
+[gazebo-1] [INFO] [1795659208.103517583] [sim.piper_x.controller_manager]: Loading controller 'arm_controller'
+[gazebo-1] [INFO] [1795659208.108634789] [sim.piper_x.controller_manager]: Controller 'arm_controller' node arguments: --ros-args --params-file /home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/config/piper_x_controllers.yaml --ros-args -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-6] [INFO] [1795659208.132475229] [spawner_arm_controller]: Loaded arm_controller
+[gazebo-1] [INFO] [1795659208.133498810] [sim.piper_x.controller_manager]: Configuring controller: 'arm_controller'
+[gazebo-1] [INFO] [1795659208.133783619] [sim.piper_x.arm_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[gazebo-1] [INFO] [1795659208.133831530] [sim.piper_x.arm_controller]: Command interfaces are [position] and state interfaces are [position velocity].
+[gazebo-1] [INFO] [1795659208.133872456] [sim.piper_x.arm_controller]: Using 'splines' interpolation method.
+[gazebo-1] [INFO] [1795659208.136716567] [sim.piper_x.arm_controller]: Action status changes will be monitored at 20.00 Hz.
+[gazebo-1] [INFO] [1795659208.142331456] [sim.piper_x.arm_controller]: Setting initial scaling factor to 1.000000
+[gazebo-1] [INFO] [1795659208.142361068] [sim.piper_x.arm_controller]: No scaling interface set. This controller will not read speed scaling from the hardware.
+[gazebo-1] [INFO] [1795659208.152804583] [sim.piper_x.controller_manager]: Activating controllers: [ arm_controller ]
+[gazebo-1] [INFO] [1795659208.161619629] [sim.piper_x.controller_manager]: Successfully switched controllers!
+[spawner-6] [INFO] [1795659208.172381406] [spawner_arm_controller]: Configured and activated arm_controller
+[INFO] [spawner-6]: process has finished cleanly [pid 1860295]
+[INFO] [spawner-7]: process started with pid [1860331]
+[spawner-7] [INFO] [1795659208.722921349] [spawner_gripper_controller]: waiting for service /sim/piper_x/controller_manager/list_controllers to become available...
+[gazebo-1] [INFO] [1795659208.974893016] [sim.piper_x.controller_manager]: Loading controller : 'gripper_controller' of type 'joint_trajectory_controller/JointTrajectoryController'
+[gazebo-1] [INFO] [1795659208.974960552] [sim.piper_x.controller_manager]: Loading controller 'gripper_controller'
+[gazebo-1] [INFO] [1795659208.975207787] [sim.piper_x.controller_manager]: Controller 'gripper_controller' node arguments: --ros-args --params-file /home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/config/piper_x_controllers.yaml --ros-args -p use_sim_time:=true --param use_sim_time:=true 
+[spawner-7] [INFO] [1795659208.994224700] [spawner_gripper_controller]: Loaded gripper_controller
+[gazebo-1] [INFO] [1795659208.995186472] [sim.piper_x.controller_manager]: Configuring controller: 'gripper_controller'
+[gazebo-1] [INFO] [1795659208.995296820] [sim.piper_x.gripper_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[gazebo-1] [INFO] [1795659208.995333067] [sim.piper_x.gripper_controller]: Command interfaces are [position] and state interfaces are [position velocity].
+[gazebo-1] [INFO] [1795659208.995352692] [sim.piper_x.gripper_controller]: Using 'splines' interpolation method.
+[gazebo-1] [INFO] [1795659208.996502125] [sim.piper_x.gripper_controller]: Action status changes will be monitored at 20.00 Hz.
+[gazebo-1] [INFO] [1795659209.000137597] [sim.piper_x.gripper_controller]: Setting initial scaling factor to 1.000000
+[gazebo-1] [INFO] [1795659209.000164765] [sim.piper_x.gripper_controller]: No scaling interface set. This controller will not read speed scaling from the hardware.
+[gazebo-1] [INFO] [1795659209.004160684] [sim.piper_x.controller_manager]: Activating controllers: [ gripper_controller ]
+[gazebo-1] [INFO] [1795659209.012910917] [sim.piper_x.controller_manager]: Successfully switched controllers!
+[spawner-7] [INFO] [1795659209.024138598] [spawner_gripper_controller]: Configured and activated gripper_controller
+[INFO] [spawner-7]: process has finished cleanly [pid 1860331]
+[gazebo-1] [1;32m[Msg] [0m[1;32mWorld [[0m[1;32mpiper_x_lab[0m[1;32m] initialized with [[0m[1;32m1ms[0m[1;32m] physics profile.[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing scene information on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mscene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing graph information on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mscene/graph[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mstate[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state (async) on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mstate_async[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing scene information on [[0m[1;32m/world/piper_x_lab/scene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing entity deletions on [[0m[1;32m/world/piper_x_lab/scene/deletion[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing state changes on [[0m[1;32m/world/piper_x_lab/state[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing pose messages on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mpose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing dynamic pose messages on [[0m[1;32m/world/piper_x_lab[0m[1;32m/[0m[1;32mdynamic_pose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [INFO] [1795659211.481004444] [sim.piper_x.controller_manager]: Deactivating controllers: [ arm_controller gripper_controller ]
+[gazebo-1] [INFO] [1795659211.482785234] [sim.piper_x.controller_manager]: Requested controller switch from non-realtime loop
+[gazebo-1] [INFO] [1795659211.482897887] [sim.piper_x.controller_manager]: Successfully switched controllers!
+[gazebo-1] [INFO] [1795659212.660488808] [sim.piper_x.controller_manager]: Loading controller : 'joint2_position_test' of type 'joint_trajectory_controller/JointTrajectoryController'
+[gazebo-1] [INFO] [1795659212.660529804] [sim.piper_x.controller_manager]: Loading controller 'joint2_position_test'
+[gazebo-1] [INFO] [1795659212.660802810] [sim.piper_x.controller_manager]: Controller 'joint2_position_test' node arguments: --ros-args --params-file /home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/config/piper_x_controllers.yaml --ros-args -p use_sim_time:=true --param use_sim_time:=true 
+[gazebo-1] [INFO] [1795659213.842202004] [sim.piper_x.controller_manager]: Configuring controller: 'joint2_position_test'
+[gazebo-1] [INFO] [1795659213.842314866] [sim.piper_x.joint2_position_test]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[gazebo-1] [INFO] [1795659213.842337285] [sim.piper_x.joint2_position_test]: Command interfaces are [position] and state interfaces are [position velocity].
+[gazebo-1] [INFO] [1795659213.842350694] [sim.piper_x.joint2_position_test]: Using 'splines' interpolation method.
+[gazebo-1] [INFO] [1795659213.843475403] [sim.piper_x.joint2_position_test]: Action status changes will be monitored at 20.00 Hz.
+[gazebo-1] [INFO] [1795659213.847288827] [sim.piper_x.joint2_position_test]: Setting initial scaling factor to 1.000000
+[gazebo-1] [INFO] [1795659213.847322211] [sim.piper_x.joint2_position_test]: No scaling interface set. This controller will not read speed scaling from the hardware.
+[gazebo-1] [INFO] [1795659215.317999551] [sim.piper_x.controller_manager]: Activating controllers: [ joint2_position_test ]
+[gazebo-1] [INFO] [1795659215.324147458] [sim.piper_x.controller_manager]: Activated controllers: [ joint2_position_test ]
+[gazebo-1] [INFO] [1795659215.324185172] [sim.piper_x.controller_manager]: Successfully switched controllers!
+[gazebo-1] [INFO] [1795659216.519227182] [sim.piper_x.joint2_position_test]: Received new action goal
+[gazebo-1] [INFO] [1795659216.519300025] [sim.piper_x.joint2_position_test]: Accepted new action goal
+[gazebo-1] [INFO] [1795659218.518975343] [sim.piper_x.joint2_position_test]: Goal reached, success!
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [parameter_bridge-4]: sending signal 'SIGINT' to process[parameter_bridge-4]
+[INFO] [robot_state_publisher-2]: sending signal 'SIGINT' to process[robot_state_publisher-2]
+[INFO] [gazebo-1]: sending signal 'SIGINT' to process[gazebo-1]
+[parameter_bridge-4] [INFO] [1795659218.697303848] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-2] [INFO] [1795659218.698134180] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-4]: process has finished cleanly [pid 1860154]
+[INFO] [launch.user]: Piper X plant launch failure: stage=clock_bridge; returncode=0
+[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 1860092]
+[INFO] [launch.user]: Piper X plant launch failure: stage=robot_state_publisher; returncode=0
+[ERROR] [gazebo-1]: process[gazebo-1] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [gazebo-1]: sending signal 'SIGTERM' to process[gazebo-1]
+[ERROR] [gazebo-1]: process has died [pid 1860091, exit code -15, cmd 'ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim -r -s  -v 3 /home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/worlds/piper_x_lab.sdf --force-version 8'].
+[INFO] [launch]: process[gazebo-1] was required: shutting down launched system

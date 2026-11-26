@@ -1,0 +1,9 @@
+domain-43 nodes before launch:
+/robot_state_publisher
+/ros_gz_bridge
+/ros_gz_bridge
+/ros_gz_bridge
+other /sim publishers (not this plant):
+/sim/camera/camera_info
+/sim/camera/image
+/sim/scan

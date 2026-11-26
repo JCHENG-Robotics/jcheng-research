@@ -1,0 +1,10 @@
+/clock
+/joint_states
+/parameter_events
+/robot_description
+/rosout
+/sim/camera/camera_info
+/sim/camera/image
+/sim/scan
+/tf
+/tf_static

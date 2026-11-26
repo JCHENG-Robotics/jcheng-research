@@ -1,0 +1,100 @@
+{
+  "schema": "jcheng.piper_x_mve1_runtime.v1",
+  "arm_goal": {
+    "joint1": 0.3,
+    "joint2": 0.6,
+    "joint3": -0.5,
+    "joint4": 0.4,
+    "joint5": -0.4,
+    "joint6": 0.8
+  },
+  "gripper_goal": 0.08,
+  "duration_s": 4.0,
+  "tolerances": {
+    "arm_rad": 0.02,
+    "gripper_m": 0.002,
+    "mimic_m": 0.001
+  },
+  "errors": [],
+  "joint_names": [
+    "gripper",
+    "gripper_joint1",
+    "gripper_joint2",
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6"
+  ],
+  "missing_expected_joints": [],
+  "initial": {
+    "gripper": -0.0,
+    "gripper_joint1": -0.0,
+    "gripper_joint2": 0.0,
+    "joint1": -0.0,
+    "joint2": -0.0,
+    "joint3": 0.0,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0
+  },
+  "arm": {
+    "status": 4,
+    "status_text": "SUCCEEDED",
+    "error_code": 0,
+    "error_string": "Goal successfully reached!",
+    "elapsed_s": 4.052
+  },
+  "gripper": {
+    "status": 4,
+    "status_text": "SUCCEEDED",
+    "error_code": 0,
+    "error_string": "Goal successfully reached!",
+    "elapsed_s": 4.051
+  },
+  "final": {
+    "gripper": 0.08,
+    "gripper_joint1": 0.04,
+    "gripper_joint2": 0.0,
+    "joint1": 0.3,
+    "joint2": -0.0,
+    "joint3": 0.0,
+    "joint4": 0.4,
+    "joint5": -0.4,
+    "joint6": 0.8
+  },
+  "arm_errors_rad": {
+    "joint1": -0.0,
+    "joint2": -0.6,
+    "joint3": 0.5,
+    "joint4": 0.0,
+    "joint5": 0.0,
+    "joint6": 0.0
+  },
+  "arm_max_abs_error_rad": 0.6,
+  "gripper_error_m": 0.0,
+  "gripper_travel_m": 0.08,
+  "mimic": {
+    "gripper_joint1": {
+      "present": true,
+      "expected_m": 0.04,
+      "actual_m": 0.04,
+      "delta_m": 0.0,
+      "multiplier": 0.5
+    },
+    "gripper_joint2": {
+      "present": true,
+      "expected_m": -0.04,
+      "actual_m": 0.0,
+      "delta_m": 0.04,
+      "multiplier": -0.5
+    }
+  },
+  "mimic_enforced": false,
+  "pass": {
+    "actions": true,
+    "tracking": false,
+    "mimic_enforced": false
+  }
+}

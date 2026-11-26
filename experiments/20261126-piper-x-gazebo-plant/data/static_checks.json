@@ -1,0 +1,943 @@
+{
+  "schema": "jcheng.piper_x_mve1_static.v1",
+  "generated": "2026-11-26T02:27:30.580076+00:00",
+  "joint_map": "/home/jerichocheng/jcheng/jcheng-simulation/docs/robots/piper_x/joint_map.yaml",
+  "urdf": "/home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/generated/piper_x_gazebo.urdf",
+  "plant_report": {
+    "schema": "jcheng.piper_x_gazebo_plant.v1",
+    "generated": "2026-11-26",
+    "model_name": "piper_x",
+    "source": {
+      "commit": "680fa925cd00db7e2628563d2edc5540963045de",
+      "asset_dir": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925",
+      "files": {
+        "piper_x/urdf/piper_x_description.urdf": {
+          "sha256": "93eb2a84d01df81566a3c1ed275626d93a1c4275564a30c7899a35a672e265bb",
+          "expected": "93eb2a84d01df81566a3c1ed275626d93a1c4275564a30c7899a35a672e265bb",
+          "match": true
+        },
+        "piper_x/urdf/piper_x_with_gripper_description.xacro": {
+          "sha256": "88561fe45a3f4e639c7a233b13574d88d7707b545110cb30b983e360cdb57420",
+          "expected": "88561fe45a3f4e639c7a233b13574d88d7707b545110cb30b983e360cdb57420",
+          "match": true
+        }
+      }
+    },
+    "joint_map": "/home/jerichocheng/jcheng/jcheng-simulation/docs/robots/piper_x/joint_map.yaml",
+    "meshes": {
+      "items": [
+        {
+          "link": "base_link",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/base_link.dae",
+          "relative_path": "piper_x/meshes/dae/base_link.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/base_link.dae",
+          "exists": true,
+          "bytes": 1007703
+        },
+        {
+          "link": "base_link",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/base_link.stl",
+          "relative_path": "piper_x/meshes/base_link.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/base_link.stl",
+          "exists": true,
+          "bytes": 605984
+        },
+        {
+          "link": "link1",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/link1.dae",
+          "relative_path": "piper_x/meshes/dae/link1.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/link1.dae",
+          "exists": true,
+          "bytes": 2371706
+        },
+        {
+          "link": "link1",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/link1.stl",
+          "relative_path": "piper_x/meshes/link1.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/link1.stl",
+          "exists": true,
+          "bytes": 1332084
+        },
+        {
+          "link": "link2",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/link2.dae",
+          "relative_path": "piper_x/meshes/dae/link2.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/link2.dae",
+          "exists": true,
+          "bytes": 6923487
+        },
+        {
+          "link": "link2",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/link2.stl",
+          "relative_path": "piper_x/meshes/link2.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/link2.stl",
+          "exists": true,
+          "bytes": 2951684
+        },
+        {
+          "link": "link3",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/link3.dae",
+          "relative_path": "piper_x/meshes/dae/link3.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/link3.dae",
+          "exists": true,
+          "bytes": 4306805
+        },
+        {
+          "link": "link3",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/link3.stl",
+          "relative_path": "piper_x/meshes/link3.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/link3.stl",
+          "exists": true,
+          "bytes": 2362084
+        },
+        {
+          "link": "link4",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/link4.dae",
+          "relative_path": "piper_x/meshes/dae/link4.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/link4.dae",
+          "exists": true,
+          "bytes": 2038828
+        },
+        {
+          "link": "link4",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/link4.stl",
+          "relative_path": "piper_x/meshes/link4.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/link4.stl",
+          "exists": true,
+          "bytes": 1163284
+        },
+        {
+          "link": "link5",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/link5.dae",
+          "relative_path": "piper_x/meshes/dae/link5.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/link5.dae",
+          "exists": true,
+          "bytes": 2157773
+        },
+        {
+          "link": "link5",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/link5.stl",
+          "relative_path": "piper_x/meshes/link5.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/link5.stl",
+          "exists": true,
+          "bytes": 1139184
+        },
+        {
+          "link": "link6",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/link6.dae",
+          "relative_path": "piper_x/meshes/dae/link6.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/link6.dae",
+          "exists": true,
+          "bytes": 331350
+        },
+        {
+          "link": "link6",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/link6.stl",
+          "relative_path": "piper_x/meshes/link6.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/link6.stl",
+          "exists": true,
+          "bytes": 162084
+        },
+        {
+          "link": "flange_link",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/flange.dae",
+          "relative_path": "piper_x/meshes/dae/flange.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/dae/flange.dae",
+          "exists": true,
+          "bytes": 285243
+        },
+        {
+          "link": "flange_link",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/piper_x/meshes/flange.stl",
+          "relative_path": "piper_x/meshes/flange.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/piper_x/meshes/flange.stl",
+          "exists": true,
+          "bytes": 204584
+        },
+        {
+          "link": "gripper_base",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/agx_gripper/meshes/dae/gripper_base.dae",
+          "relative_path": "agx_gripper/meshes/dae/gripper_base.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/agx_gripper/meshes/dae/gripper_base.dae",
+          "exists": true,
+          "bytes": 2721338
+        },
+        {
+          "link": "gripper_base",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/agx_gripper/meshes/gripper_base.stl",
+          "relative_path": "agx_gripper/meshes/gripper_base.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/agx_gripper/meshes/gripper_base.stl",
+          "exists": true,
+          "bytes": 1837884
+        },
+        {
+          "link": "gripper_link1",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/agx_gripper/meshes/dae/gripper_link1.dae",
+          "relative_path": "agx_gripper/meshes/dae/gripper_link1.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/agx_gripper/meshes/dae/gripper_link1.dae",
+          "exists": true,
+          "bytes": 176476
+        },
+        {
+          "link": "gripper_link1",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/agx_gripper/meshes/gripper_link1.stl",
+          "relative_path": "agx_gripper/meshes/gripper_link1.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/agx_gripper/meshes/gripper_link1.stl",
+          "exists": true,
+          "bytes": 104384
+        },
+        {
+          "link": "gripper_link2",
+          "kind": "visual",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/agx_gripper/meshes/dae/gripper_link2.dae",
+          "relative_path": "agx_gripper/meshes/dae/gripper_link2.dae",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/agx_gripper/meshes/dae/gripper_link2.dae",
+          "exists": true,
+          "bytes": 176476
+        },
+        {
+          "link": "gripper_link2",
+          "kind": "collision",
+          "source_uri": "package://agx_arm_description/agx_arm_urdf/agx_gripper/meshes/gripper_link2.stl",
+          "relative_path": "agx_gripper/meshes/gripper_link2.stl",
+          "resolved": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/agx_gripper/meshes/gripper_link2.stl",
+          "exists": true,
+          "bytes": 104384
+        }
+      ],
+      "missing": [],
+      "references": 22,
+      "unique_files": 22,
+      "total_bytes": 34464809
+    },
+    "adaptations": [
+      {
+        "id": "mesh_uri_rewrite",
+        "reason": "Gazebo cannot resolve package://agx_arm_description; resolve every mesh inside the external MIT asset bundle",
+        "from": "package://agx_arm_description/agx_arm_urdf/",
+        "to": "file:///home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925/"
+      },
+      {
+        "id": "joint_limits_from_joint_map",
+        "reason": "joint_map.yaml is the checked-in limit contract; every movable joint limit is rewritten from it and the source delta is asserted to be zero"
+      },
+      {
+        "id": "gripper_link_placeholder_inertial",
+        "reason": "the MIT xacro declares gripper_link without <inertial>; urdf2sdf drops massless links and with them the master 'gripper' joint, which also breaks the mimic references",
+        "values": {
+          "mass": 0.05,
+          "inertia": {
+            "ixx": 0.0001,
+            "ixy": 0.0,
+            "ixz": 0.0,
+            "iyy": 0.0001,
+            "iyz": 0.0,
+            "izz": 0.0001
+          }
+        },
+        "status": "simulation placeholder, not a measured value"
+      },
+      {
+        "id": "gz_ros2_control_plugin",
+        "reason": "run the controller manager inside Gazebo in the /sim/piper_x namespace and remap robot_description to the namespaced topic published by robot_state_publisher",
+        "controllers_yaml": "/home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/plant/config/piper_x_controllers.yaml"
+      },
+      {
+        "id": "ros2_control_system",
+        "reason": "expose position commands for the 6 arm joints and the master gripper joint, and position/velocity state for all 9 movable joints including the two mimic fingers",
+        "actuated": [
+          "joint1",
+          "joint2",
+          "joint3",
+          "joint4",
+          "joint5",
+          "joint6",
+          "gripper"
+        ],
+        "mimic": [
+          "gripper_joint1",
+          "gripper_joint2"
+        ]
+      }
+    ],
+    "joints": [
+      {
+        "name": "world_to_base_link",
+        "type": "fixed",
+        "parent": "world",
+        "child": "base_link",
+        "limits": null
+      },
+      {
+        "name": "joint1",
+        "type": "revolute",
+        "parent": "base_link",
+        "child": "link1",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": -2.6179938,
+          "upper": 2.6179938,
+          "effort": 100.0,
+          "velocity": 5.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axis_matches_map": true
+      },
+      {
+        "name": "joint2",
+        "type": "revolute",
+        "parent": "link1",
+        "child": "link2",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": 0.0,
+          "upper": 3.1415926,
+          "effort": 100.0,
+          "velocity": 5.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axis_matches_map": true
+      },
+      {
+        "name": "joint3",
+        "type": "revolute",
+        "parent": "link2",
+        "child": "link3",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": -2.9670597,
+          "upper": 0.0,
+          "effort": 100.0,
+          "velocity": 5.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axis_matches_map": true
+      },
+      {
+        "name": "joint4",
+        "type": "revolute",
+        "parent": "link3",
+        "child": "link4",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": -1.553343,
+          "upper": 1.553343,
+          "effort": 100.0,
+          "velocity": 5.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axis_matches_map": true
+      },
+      {
+        "name": "joint5",
+        "type": "revolute",
+        "parent": "link4",
+        "child": "link5",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": -1.553343,
+          "upper": 1.553343,
+          "effort": 100.0,
+          "velocity": 5.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axis_matches_map": true
+      },
+      {
+        "name": "joint6",
+        "type": "revolute",
+        "parent": "link5",
+        "child": "link6",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": -2.9670597,
+          "upper": 2.9670597,
+          "effort": 100.0,
+          "velocity": 5.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axis_matches_map": true
+      },
+      {
+        "name": "flange_joint",
+        "type": "fixed",
+        "parent": "link6",
+        "child": "flange_link",
+        "limits": null
+      },
+      {
+        "name": "gripper_base_joint",
+        "type": "fixed",
+        "parent": "flange_link",
+        "child": "gripper_base",
+        "limits": null
+      },
+      {
+        "name": "gripper",
+        "type": "prismatic",
+        "parent": "gripper_base",
+        "child": "gripper_link",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": 0.0,
+          "upper": 0.1,
+          "effort": 10.0,
+          "velocity": 3.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "axis_matches_map": false
+      },
+      {
+        "name": "gripper_joint1",
+        "type": "prismatic",
+        "parent": "gripper_base",
+        "child": "gripper_link1",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "limits": {
+          "lower": 0.0,
+          "upper": 0.05,
+          "effort": 10.0,
+          "velocity": 3.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "axis_matches_map": false,
+        "mimic": {
+          "joint": "gripper",
+          "multiplier": 0.5,
+          "offset": 0.0
+        }
+      },
+      {
+        "name": "gripper_joint2",
+        "type": "prismatic",
+        "parent": "gripper_base",
+        "child": "gripper_link2",
+        "axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "limits": {
+          "lower": -0.05,
+          "upper": 0.0,
+          "effort": 10.0,
+          "velocity": 3.0
+        },
+        "source_limit_delta": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "effort": 0.0,
+          "velocity": 0.0
+        },
+        "map_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "axis_matches_map": false,
+        "mimic": {
+          "joint": "gripper",
+          "multiplier": -0.5,
+          "offset": 0.0
+        }
+      }
+    ],
+    "masses": [
+      {
+        "link": "base_link",
+        "mass_kg": 1.02
+      },
+      {
+        "link": "link1",
+        "mass_kg": 0.71
+      },
+      {
+        "link": "link2",
+        "mass_kg": 1.16
+      },
+      {
+        "link": "link3",
+        "mass_kg": 0.67
+      },
+      {
+        "link": "link4",
+        "mass_kg": 0.39
+      },
+      {
+        "link": "link5",
+        "mass_kg": 0.35
+      },
+      {
+        "link": "link6",
+        "mass_kg": 0.01655408133
+      },
+      {
+        "link": "flange_link",
+        "mass_kg": 0.04
+      },
+      {
+        "link": "gripper_base",
+        "mass_kg": 0.45
+      },
+      {
+        "link": "gripper_link",
+        "mass_kg": 0.05
+      },
+      {
+        "link": "gripper_link1",
+        "mass_kg": 0.025
+      },
+      {
+        "link": "gripper_link2",
+        "mass_kg": 0.025
+      }
+    ],
+    "total_mass_kg": 4.906554081,
+    "counts": {
+      "links": 13,
+      "joints": 12,
+      "movable": 9
+    },
+    "actuated_joints": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "gripper"
+    ],
+    "mimic_joints": [
+      "gripper_joint1",
+      "gripper_joint2"
+    ]
+  },
+  "environment": {
+    "gz_sim_versions": "8.15.0",
+    "physics_engines": [
+      {
+        "library": "libgz-physics7-bullet-featherstone-plugin.so",
+        "declares_set_mimic_feature": true,
+        "contains_unsupported_message": false
+      },
+      {
+        "library": "libgz-physics7-bullet-plugin.so",
+        "declares_set_mimic_feature": false,
+        "contains_unsupported_message": false
+      },
+      {
+        "library": "libgz-physics7-dartsim-plugin.so",
+        "declares_set_mimic_feature": false,
+        "contains_unsupported_message": false
+      },
+      {
+        "library": "libgz-physics7-tpe-plugin.so",
+        "declares_set_mimic_feature": false,
+        "contains_unsupported_message": false
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "A1.1",
+      "description": "pinned source SHA-256 matches joint_map.yaml",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "commit": "680fa925cd00db7e2628563d2edc5540963045de",
+        "asset_dir": "/home/jerichocheng/.local/share/jcheng/assets/piper_x/agx_arm_urdf-680fa925",
+        "files": {
+          "piper_x/urdf/piper_x_description.urdf": {
+            "sha256": "93eb2a84d01df81566a3c1ed275626d93a1c4275564a30c7899a35a672e265bb",
+            "expected": "93eb2a84d01df81566a3c1ed275626d93a1c4275564a30c7899a35a672e265bb",
+            "match": true
+          },
+          "piper_x/urdf/piper_x_with_gripper_description.xacro": {
+            "sha256": "88561fe45a3f4e639c7a233b13574d88d7707b545110cb30b983e360cdb57420",
+            "expected": "88561fe45a3f4e639c7a233b13574d88d7707b545110cb30b983e360cdb57420",
+            "match": true
+          }
+        }
+      }
+    },
+    {
+      "id": "A1.2",
+      "description": "generated URDF is well-formed with 12 joints",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "well_formed": true,
+        "error": null,
+        "joints": 12
+      }
+    },
+    {
+      "id": "A2.1",
+      "description": "movable joint set is exactly joint_map.yaml",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "expected": [
+          "gripper",
+          "gripper_joint1",
+          "gripper_joint2",
+          "joint1",
+          "joint2",
+          "joint3",
+          "joint4",
+          "joint5",
+          "joint6"
+        ],
+        "actual": [
+          "gripper",
+          "gripper_joint1",
+          "gripper_joint2",
+          "joint1",
+          "joint2",
+          "joint3",
+          "joint4",
+          "joint5",
+          "joint6"
+        ],
+        "missing": [],
+        "unexpected": []
+      }
+    },
+    {
+      "id": "A2.2",
+      "description": "movable joint types match joint_map.yaml",
+      "status": "pass",
+      "level": "hard",
+      "detail": "all match"
+    },
+    {
+      "id": "A2.3",
+      "description": "movable joint limits match joint_map.yaml (abs tol 1e-9)",
+      "status": "pass",
+      "level": "hard",
+      "detail": "all match"
+    },
+    {
+      "id": "A2.4",
+      "description": "URDF mimic relations match joint_map.yaml (+0.5 / -0.5)",
+      "status": "pass",
+      "level": "hard",
+      "detail": "gripper_joint1 +0.5, gripper_joint2 -0.5"
+    },
+    {
+      "id": "A3.1",
+      "description": "every mesh URI resolves to an existing file",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "references": 22,
+        "unique": 22,
+        "missing": []
+      }
+    },
+    {
+      "id": "A3.2",
+      "description": "no package:// URI remains in the plant URDF",
+      "status": "pass",
+      "level": "hard",
+      "detail": "none"
+    },
+    {
+      "id": "A3.3",
+      "description": "gz sdf -p conversion succeeds with clean stderr",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "exit": 0,
+        "stderr_lines": 0,
+        "stderr": "",
+        "bad_lines": [],
+        "error": null
+      }
+    },
+    {
+      "id": "A4.1",
+      "description": "SDF keeps all 9 movable joints including the master gripper",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "sdf_joints": [
+          "gripper",
+          "gripper_joint1",
+          "gripper_joint2",
+          "joint1",
+          "joint2",
+          "joint3",
+          "joint4",
+          "joint5",
+          "joint6",
+          "world_to_base_link"
+        ],
+        "missing_movable": [],
+        "master_gripper_present": true
+      }
+    },
+    {
+      "id": "A4.2",
+      "description": "SDF preserves mimic under <axis> with +0.5 / -0.5 and offset 0",
+      "status": "pass",
+      "level": "hard",
+      "detail": [
+        {
+          "joint": "gripper_joint1",
+          "mimic_present": true,
+          "parent": "gripper",
+          "multiplier": 0.5,
+          "offset": 0.0,
+          "reference": 0.0
+        },
+        {
+          "joint": "gripper_joint2",
+          "mimic_present": true,
+          "parent": "gripper",
+          "multiplier": -0.5,
+          "offset": 0.0,
+          "reference": 0.0
+        }
+      ]
+    },
+    {
+      "id": "A4.3",
+      "description": "every SDF mesh URI resolves to an existing file",
+      "status": "pass",
+      "level": "hard",
+      "detail": {
+        "uris": 22,
+        "missing": []
+      }
+    },
+    {
+      "id": "ENV.1",
+      "description": "installed physics engines and their SDF mimic capability",
+      "status": "warn",
+      "level": "warn",
+      "detail": {
+        "gz_sim_versions": "8.15.0",
+        "physics_engines": [
+          {
+            "library": "libgz-physics7-bullet-featherstone-plugin.so",
+            "declares_set_mimic_feature": true,
+            "contains_unsupported_message": false
+          },
+          {
+            "library": "libgz-physics7-bullet-plugin.so",
+            "declares_set_mimic_feature": false,
+            "contains_unsupported_message": false
+          },
+          {
+            "library": "libgz-physics7-dartsim-plugin.so",
+            "declares_set_mimic_feature": false,
+            "contains_unsupported_message": false
+          },
+          {
+            "library": "libgz-physics7-tpe-plugin.so",
+            "declares_set_mimic_feature": false,
+            "contains_unsupported_message": false
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "massless_source_link",
+      "link": "gripper_link",
+      "detail": "the MIT xacro declares this link without <inertial>; urdf2sdf drops it (and its parent joint) unless the plant supplies a placeholder mass"
+    },
+    {
+      "id": "joint_map_axis_mismatch",
+      "detail": "joint_map.yaml records a different <axis> for these gripper joints than the pinned xacro; the plant keeps the URDF axis (geometry authority) and records the discrepancy",
+      "items": [
+        {
+          "joint": "gripper",
+          "urdf_axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "joint_map_axis": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "joint": "gripper_joint1",
+          "urdf_axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "joint_map_axis": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "joint": "gripper_joint2",
+          "urdf_axis": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "joint_map_axis": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "hard_failures": 0,
+    "warnings": 1,
+    "acceptance": {
+      "A1": "pass",
+      "A2": "pass",
+      "A3": "pass",
+      "A4": "pass",
+      "A5": "runtime-only",
+      "A6": "runtime-only",
+      "A7": "runtime-only"
+    }
+  }
+}

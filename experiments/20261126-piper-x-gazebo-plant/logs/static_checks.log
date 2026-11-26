@@ -1,0 +1,14 @@
+[PASS] A1.1 pinned source SHA-256 matches joint_map.yaml
+[PASS] A1.2 generated URDF is well-formed with 12 joints
+[PASS] A2.1 movable joint set is exactly joint_map.yaml
+[PASS] A2.2 movable joint types match joint_map.yaml
+[PASS] A2.3 movable joint limits match joint_map.yaml (abs tol 1e-9)
+[PASS] A2.4 URDF mimic relations match joint_map.yaml (+0.5 / -0.5)
+[PASS] A3.1 every mesh URI resolves to an existing file
+[PASS] A3.2 no package:// URI remains in the plant URDF
+[PASS] A3.3 gz sdf -p conversion succeeds with clean stderr
+[PASS] A4.1 SDF keeps all 9 movable joints including the master gripper
+[PASS] A4.2 SDF preserves mimic under <axis> with +0.5 / -0.5 and offset 0
+[PASS] A4.3 every SDF mesh URI resolves to an existing file
+[WARN] ENV.1 installed physics engines and their SDF mimic capability
+static checks: 0 hard failure(s), 1 warning(s); report -> /home/jerichocheng/jcheng/jcheng-research/experiments/20261126-piper-x-gazebo-plant/data/static_checks.json
