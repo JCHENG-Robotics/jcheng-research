@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Draft investigation report `reports/20261126-sam3-sst-open-source-attempt-route.md`
+  (SAM 3 in the SST post-competition repository: vendored SAM3, offline data
+  chain, online stream server, prompt/judge contracts, gated weights, SAM
+  License, consumer-GPU evidence, and a staged ArmPi route), with the source
+  record updates in `references/perception/sam3.md` and
+  `references/manipulation/sst-repo-audit.md`, and the pre-registered
+  `experiments/20261126-sam3-6gb-feasibility/design.md` (MVE-0…3; not run,
+  blocked on HF gated weights).
+- Draft investigation report `reports/20261126-agx-orin-sam3-qwen-deployment.md`
+  (Jetson AGX Orin 64GB, JetPack 6.2: Qwen3-VL-8B via llama.cpp, SAM 3.0 at
+  1008 px + bf16 autocast, 19V PSU requirement, shelf calibration and
+  100-frame front/wrist pipelines, judge template sensitivity), the source
+  record `references/perception/jetson-agx-orin.md`, and the
+  `experiments/20261126-agx-orin-stack-probe/` design/result/data (MVE-0/1/2
+  run; MVE-3 partial).
 - Draft investigation report `reports/20261125-lingbot-vla-sst-foreground-prompting.md`
   (LingBot-VLA 2.0 / SST foreground-prompting evaluation), eight source records
   under `references/`, and the MVE-0 desk re-analysis under
