@@ -1,0 +1,35 @@
+camera,frame,prompt,score,area,answer,p_yes,qwen_s
+front,5,chip bag,0.883,6381,yes,0.9983,2.52
+front,10,chip bag,0.859,6462,yes,0.9978,2.67
+front,15,chip bag,0.875,6422,yes,0.9947,2.59
+front,20,chip bag,0.855,6631,yes,0.9965,2.58
+front,21,green soda bottle,0.91,6481,no,0.0095,2.75
+front,25,chip bag,0.867,6297,yes,0.999,2.55
+front,30,chip bag,0.875,6402,yes,0.9957,2.61
+front,35,chip bag,0.859,6289,yes,0.9992,2.73
+front,40,chip bag,0.875,6270,yes,0.9997,2.54
+front,45,chip bag,0.879,6255,yes,0.9966,2.57
+front,50,chip bag,0.832,6222,yes,0.9959,2.59
+wrist,51,green soda bottle,0.965,14690,yes,1.0,2.51
+wrist,52,transparent empty bottle,0.926,108255,yes,0.9991,2.71
+wrist,54,bottle,0.984,54365,yes,1.0,2.42
+wrist,58,bottle,0.965,8273,yes,1.0,2.63
+wrist,60,transparent empty bottle,0.832,102506,yes,0.971,2.65
+wrist,62,bottle,0.977,35799,yes,1.0,2.43
+wrist,64,transparent empty bottle,0.734,20812,yes,0.9997,2.74
+wrist,66,bottle,0.988,87222,yes,1.0,2.47
+wrist,67,green soda bottle,0.98,90965,yes,1.0,2.68
+wrist,68,transparent empty bottle,0.828,26777,yes,0.9763,2.58
+wrist,70,bottle,0.988,45682,yes,1.0,2.54
+wrist,71,green soda bottle,0.973,91499,yes,1.0,2.73
+wrist,72,transparent empty bottle,0.762,12963,no,0.2604,2.46
+wrist,74,bottle,0.969,17389,yes,1.0,2.66
+wrist,77,orange soda bottle,0.727,54922,yes,1.0,2.64
+wrist,78,bottle,0.98,93205,yes,1.0,2.54
+wrist,79,green soda bottle,0.973,45970,yes,1.0,2.77
+wrist,82,bottle,0.98,96378,yes,1.0,2.45
+wrist,86,bottle,0.98,100368,yes,1.0,2.69
+wrist,90,bottle,0.984,95829,yes,1.0,2.63
+wrist,92,transparent empty bottle,0.727,37949,yes,0.8416,2.51
+wrist,94,bottle,0.98,63870,yes,1.0,2.7
+wrist,98,bottle,0.98,15741,yes,1.0,2.44

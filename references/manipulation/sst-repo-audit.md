@@ -72,3 +72,32 @@ eval.sh                          -> script_sam.sh
 - **静态**：上文所有文件/行号结论。
 - **推断**：决赛真机方案不在本仓库；发布的实验是 RoboTwin 初赛赛道。本报告不对
   决赛真机栈作任何断言。
+
+## 2026-11-26 补充：SAM3 适配层与版本
+
+同一 commit `8797aa31` 的追加静态审读，聚焦 SAM3：
+
+- **vendored 版本**：`sam3/` 是上游全量树（204 文件 / 160 Python 文件），已包含
+  SAM 3.1 Object Multiplex 代码（`multiplex_mask_decoder.py`、`sam3_multiplex_*`、
+  `video_tracking_multiplex.py`）；`build_sam3_predictor(version="sam3.1")` 映射到
+  `facebook/sam3.1/sam3.1_multiplex.pt`。但 SST 的掩码器默认 `version="sam3"`
+  （`sam3/tools/sam3_video_masker.py:53`），数据生成用 3.0 权重。
+- **在线服务**：`sam3/tools/sam3_stream_server.py` 是 stdlib HTTP 服务，
+  `/start`、`/step`、`/end`、`/start_judged`、`/step_judged`；一个进程独占一张
+  GPU，GPU 工作用锁串行化；`client_id` 防会话泄漏；空闲会话回收。
+  `base.json` 设 `inference.gpu="1"`、`memory_window=10`。
+- **因果化封装**：`sam3/tools/sam3_stream_tracker.py` 让 `num_frames` 随帧增长，
+  只回看历史；docstring 明确写出与离线训练集的差异——离线 `hotstart_delay=15`
+  压住前 15 帧输出，在线不能等，被 hotstart 移除的物体从该帧起消失。
+- **提示词契约**：`vllm_space/sam3_prompt.py` 73 行，英文；逐类短语 + 颜色备份 +
+  `MISSED` 规避，强制 `robot, robot arm`。词表本身就是方法的一部分。
+- **评审参数**：`tools/services.py` 固定 `score_threshold_detection=0.3`、
+  `new_det_thresh=0.5`、judge 阈值 0.5、`outside_scale=0.2`、`regrow=2.0`、
+  `regrow_min_area=0.002`、超时 120 s；最终渲染用 0.1 + 2 px 白边。
+- **许可证/打包**：`sam3/LICENSE` 是 SAM License（2025-11-19）；
+  `sam3/pyproject.toml` 的 `MIT` classifier 与实际许可证不一致（打包元数据错误）。
+  SST 根目录仍无 LICENSE，自有适配层（`auto_mask/`、`tools/`、`inference/`）无授权。
+- **未执行**：以上均为静态；没有运行 SST 的 SAM3 服务，也没有下载 gated 权重。
+
+相关：[SAM 3 来源记录](../perception/sam3.md)、
+[SAM3 尝试路线报告](../../reports/20261126-sam3-sst-open-source-attempt-route.md)。

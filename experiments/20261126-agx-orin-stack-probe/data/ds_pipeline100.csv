@@ -1,0 +1,103 @@
+camera,frame,prompt,score,area,expected,answer,p_yes,judge_s,encode_s,prompt_s,e2e_s
+front,1,green soda bottle,0.977,7901,yes,yes,1.0,0.26,0.96,0.77,2.11
+front,2,orange soda bottle,0.973,7448,yes,yes,0.9994,0.26,0.09,1.0,1.49
+front,3,cola bottle,0.965,7990,yes,yes,1.0,0.24,0.08,0.89,1.33
+front,4,transparent empty bottle,0.953,9132,yes,yes,1.0,0.25,0.11,0.99,1.52
+front,5,chip bag,0.883,6381,yes,PARTIAL,0.5,0,0.11,0.95,1.07
+front,6,green soda bottle,0.98,7602,yes,yes,1.0,0.24,0.11,0.93,1.41
+front,7,orange soda bottle,0.953,8061,yes,yes,1.0,0.25,0.08,0.98,1.48
+front,8,cola bottle,0.906,7971,yes,yes,0.9998,0.23,0.09,0.89,1.35
+front,9,transparent empty bottle,0.957,8551,yes,yes,1.0,0.25,0.11,1.0,1.5
+front,10,chip bag,0.859,6462,yes,PARTIAL,0.5,0,0.12,0.98,1.1
+front,11,green soda bottle,0.98,7624,yes,yes,1.0,0.21,0.11,0.91,1.37
+front,12,orange soda bottle,0.969,8215,yes,yes,1.0,0.23,0.08,1.03,1.49
+front,13,cola bottle,0.973,7393,yes,yes,1.0,0.24,0.08,0.9,1.35
+front,14,transparent empty bottle,0.961,8843,yes,yes,1.0,0.26,0.11,0.95,1.47
+front,15,chip bag,0.875,6422,yes,PARTIAL,0.5,0,0.11,0.94,1.06
+front,16,green soda bottle,0.953,8770,yes,yes,1.0,0.25,0.11,0.87,1.37
+front,17,orange soda bottle,0.965,7533,yes,yes,1.0,0.25,0.08,0.98,1.45
+front,18,cola bottle,0.961,8242,yes,yes,0.9999,0.25,0.09,0.89,1.36
+front,19,transparent empty bottle,0.965,8848,yes,yes,1.0,0.26,0.09,1.06,1.55
+front,20,chip bag,0.855,6631,yes,PARTIAL,0.5,0,0.11,0.95,1.07
+front,21,green soda bottle,0.91,6481,yes,PARTIAL,0.5,0,0.11,0.88,0.99
+front,22,orange soda bottle,0.938,8467,yes,yes,1.0,0.27,0.11,0.99,1.52
+front,23,cola bottle,0.973,8392,yes,yes,1.0,0.24,0.11,0.94,1.43
+front,24,transparent empty bottle,0.961,8621,yes,yes,0.9999,0.25,0.11,0.91,1.42
+front,25,chip bag,0.867,6297,yes,PARTIAL,0.5,0,0.11,1.04,1.16
+front,26,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.09,0.9,1.0
+front,27,orange soda bottle,0.938,8023,yes,yes,1.0,0.23,0.1,0.91,1.39
+front,28,cola bottle,0.973,8402,yes,yes,1.0,0.24,0.11,1.02,1.5
+front,29,transparent empty bottle,0.965,8400,yes,yes,1.0,0.24,0.11,0.88,1.37
+front,30,chip bag,0.875,6402,yes,PARTIAL,0.5,0,0.11,0.93,1.05
+front,31,green soda bottle,0.969,8241,yes,yes,1.0,0.25,0.11,0.96,1.45
+front,32,orange soda bottle,0.953,7367,yes,yes,1.0,0.32,0.11,0.9,1.47
+front,33,cola bottle,0.953,8320,yes,yes,1.0,0.27,0.11,1.05,1.56
+front,34,transparent empty bottle,0.953,9217,yes,yes,0.9999,0.26,0.11,0.9,1.39
+front,35,chip bag,0.859,6289,yes,PARTIAL,0.5,0,0.11,0.93,1.05
+front,36,green soda bottle,0.977,7883,yes,yes,1.0,0.3,0.09,0.97,1.48
+front,37,orange soda bottle,0.949,7508,yes,yes,0.9998,0.24,0.11,0.86,1.35
+front,38,cola bottle,0.969,7530,yes,yes,0.9999,0.26,0.11,1.02,1.54
+front,39,transparent empty bottle,0.961,9168,yes,yes,1.0,0.27,0.08,0.97,1.46
+front,40,chip bag,0.875,6270,yes,PARTIAL,0.5,0,0.11,0.93,1.05
+front,41,green soda bottle,0.977,7697,yes,yes,1.0,0.23,0.09,1.04,1.5
+front,42,orange soda bottle,0.969,7457,yes,yes,0.9999,0.26,0.11,0.86,1.36
+front,43,cola bottle,0,0,yes,NO_MASK,0.5,0,0.1,0.96,1.05
+front,44,transparent empty bottle,0.953,8526,yes,yes,0.9999,0.26,0.11,0.94,1.45
+front,45,chip bag,0.879,6255,yes,PARTIAL,0.5,0,0.08,0.87,0.96
+front,46,green soda bottle,0.973,7880,yes,yes,1.0,0.27,0.11,0.95,1.48
+front,47,orange soda bottle,0.969,8004,yes,yes,1.0,0.22,0.11,0.93,1.42
+front,48,cola bottle,0,0,yes,NO_MASK,0.5,0,0.08,0.93,1.01
+front,49,transparent empty bottle,0.949,9691,yes,yes,0.9997,0.24,0.09,1.02,1.49
+front,50,chip bag,0.832,6222,yes,PARTIAL,0.5,0,0.08,0.92,1.0
+wrist,51,green soda bottle,0.965,14690,yes,PARTIAL,0.5,0,0.09,0.9,0.99
+wrist,52,transparent empty bottle,0.926,108255,yes,PARTIAL,0.5,0,0.11,0.96,1.08
+wrist,53,orange soda bottle,0.922,6852,yes,yes,0.9994,2.49,0.11,0.95,3.69
+wrist,54,bottle,0.984,54365,yes,PARTIAL,0.5,0,0.11,1.05,1.17
+wrist,55,green soda bottle,0.945,9392,yes,yes,1.0,2.68,0.1,0.91,3.84
+wrist,55,green soda bottle,0.945,9392,no,no,0.0819,2.52,0.1,0.91,6.37
+wrist,56,transparent empty bottle,0,0,yes,NO_MASK,0.5,0,0.1,0.95,1.05
+wrist,57,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.12,0.92,1.03
+wrist,58,bottle,0.965,8273,yes,PARTIAL,0.5,0,0.09,0.95,1.04
+wrist,59,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,0.86,0.97
+wrist,60,transparent empty bottle,0.832,102506,yes,PARTIAL,0.5,0,0.11,0.95,1.07
+wrist,61,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.12,0.97,1.09
+wrist,62,bottle,0.977,35799,yes,PARTIAL,0.5,0,0.09,0.96,1.05
+wrist,63,green soda bottle,0.883,17369,yes,yes,1.0,2.65,0.08,0.92,3.79
+wrist,64,transparent empty bottle,0.734,20812,yes,PARTIAL,0.5,0,0.09,0.9,1.0
+wrist,65,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,0.94,1.05
+wrist,66,bottle,0.988,87222,yes,PARTIAL,0.5,0,0.11,0.98,1.1
+wrist,67,green soda bottle,0.98,90965,yes,PARTIAL,0.5,0,0.09,0.93,1.02
+wrist,68,transparent empty bottle,0.828,26777,yes,PARTIAL,0.5,0,0.11,0.88,1.0
+wrist,69,orange soda bottle,0.898,7881,yes,yes,0.9952,2.48,0.11,0.94,3.7
+wrist,70,bottle,0.988,45682,yes,PARTIAL,0.5,0,0.11,0.98,1.1
+wrist,71,green soda bottle,0.973,91499,yes,PARTIAL,0.5,0,0.11,1.03,1.15
+wrist,72,transparent empty bottle,0.762,12963,yes,PARTIAL,0.5,0,0.11,0.87,0.98
+wrist,73,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,0.85,0.96
+wrist,74,bottle,0.969,17389,yes,PARTIAL,0.5,0,0.11,0.94,1.07
+wrist,75,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.12,1.02,1.13
+wrist,76,transparent empty bottle,0,0,yes,NO_MASK,0.5,0,0.09,0.92,1.02
+wrist,77,orange soda bottle,0.727,54922,yes,PARTIAL,0.5,0,0.11,0.84,0.96
+wrist,78,bottle,0.98,93205,yes,PARTIAL,0.5,0,0.11,0.94,1.06
+wrist,79,green soda bottle,0.973,45970,yes,PARTIAL,0.5,0,0.11,1.02,1.14
+wrist,80,transparent empty bottle,0.602,40695,yes,LOW_SCORE,0.5,0,0.09,0.94,1.03
+wrist,81,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.09,0.89,0.98
+wrist,82,bottle,0.98,96378,yes,PARTIAL,0.5,0,0.11,0.92,1.04
+wrist,83,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,1.01,1.12
+wrist,84,transparent empty bottle,0,0,yes,NO_MASK,0.5,0,0.08,0.94,1.02
+wrist,85,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.08,0.92,1.0
+wrist,86,bottle,0.98,100368,yes,PARTIAL,0.5,0,0.11,0.94,1.06
+wrist,87,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,1.0,1.12
+wrist,88,transparent empty bottle,0.527,94649,yes,LOW_SCORE,0.5,0,0.08,0.94,1.02
+wrist,89,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.08,0.91,0.99
+wrist,90,bottle,0.984,95829,yes,PARTIAL,0.5,0,0.11,0.94,1.06
+wrist,91,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.12,0.98,1.1
+wrist,92,transparent empty bottle,0.727,37949,yes,PARTIAL,0.5,0,0.09,0.95,1.04
+wrist,93,orange soda bottle,0.91,8270,yes,yes,0.9923,2.68,0.11,0.88,3.82
+wrist,94,bottle,0.98,63870,yes,PARTIAL,0.5,0,0.11,0.84,0.96
+wrist,95,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,0.96,1.08
+wrist,96,transparent empty bottle,0.898,5459,yes,yes,0.9988,2.59,0.09,1.06,3.92
+wrist,97,orange soda bottle,0,0,yes,NO_MASK,0.5,0,0.08,1.02,1.09
+wrist,98,bottle,0.98,15741,yes,PARTIAL,0.5,0,0.11,0.92,1.04
+wrist,99,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,0.93,1.04
+wrist,100,transparent empty bottle,0.957,8348,yes,yes,1.0,2.68,0.09,0.91,3.85
+wrist,100,transparent empty bottle,0.957,8348,no,no,0.0002,2.62,0.09,0.91,6.47

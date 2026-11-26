@@ -1,0 +1,61 @@
+frame,prompt,score,area,expected,answer,p_yes,judge_s,encode_s,prompt_s,e2e_s
+f_01,green soda bottle,0.977,7901,yes,yes,1.0,2.77,1.03,0.61,4.54
+f_02,orange soda bottle,0.973,7448,yes,yes,0.9993,2.45,0.08,1.01,3.69
+f_03,cola bottle,0.965,7990,yes,yes,1.0,2.69,0.11,1.04,3.97
+f_04,transparent empty bottle,0.953,9132,yes,yes,1.0,2.64,0.09,0.94,3.82
+f_05,chip bag,0.883,6381,yes,yes,0.995,2.64,0.11,1.02,3.91
+f_05,chip bag,0.883,6381,no,no,0.0,2.65,0.11,1.02,6.56
+f_06,green soda bottle,0.98,7602,yes,yes,1.0,2.69,0.11,1.03,3.97
+f_07,orange soda bottle,0.953,8061,yes,yes,1.0,2.68,0.1,0.86,3.79
+f_08,cola bottle,0.906,7971,yes,yes,0.9998,2.58,0.11,1.03,3.86
+f_09,transparent empty bottle,0.957,8551,yes,yes,1.0,2.7,0.11,1.01,3.96
+f_10,chip bag,0.859,6462,yes,yes,0.9945,2.77,0.09,0.98,3.97
+f_10,chip bag,0.859,6462,no,no,0.0,2.61,0.09,0.98,6.59
+f_11,green soda bottle,0.98,7624,yes,yes,1.0,2.72,0.1,0.99,3.94
+f_12,orange soda bottle,0.969,8215,yes,yes,1.0,2.53,0.08,1.03,3.79
+f_13,cola bottle,0.973,7393,yes,yes,1.0,2.7,0.08,0.98,3.9
+f_14,transparent empty bottle,0.961,8843,yes,yes,1.0,2.58,0.12,0.96,3.8
+f_15,chip bag,0.875,6422,yes,yes,0.9865,2.67,0.11,1.01,3.93
+f_15,chip bag,0.875,6422,no,no,0.0,2.62,0.11,1.01,6.56
+f_16,green soda bottle,0.953,8770,yes,yes,1.0,2.67,0.09,1.04,3.93
+f_17,orange soda bottle,0.965,7533,yes,yes,1.0,2.72,0.11,0.93,3.91
+f_18,cola bottle,0.961,8242,yes,yes,0.9999,2.62,0.12,1.04,3.93
+f_19,transparent empty bottle,0.965,8848,yes,yes,1.0,2.69,0.11,1.02,3.96
+f_20,chip bag,0.855,6631,yes,yes,0.9848,2.65,0.08,0.94,3.81
+f_20,chip bag,0.855,6631,no,no,0.0,2.71,0.08,0.94,6.53
+f_21,green soda bottle,0.91,6481,yes,no,0.0174,2.65,0.09,0.9,3.77
+f_22,orange soda bottle,0.938,8467,yes,yes,1.0,2.68,0.11,0.95,3.86
+f_23,cola bottle,0.973,8392,yes,yes,1.0,2.71,0.07,0.91,3.84
+f_24,transparent empty bottle,0.961,8621,yes,yes,0.9999,2.58,0.11,1.05,3.89
+f_25,chip bag,0.867,6297,yes,yes,0.955,2.64,0.11,1.02,3.91
+f_25,chip bag,0.867,6297,no,no,0.0,2.62,0.11,1.02,6.53
+f_26,green soda bottle,0,0,yes,NO_MASK,0.5,0,0.11,1.02,1.13
+f_27,orange soda bottle,0.938,8023,yes,yes,1.0,2.61,0.09,0.99,3.83
+f_28,cola bottle,0.973,8402,yes,yes,1.0,2.69,0.1,0.88,3.81
+f_29,transparent empty bottle,0.965,8400,yes,yes,1.0,2.57,0.12,1.05,3.88
+f_30,chip bag,0.875,6402,yes,yes,0.9875,2.74,0.11,1.04,4.02
+f_30,chip bag,0.875,6402,no,no,0.0001,2.61,0.11,1.04,6.63
+f_31,green soda bottle,0.969,8241,yes,yes,1.0,2.66,0.09,1.06,3.95
+f_32,orange soda bottle,0.953,7367,yes,yes,1.0,2.74,0.1,0.95,3.93
+f_33,cola bottle,0.953,8320,yes,yes,1.0,2.21,0.11,0.8,3.24
+f_34,transparent empty bottle,0.953,9217,yes,yes,0.9999,2.2,0.1,0.79,3.22
+f_35,chip bag,0.859,6289,yes,yes,0.9901,2.12,0.12,0.95,3.32
+f_35,chip bag,0.859,6289,no,no,0.0,2.29,0.12,0.95,5.61
+f_36,green soda bottle,0.977,7883,yes,yes,1.0,2.17,0.09,0.79,3.19
+f_37,orange soda bottle,0.949,7508,yes,yes,0.9998,1.41,0.08,0.64,2.24
+f_38,cola bottle,0.969,7530,yes,yes,0.9999,1.39,0.08,0.47,2.07
+f_39,transparent empty bottle,0.961,9168,yes,yes,1.0,1.39,0.08,0.45,2.04
+f_40,chip bag,0.875,6270,yes,yes,0.9967,1.4,0.08,0.46,2.05
+f_40,chip bag,0.875,6270,no,no,0.0,1.36,0.08,0.46,3.42
+f_41,green soda bottle,0.977,7697,yes,yes,1.0,1.37,0.08,0.45,2.01
+f_42,orange soda bottle,0.969,7457,yes,yes,0.9999,1.34,0.08,0.47,2.0
+f_43,cola bottle,0,0,yes,NO_MASK,0.5,0,0.08,0.47,0.55
+f_44,transparent empty bottle,0.953,8526,yes,yes,0.9998,1.39,0.08,0.47,2.05
+f_45,chip bag,0.879,6255,yes,yes,0.939,1.36,0.08,0.49,2.05
+f_45,chip bag,0.879,6255,no,no,0.0,1.34,0.08,0.49,3.39
+f_46,green soda bottle,0.973,7880,yes,yes,1.0,1.32,0.08,0.47,1.99
+f_47,orange soda bottle,0.969,8004,yes,yes,1.0,1.33,0.08,0.47,2.0
+f_48,cola bottle,0,0,yes,NO_MASK,0.5,0,0.08,0.47,0.55
+f_49,transparent empty bottle,0.949,9691,yes,yes,0.9997,1.33,0.08,0.47,1.99
+f_50,chip bag,0.832,6222,yes,yes,0.9619,1.33,0.08,0.47,1.99
+f_50,chip bag,0.832,6222,no,no,0.0,1.35,0.08,0.47,3.35

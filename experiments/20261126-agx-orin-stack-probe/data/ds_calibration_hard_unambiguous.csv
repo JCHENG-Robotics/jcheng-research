@@ -1,0 +1,61 @@
+frame,mask_prompt,score,area,question_prompt,expected,answer,p_yes,qwen_s,sam_s,overlay
+f_01,green bottle,0.969,7913,green bottle,yes,yes,1.0,0.87,0.51,/tmp/cal_hard2/01_green_bottle.png
+f_01,green bottle,0.969,7913,coca cola bottle,no,no,0.0,0.8,0.51,/tmp/cal_hard2/01_green_bottle.png
+f_01,orange bottle,0.973,7434,orange bottle,yes,yes,1.0,0.24,0.18,/tmp/cal_hard2/01_orange_bottle.png
+f_01,orange bottle,0.973,7434,green bottle,no,no,0.0,0.85,0.18,/tmp/cal_hard2/01_orange_bottle.png
+f_01,clear bottle,0.961,8715,clear bottle,yes,yes,1.0,0.81,0.2,/tmp/cal_hard2/01_clear_bottle.png
+f_01,clear bottle,0.961,8715,coca cola bottle,no,no,0.0,0.81,0.2,/tmp/cal_hard2/01_clear_bottle.png
+f_01,coca cola bottle,0.945,8012,coca cola bottle,yes,yes,0.9996,0.69,0.2,/tmp/cal_hard2/01_coca_cola_bottle.png
+f_01,coca cola bottle,0.945,8012,orange bottle,no,no,0.0,0.77,0.2,/tmp/cal_hard2/01_coca_cola_bottle.png
+f_01,snack bag,0.906,6497,snack bag,yes,yes,0.9999,0.81,0.18,/tmp/cal_hard2/01_snack_bag.png
+f_01,snack bag,0.906,6497,green bottle,no,no,0.0001,0.78,0.18,/tmp/cal_hard2/01_snack_bag.png
+f_01,red can,0.945,3377,red can,yes,yes,0.9955,0.21,0.19,/tmp/cal_hard2/01_red_can.png
+f_01,red can,0.945,3377,green bottle,no,no,0.0048,0.82,0.19,/tmp/cal_hard2/01_red_can.png
+f_02,green bottle,0.969,8027,green bottle,yes,yes,1.0,0.79,0.45,/tmp/cal_hard2/02_green_bottle.png
+f_02,green bottle,0.969,8027,coca cola bottle,no,no,0.0,0.77,0.45,/tmp/cal_hard2/02_green_bottle.png
+f_02,orange bottle,0.973,7447,orange bottle,yes,yes,1.0,0.23,0.19,/tmp/cal_hard2/02_orange_bottle.png
+f_02,orange bottle,0.973,7447,green bottle,no,no,0.0,0.82,0.19,/tmp/cal_hard2/02_orange_bottle.png
+f_02,clear bottle,0.953,7040,clear bottle,yes,yes,0.9987,0.8,0.2,/tmp/cal_hard2/02_clear_bottle.png
+f_02,clear bottle,0.953,7040,coca cola bottle,no,no,0.0001,0.81,0.2,/tmp/cal_hard2/02_clear_bottle.png
+f_02,coca cola bottle,0.953,8138,coca cola bottle,yes,yes,0.9965,0.67,0.19,/tmp/cal_hard2/02_coca_cola_bottle.png
+f_02,coca cola bottle,0.953,8138,orange bottle,no,no,0.0,0.79,0.19,/tmp/cal_hard2/02_coca_cola_bottle.png
+f_02,snack bag,0.883,6416,snack bag,yes,yes,0.9998,0.84,0.19,/tmp/cal_hard2/02_snack_bag.png
+f_02,snack bag,0.883,6416,green bottle,no,no,0.0,0.77,0.19,/tmp/cal_hard2/02_snack_bag.png
+f_02,red can,0.941,3247,red can,yes,yes,0.9939,0.28,0.18,/tmp/cal_hard2/02_red_can.png
+f_02,red can,0.941,3247,green bottle,no,no,0.022,0.85,0.18,/tmp/cal_hard2/02_red_can.png
+f_03,green bottle,0.977,7893,green bottle,yes,yes,1.0,0.79,0.46,/tmp/cal_hard2/03_green_bottle.png
+f_03,green bottle,0.977,7893,coca cola bottle,no,no,0.0,0.79,0.46,/tmp/cal_hard2/03_green_bottle.png
+f_03,orange bottle,0.977,7443,orange bottle,yes,yes,1.0,0.22,0.19,/tmp/cal_hard2/03_orange_bottle.png
+f_03,orange bottle,0.977,7443,green bottle,no,no,0.0,0.82,0.19,/tmp/cal_hard2/03_orange_bottle.png
+f_03,clear bottle,0.953,7918,clear bottle,yes,yes,1.0,0.79,0.19,/tmp/cal_hard2/03_clear_bottle.png
+f_03,clear bottle,0.953,7918,coca cola bottle,no,no,0.0,0.78,0.19,/tmp/cal_hard2/03_clear_bottle.png
+f_03,coca cola bottle,0.945,7980,coca cola bottle,yes,yes,0.9998,0.67,0.2,/tmp/cal_hard2/03_coca_cola_bottle.png
+f_03,coca cola bottle,0.945,7980,orange bottle,no,no,0.0,0.81,0.2,/tmp/cal_hard2/03_coca_cola_bottle.png
+f_03,red can,0.941,3384,red can,yes,yes,0.9903,0.23,0.18,/tmp/cal_hard2/03_red_can.png
+f_03,red can,0.941,3384,green bottle,no,no,0.0139,0.82,0.18,/tmp/cal_hard2/03_red_can.png
+f_04,green bottle,0.961,7654,green bottle,yes,yes,1.0,0.75,0.45,/tmp/cal_hard2/04_green_bottle.png
+f_04,green bottle,0.961,7654,coca cola bottle,no,no,0.0,0.75,0.45,/tmp/cal_hard2/04_green_bottle.png
+f_04,orange bottle,0.969,7488,orange bottle,yes,yes,1.0,0.21,0.18,/tmp/cal_hard2/04_orange_bottle.png
+f_04,orange bottle,0.969,7488,green bottle,no,no,0.0,0.78,0.18,/tmp/cal_hard2/04_orange_bottle.png
+f_04,clear bottle,0.965,9177,clear bottle,yes,yes,1.0,0.79,0.18,/tmp/cal_hard2/04_clear_bottle.png
+f_04,clear bottle,0.965,9177,coca cola bottle,no,no,0.0,0.73,0.18,/tmp/cal_hard2/04_clear_bottle.png
+f_04,coca cola bottle,0.969,8185,coca cola bottle,yes,yes,0.9999,0.7,0.19,/tmp/cal_hard2/04_coca_cola_bottle.png
+f_04,coca cola bottle,0.969,8185,orange bottle,no,no,0.0,0.77,0.19,/tmp/cal_hard2/04_coca_cola_bottle.png
+f_04,snack bag,0.891,6347,snack bag,yes,yes,0.9998,0.78,0.19,/tmp/cal_hard2/04_snack_bag.png
+f_04,snack bag,0.891,6347,green bottle,no,no,0.0,0.78,0.19,/tmp/cal_hard2/04_snack_bag.png
+f_04,red can,0.938,3279,red can,yes,yes,0.9937,0.2,0.19,/tmp/cal_hard2/04_red_can.png
+f_04,red can,0.938,3279,green bottle,no,no,0.0007,0.76,0.19,/tmp/cal_hard2/04_red_can.png
+f_05,green bottle,0.969,7690,green bottle,yes,yes,1.0,0.75,0.47,/tmp/cal_hard2/05_green_bottle.png
+f_05,green bottle,0.969,7690,coca cola bottle,no,no,0.0,0.74,0.47,/tmp/cal_hard2/05_green_bottle.png
+f_05,orange bottle,0.969,7547,orange bottle,yes,yes,1.0,0.23,0.18,/tmp/cal_hard2/05_orange_bottle.png
+f_05,orange bottle,0.969,7547,green bottle,no,no,0.0,0.8,0.18,/tmp/cal_hard2/05_orange_bottle.png
+f_05,clear bottle,0.941,6605,clear bottle,yes,yes,1.0,0.79,0.18,/tmp/cal_hard2/05_clear_bottle.png
+f_05,clear bottle,0.941,6605,coca cola bottle,no,no,0.0001,0.74,0.18,/tmp/cal_hard2/05_clear_bottle.png
+f_05,coca cola bottle,0.957,8227,coca cola bottle,yes,yes,0.9999,0.65,0.18,/tmp/cal_hard2/05_coca_cola_bottle.png
+f_05,coca cola bottle,0.957,8227,orange bottle,no,no,0.0,0.74,0.18,/tmp/cal_hard2/05_coca_cola_bottle.png
+f_05,snack bag,0.891,6372,snack bag,yes,yes,0.9999,0.75,0.18,/tmp/cal_hard2/05_snack_bag.png
+f_05,snack bag,0.891,6372,green bottle,no,no,0.0,0.74,0.18,/tmp/cal_hard2/05_snack_bag.png
+f_05,red can,0.949,3169,red can,yes,yes,0.9963,0.19,0.19,/tmp/cal_hard2/05_red_can.png
+f_05,red can,0.949,3169,green bottle,no,no,0.0001,0.79,0.19,/tmp/cal_hard2/05_red_can.png
+f_06,snack bag,0.902,6594,snack bag,yes,yes,0.9997,0.17,0.46,/tmp/cal_hard2/06_snack_bag.png
+f_06,snack bag,0.902,6594,green bottle,no,no,0.0,1.37,0.46,/tmp/cal_hard2/06_snack_bag.png
