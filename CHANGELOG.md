@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Draft investigation report
+  `reports/20261126-rlinf-piper-pico-data-collection.md` (RLinf at
+  `ed0e1b83`: the PICO VR chain is implemented, but `PiperEnv` rejects every
+  teleop device (`TELEOP = ()`) and lacks the kinematics that `PicoJoint`
+  requires; the vendor `pyAgxArm` layer does support `piper_x`, `move_p()` and
+  TCP/flange conversion, so the route is a CARTESIAN_POSE environment rather
+  than hand-written IK; includes community implementations and their licences).
+  Adds the source record `references/manipulation/rlinf-piper-pico.md` and the
+  pre-registered `experiments/20261126-rlinf-piper-pico-mve/design.md` (MVE-0…3;
+  not run).
 - Ran a 30-minute advisory-service soak on the Orin: 1,800 s / 180
   requests / 0 errors, 162 judge / 18 no-mask, p50 1.04 s / p95 2.32 s;
   service RSS +3 MB and Qwen RSS +7 MB (plateau), no crash. Data

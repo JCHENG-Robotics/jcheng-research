@@ -25,6 +25,7 @@ gripper control strategies, adapting learned policies to the 5-DoF platform.
 | [lightweight-grocery-mobile-manipulator.md](lightweight-grocery-mobile-manipulator.md) | Grocery pick-and-pack (Sensors 2026, 26(9), 2860) | 2026-11-25 | — |
 | [3d-bin-picking-review.md](3d-bin-picking-review.md) | 3D vision bin-picking review (Appl. Sci. 2026, 16(22), 11254) | 2026-11-25 | — |
 | [piper-x-assets.md](piper-x-assets.md) | AgileX Piper X official/community repositories and simulation assets | 2026-11-26 | — |
+| [rlinf-piper-pico.md](rlinf-piper-pico.md) | RLinf real-world teleop/data collection + PICO VR + AgileX Piper/Piper X | 2026-11-26 | — |
 
 Cross-theme records used by this theme:
 [SAM 3](../perception/sam3.md) (perception),
