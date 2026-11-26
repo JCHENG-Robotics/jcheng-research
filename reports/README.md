@@ -17,6 +17,7 @@ draft is never upgraded by appearing here. Themes follow
 | [AGX Orin SAM3 + Qwen deployment](20261126-agx-orin-sam3-qwen-deployment.md) | perception | whether AGX Orin is the SAM3+Qwen host, which stack/model size, and what to probe first | draft; Qwen3-VL-8B + SAM3 3.0 run; shelf calibration and 100-frame pipelines; judge template-sensitive (fix T1+score>=0.8; 18-case 15/15; 200-frame 182/183 = 99.45%, 1 edge FN); advisory service 30-min soak 180 req, 0 error, RSS +3 MB | [MVE-0/MVE-1/MVE-2 run; MVE-3 partial](../experiments/20261126-agx-orin-stack-probe/result.md) |
 | [Piper X simulation data map](20261126-piper-x-simulation-data-map.md) | manipulation | which GitHub assets to pin, where they belong, and whether to open a CAN profile contract | draft; review pending | [MVE-0 asset materialisation; MVE-1 run](../experiments/20261126-piper-x-gazebo-plant/result.md) — MVE-1 has an open joint2/3 tracking failure; MVE-2…4 designed, not run |
 | [RLinf PICO→Piper X data-collection assessment](20261126-rlinf-piper-pico-data-collection.md) | manipulation | whether RLinf is a viable PICO VR data-collection path for the AgileX Piper X, and what must be built/verified before a hardware session | draft; review pending | [MVE-0…3 designed](../experiments/20261126-rlinf-piper-pico-mve/design.md); not run |
+| [Ultralytics repository review](20261126-ultralytics-repository-review.md) | perception | whether to keep Ultralytics as the perception detector backend/training tool, and under which license, version and runtime boundary | draft; review pending | [MVE-1…3 designed](../experiments/20261126-ultralytics-runtime-audit/design.md); not run |
 
 Chinese edition: [GloVLA report DOCX](20261125-glovla-hybrid-factorization-eval.zh-CN.docx);
 the Markdown report remains the traceable version.
@@ -30,6 +31,7 @@ the Markdown report remains the traceable version.
 | [GloVLA handoff-budget MVE-0](../experiments/20261125-glovla-handoff-budget/result.md) | manipulation | desk calculation run 2026-11-25 | GloVLA report above |
 | [Piper X Gazebo plant MVE-1](../experiments/20261126-piper-x-gazebo-plant/result.md) | manipulation | run 2026-11-26; A1–A5/A7 pass, A6 fails on joint2/joint3; mimic structural only | Piper X report above |
 | [RLinf PICO→Piper X MVE-0…3](../experiments/20261126-rlinf-piper-pico-mve/design.md) | manipulation | pre-registered design; not run | RLinf report above |
+| [Ultralytics runtime audit MVE-1…3](../experiments/20261126-ultralytics-runtime-audit/design.md) | perception | pre-registered design; not run | Ultralytics report above |
 | [SAM3 6 GB feasibility MVE-0…3](../experiments/20261126-sam3-6gb-feasibility/design.md) | perception | pre-registered design; not run (MVE-0 blocked on HF gated weights) | SAM3 / SST report above |
 | [AGX Orin stack probe MVE-0…4](../experiments/20261126-agx-orin-stack-probe/design.md) | perception | MVE-0/1/2 run; MVE-3 partial; judge template sensitivity found | AGX Orin report above |
 

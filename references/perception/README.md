@@ -11,6 +11,7 @@ themes.
 |---|---|---|---|
 | [sam3.md](sam3.md) | SAM 3 — Segment Anything with Concepts (arXiv:2511.16719); upstream repo, SAM 3.1, gating and consumer-GPU evidence (2026-11-26 update) | 2026-11-25 / 2026-11-26 | — |
 | [jetson-agx-orin.md](jetson-agx-orin.md) | Jetson AGX Orin specs, JetPack, TensorRT Edge-LLM, SAM3/Qwen Orin benchmarks | 2026-11-26 | — |
+| [ultralytics-repository.md](ultralytics-repository.md) | Ultralytics `v8.4.219`: AGPL/Enterprise licensing, default telemetry/auto-install/unsafe load, CI/tests, YOLO26 paper, Pi 5/Orin numbers, issue threads | 2026-11-26 | — |
 | [dynamic-localization-coal-sorting.md](dynamic-localization-coal-sorting.md) | Dynamic visual localization for coal-gangue sorting (Sci. Rep. 2026, 16, 38110) | 2026-11-25 | — |
 | [gld-yolo-ore-segmentation.md](gld-yolo-ore-segmentation.md) | GLD-YOLO ore instance segmentation (Machines 2026, 14(7), 731) | 2026-11-25 | — |
 
