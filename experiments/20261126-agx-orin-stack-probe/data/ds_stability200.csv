@@ -1,0 +1,217 @@
+seq,local,prompt,score,area,expected,answer,p_yes,gate,judge_s,encode_s,prompt_s,e2e_s
+frontA,1,green soda bottle,0.977,7901,yes,yes,1.0,JUDGE,1.38,1.08,0.61,3.21
+frontA,2,orange soda bottle,0.973,7448,yes,yes,0.9981,JUDGE,2.77,0.1,1.0,4.01
+frontA,3,cola bottle,0.965,7990,yes,yes,1.0,JUDGE,0.28,0.08,0.99,1.48
+frontA,4,transparent empty bottle,0.953,9132,yes,yes,1.0,JUDGE,2.66,0.1,0.99,3.9
+frontA,5,chip bag,0.883,6381,yes,yes,0.9838,JUDGE,0.27,0.11,0.96,1.49
+frontA,6,green soda bottle,0.98,7602,yes,yes,1.0,JUDGE,0.34,0.11,0.88,1.47
+frontA,7,orange soda bottle,0.953,8061,yes,yes,1.0,JUDGE,0.28,0.11,0.96,1.5
+frontA,8,cola bottle,0.906,7971,yes,yes,0.9986,JUDGE,0.26,0.11,0.94,1.45
+frontA,9,transparent empty bottle,0.957,8551,yes,yes,1.0,JUDGE,2.71,0.11,1.02,3.97
+frontA,10,chip bag,0.859,6462,yes,yes,0.9716,JUDGE,2.66,0.11,1.04,3.95
+frontA,10,chip bag,0.859,6462,no,no,0.0,JUDGE,2.75,0.11,1.04,6.7
+frontA,11,green soda bottle,0.98,7624,yes,yes,1.0,JUDGE,2.72,0.08,0.95,3.89
+frontA,12,orange soda bottle,0.969,8215,yes,yes,1.0,JUDGE,2.75,0.11,0.95,3.94
+frontA,13,cola bottle,0.973,7393,yes,yes,0.9999,JUDGE,2.74,0.11,1.01,4.0
+frontA,14,transparent empty bottle,0.961,8843,yes,yes,1.0,JUDGE,2.75,0.11,1.03,4.02
+frontA,15,chip bag,0.875,6422,yes,yes,0.8205,JUDGE,2.71,0.08,1.07,4.01
+frontA,16,green soda bottle,0.953,8770,yes,yes,1.0,JUDGE,2.75,0.12,1.04,4.04
+frontA,17,orange soda bottle,0.965,7533,yes,yes,0.9999,JUDGE,2.73,0.11,1.04,4.02
+frontA,18,cola bottle,0.961,8242,yes,yes,0.9999,JUDGE,2.71,0.11,1.04,4.01
+frontA,19,transparent empty bottle,0.965,8848,yes,yes,1.0,JUDGE,2.7,0.11,1.05,4.0
+frontA,20,chip bag,0.855,6631,yes,yes,0.9337,JUDGE,2.72,0.11,1.05,4.03
+frontA,20,chip bag,0.855,6631,no,no,0.0,JUDGE,2.7,0.11,1.05,6.73
+frontA,21,green soda bottle,0.91,6481,yes,no,0.0044,JUDGE,0.31,0.11,0.97,1.52
+frontA,22,orange soda bottle,0.938,8467,yes,yes,1.0,JUDGE,2.74,0.11,0.96,3.95
+frontA,23,cola bottle,0.973,8392,yes,yes,1.0,JUDGE,2.74,0.11,0.94,3.93
+frontA,24,transparent empty bottle,0.961,8621,yes,yes,0.9999,JUDGE,2.77,0.11,0.96,3.98
+frontA,25,chip bag,0.867,6297,yes,yes,0.9224,JUDGE,2.75,0.11,0.97,3.97
+frontA,26,green soda bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.0,1.11
+frontA,27,orange soda bottle,0.938,8023,yes,yes,1.0,JUDGE,2.75,0.09,0.93,3.91
+frontA,28,cola bottle,0.973,8402,yes,yes,1.0,JUDGE,2.76,0.1,0.93,3.95
+frontA,29,transparent empty bottle,0.965,8400,yes,yes,1.0,JUDGE,2.74,0.11,0.88,3.87
+frontA,30,chip bag,0.875,6402,yes,yes,0.9486,JUDGE,2.75,0.11,0.91,3.91
+frontA,30,chip bag,0.875,6402,no,no,0.0,JUDGE,2.68,0.11,0.91,6.59
+frontA,31,green soda bottle,0.969,8241,yes,yes,1.0,JUDGE,2.68,0.1,1.01,3.93
+frontA,32,orange soda bottle,0.953,7367,yes,yes,0.9999,JUDGE,2.67,0.1,0.98,3.9
+frontA,33,cola bottle,0.953,8320,yes,yes,0.9999,JUDGE,2.67,0.11,0.98,3.9
+frontA,34,transparent empty bottle,0.953,9217,yes,yes,0.9999,JUDGE,2.65,0.08,0.99,3.86
+frontA,35,chip bag,0.859,6289,yes,yes,0.947,JUDGE,2.65,0.11,1.0,3.91
+frontA,36,green soda bottle,0.977,7883,yes,yes,1.0,JUDGE,2.7,0.11,0.97,3.92
+frontA,37,orange soda bottle,0.949,7508,yes,yes,0.9998,JUDGE,2.65,0.11,0.96,3.86
+frontA,38,cola bottle,0.969,7530,yes,yes,0.9998,JUDGE,2.68,0.11,0.95,3.88
+frontA,39,transparent empty bottle,0.961,9168,yes,yes,1.0,JUDGE,2.66,0.11,0.98,3.9
+frontA,40,chip bag,0.875,6270,yes,yes,0.9768,JUDGE,2.66,0.11,0.97,3.87
+frontA,40,chip bag,0.875,6270,no,no,0.0,JUDGE,2.71,0.11,0.97,6.59
+frontA,41,green soda bottle,0.977,7697,yes,yes,1.0,JUDGE,2.73,0.11,0.91,3.88
+frontA,42,orange soda bottle,0.969,7457,yes,yes,0.9994,JUDGE,2.72,0.12,0.91,3.89
+frontA,43,cola bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.96,1.08
+frontA,44,transparent empty bottle,0.953,8526,yes,yes,0.9999,JUDGE,2.6,0.11,1.04,3.9
+frontA,45,chip bag,0.879,6255,yes,yes,0.882,JUDGE,2.62,0.11,1.01,3.88
+frontA,46,green soda bottle,0.973,7880,yes,yes,1.0,JUDGE,2.65,0.08,1.05,3.93
+frontA,47,orange soda bottle,0.969,8004,yes,yes,1.0,JUDGE,2.69,0.08,1.04,3.96
+frontA,48,cola bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.08,0.99,1.07
+frontA,49,transparent empty bottle,0.949,9691,yes,yes,0.9998,JUDGE,2.7,0.11,1.01,3.94
+frontA,50,chip bag,0.832,6222,yes,yes,0.7518,JUDGE,2.68,0.11,1.01,3.95
+frontA,50,chip bag,0.832,6222,no,no,0.0,JUDGE,2.74,0.11,1.01,6.7
+frontB,1,green soda bottle,0.969,7451,yes,yes,1.0,JUDGE,2.72,0.1,0.96,3.92
+frontB,2,orange soda bottle,0.965,8293,yes,yes,0.9997,JUDGE,2.76,0.11,1.01,4.03
+frontB,3,cola bottle,0.973,7355,yes,yes,1.0,JUDGE,2.72,0.12,0.96,3.95
+frontB,4,transparent empty bottle,0.953,7906,yes,yes,1.0,JUDGE,2.73,0.11,0.96,3.96
+frontB,5,chip bag,0.852,6371,yes,yes,0.9885,JUDGE,2.74,0.11,0.91,3.91
+frontB,6,green soda bottle,0.957,7288,yes,yes,1.0,JUDGE,2.77,0.12,0.9,3.92
+frontB,7,orange soda bottle,0.961,6903,yes,yes,0.9996,JUDGE,2.75,0.12,0.94,3.94
+frontB,8,cola bottle,0.965,7113,yes,yes,0.9999,JUDGE,2.75,0.11,0.98,3.98
+frontB,9,transparent empty bottle,0.898,8574,yes,yes,0.9995,JUDGE,2.74,0.11,0.96,3.96
+frontB,10,chip bag,0.859,6538,yes,yes,0.7818,JUDGE,2.72,0.11,0.96,3.93
+frontB,10,chip bag,0.859,6538,no,no,0.0,JUDGE,2.61,0.11,0.96,6.55
+frontB,11,green soda bottle,0.965,6450,yes,yes,1.0,JUDGE,2.66,0.11,1.01,3.94
+frontB,12,orange soda bottle,0.969,6948,yes,yes,0.9992,JUDGE,2.6,0.11,1.04,3.9
+frontB,13,cola bottle,0.969,7340,yes,yes,1.0,JUDGE,2.57,0.11,1.02,3.86
+frontB,14,transparent empty bottle,0.949,9321,yes,yes,1.0,JUDGE,2.63,0.11,1.03,3.92
+frontB,15,chip bag,0.855,6336,yes,yes,0.8278,JUDGE,2.68,0.1,1.02,3.95
+frontB,16,green soda bottle,0.973,6968,yes,yes,1.0,JUDGE,2.73,0.09,0.97,3.93
+frontB,17,orange soda bottle,0.953,7494,yes,yes,0.9999,JUDGE,2.73,0.09,0.91,3.87
+frontB,18,cola bottle,0.93,7290,yes,yes,0.9998,JUDGE,2.74,0.11,0.89,3.9
+frontB,19,transparent empty bottle,0.965,9131,yes,yes,1.0,JUDGE,2.74,0.11,0.86,3.85
+frontB,20,chip bag,0.852,7998,yes,yes,0.9967,JUDGE,2.74,0.11,0.97,3.97
+frontB,20,chip bag,0.852,7998,no,no,0.0,JUDGE,2.68,0.11,0.97,6.66
+frontB,21,green soda bottle,0.949,6199,yes,yes,1.0,JUDGE,2.66,0.09,1.02,3.91
+frontB,22,orange soda bottle,0.953,6132,yes,yes,1.0,JUDGE,2.67,0.1,0.99,3.9
+frontB,23,cola bottle,0.965,7263,yes,yes,1.0,JUDGE,2.67,0.11,0.98,3.91
+frontB,24,transparent empty bottle,0.953,8276,yes,yes,1.0,JUDGE,2.66,0.08,0.97,3.85
+frontB,25,chip bag,0.887,6675,yes,yes,0.9913,JUDGE,2.63,0.11,1.0,3.88
+frontB,26,green soda bottle,0.969,7155,yes,yes,1.0,JUDGE,2.65,0.11,0.95,3.85
+frontB,27,orange soda bottle,0.953,7157,yes,yes,1.0,JUDGE,2.68,0.11,1.0,3.92
+frontB,28,cola bottle,0.969,8230,yes,yes,1.0,JUDGE,2.66,0.11,1.03,3.95
+frontB,29,transparent empty bottle,0.969,8621,yes,yes,1.0,JUDGE,2.67,0.09,1.04,3.95
+frontB,30,chip bag,0.785,3746,yes,SKIP,0.5,SKIP,0,0.11,1.02,1.15
+frontB,31,green soda bottle,0.973,7951,yes,yes,1.0,JUDGE,2.65,0.11,0.96,3.87
+frontB,32,orange soda bottle,0.945,7153,yes,yes,0.9999,JUDGE,2.66,0.11,0.98,3.9
+frontB,33,cola bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.96,1.07
+frontB,34,transparent empty bottle,0.965,8057,yes,yes,1.0,JUDGE,2.74,0.11,1.03,4.04
+frontB,35,chip bag,0.812,5924,yes,yes,0.9977,JUDGE,2.69,0.11,1.02,3.97
+frontB,36,green soda bottle,0.973,7554,yes,yes,0.9999,JUDGE,2.68,0.11,1.05,3.98
+frontB,37,orange soda bottle,0.973,7367,yes,yes,0.9998,JUDGE,2.62,0.08,1.07,3.92
+frontB,38,cola bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.12,1.06,1.18
+frontB,39,transparent empty bottle,0.957,9710,yes,yes,1.0,JUDGE,2.75,0.11,0.87,3.88
+frontB,40,chip bag,0.793,6533,yes,SKIP,0.5,SKIP,0,0.11,0.93,1.05
+frontB,41,green soda bottle,0.969,7242,yes,yes,1.0,JUDGE,2.66,0.11,1.04,3.95
+frontB,42,orange soda bottle,0.961,7458,yes,yes,0.9999,JUDGE,2.61,0.11,1.02,3.88
+frontB,43,cola bottle,0.965,8205,yes,yes,1.0,JUDGE,2.58,0.11,1.03,3.87
+frontB,44,transparent empty bottle,0.941,9930,yes,yes,0.9995,JUDGE,2.65,0.08,1.07,3.94
+frontB,45,chip bag,0.887,6608,yes,yes,0.9895,JUDGE,2.72,0.11,1.0,3.97
+frontB,46,green soda bottle,0.973,8057,yes,yes,1.0,JUDGE,2.74,0.08,0.98,3.94
+frontB,47,orange soda bottle,0.914,7166,yes,yes,1.0,JUDGE,2.71,0.08,0.93,3.87
+frontB,48,cola bottle,0.961,6953,yes,yes,1.0,JUDGE,2.7,0.11,0.86,3.8
+frontB,49,transparent empty bottle,0.965,8233,yes,yes,1.0,JUDGE,2.73,0.12,0.93,3.91
+frontB,50,chip bag,0.852,6333,yes,yes,0.9806,JUDGE,2.74,0.11,0.95,3.94
+frontB,50,chip bag,0.852,6333,no,no,0.0,JUDGE,2.66,0.11,0.95,6.6
+wristA,1,bottle,0.98,14801,yes,yes,1.0,JUDGE,2.65,0.12,1.02,3.96
+wristA,2,bottle,0.98,38986,yes,yes,0.9708,JUDGE,2.64,0.12,0.96,3.85
+wristA,3,bottle,0.977,7772,yes,yes,1.0,JUDGE,2.66,0.11,0.97,3.91
+wristA,4,bottle,0.984,54365,yes,yes,1.0,JUDGE,2.66,0.11,0.95,3.82
+wristA,5,bottle,0.973,8275,yes,yes,0.9998,JUDGE,2.66,0.11,0.98,3.91
+wristA,6,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.0,1.12
+wristA,7,bottle,0.98,90318,yes,yes,1.0,JUDGE,2.66,0.09,1.05,3.93
+wristA,8,bottle,0.965,8273,yes,yes,1.0,JUDGE,2.65,0.12,1.03,3.94
+wristA,9,bottle,0.98,39765,yes,yes,1.0,JUDGE,2.67,0.08,1.02,3.92
+wristA,10,bottle,0.973,9450,yes,yes,1.0,JUDGE,2.68,0.1,0.97,3.9
+wristA,10,bottle,0.973,9450,no,no,0.0,JUDGE,2.72,0.1,0.97,6.62
+wristA,11,bottle,0.984,26127,yes,yes,0.9996,JUDGE,2.58,0.09,1.06,3.85
+wristA,12,bottle,0.977,35799,yes,yes,1.0,JUDGE,2.62,0.11,1.06,3.93
+wristA,13,bottle,0.969,26046,yes,yes,1.0,JUDGE,2.63,0.11,1.07,3.96
+wristA,14,bottle,0.988,96693,yes,yes,1.0,JUDGE,2.67,0.11,1.03,3.91
+wristA,15,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.08,0.95,1.02
+wristA,16,bottle,0.988,87222,yes,yes,1.0,JUDGE,2.65,0.11,1.04,3.93
+wristA,17,bottle,0.98,91265,yes,yes,1.0,JUDGE,2.68,0.11,1.05,4.0
+wristA,18,bottle,0.984,67324,yes,yes,1.0,JUDGE,2.51,0.11,1.01,3.72
+wristA,19,bottle,0.973,7957,yes,yes,0.9789,JUDGE,2.62,0.11,1.03,3.92
+wristA,20,bottle,0.988,45682,yes,yes,1.0,JUDGE,2.69,0.08,1.03,3.92
+wristA,20,bottle,0.988,45682,no,no,0.0,JUDGE,2.69,0.08,1.03,6.62
+wristA,21,bottle,0.984,91781,yes,yes,1.0,JUDGE,2.68,0.11,1.02,3.98
+wristA,22,bottle,0.988,38673,yes,yes,1.0,JUDGE,2.7,0.11,1.03,3.96
+wristA,23,bottle,0.984,92090,yes,yes,1.0,JUDGE,2.66,0.1,1.04,3.92
+wristA,24,bottle,0.969,17389,yes,yes,1.0,JUDGE,2.68,0.11,1.08,4.03
+wristA,25,bottle,0.977,93590,yes,yes,1.0,JUDGE,2.63,0.11,1.03,3.88
+wristA,26,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.09,1.0,1.09
+wristA,27,bottle,0.977,55086,yes,yes,1.0,JUDGE,2.75,0.11,0.91,3.88
+wristA,28,bottle,0.98,93205,yes,yes,1.0,JUDGE,2.73,0.11,0.98,3.98
+wristA,29,bottle,0.988,41809,yes,yes,1.0,JUDGE,2.69,0.11,1.01,3.93
+wristA,30,bottle,0.98,28235,yes,yes,0.995,JUDGE,2.68,0.11,1.03,3.95
+wristA,30,bottle,0.98,28235,no,no,0.0,JUDGE,2.65,0.11,1.03,6.6
+wristA,31,bottle,0.984,30936,yes,yes,1.0,JUDGE,2.64,0.11,1.02,3.89
+wristA,32,bottle,0.98,96378,yes,yes,1.0,JUDGE,2.61,0.11,1.01,3.85
+wristA,33,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.06,1.17
+wristA,34,bottle,0.98,98090,yes,yes,1.0,JUDGE,2.63,0.11,0.95,3.82
+wristA,35,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.03,1.14
+wristA,36,bottle,0.98,100368,yes,yes,1.0,JUDGE,2.69,0.12,1.02,3.94
+wristA,37,bottle,0.957,19503,yes,yes,0.9995,JUDGE,2.71,0.12,1.03,4.02
+wristA,38,bottle,0.977,94943,yes,yes,1.0,JUDGE,2.67,0.11,1.06,3.95
+wristA,39,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.08,1.06,1.14
+wristA,40,bottle,0.984,95829,yes,yes,1.0,JUDGE,2.71,0.11,1.01,3.95
+wristA,40,bottle,0.984,95829,no,no,0.0,JUDGE,2.66,0.11,1.01,6.62
+wristA,41,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.09,1.04,1.13
+wristA,42,bottle,0.977,80026,yes,yes,1.0,JUDGE,2.7,0.11,0.9,3.84
+wristA,43,bottle,0.973,91582,yes,yes,1.0,JUDGE,2.75,0.11,0.96,3.96
+wristA,44,bottle,0.98,63870,yes,yes,1.0,JUDGE,2.68,0.11,0.99,3.9
+wristA,45,bottle,0.977,96544,yes,yes,1.0,JUDGE,2.73,0.11,1.04,4.03
+wristA,46,bottle,0.98,14871,yes,yes,1.0,JUDGE,2.71,0.11,1.03,4.03
+wristA,47,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.03,1.14
+wristA,48,bottle,0.98,15741,yes,yes,1.0,JUDGE,2.72,0.08,0.9,3.87
+wristA,49,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.91,1.02
+wristA,50,bottle,0.984,15819,yes,yes,1.0,JUDGE,2.71,0.11,1.04,4.02
+wristA,50,bottle,0.984,15819,no,no,0.0,JUDGE,2.8,0.11,1.04,6.82
+wristB,1,bottle,0.902,2874,yes,yes,0.9997,JUDGE,2.75,0.11,0.91,3.95
+wristB,2,bottle,0.98,9748,yes,yes,1.0,JUDGE,2.72,0.11,0.94,3.92
+wristB,3,bottle,0.965,7609,yes,yes,0.9994,JUDGE,2.73,0.11,0.98,3.98
+wristB,4,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.96,1.08
+wristB,5,bottle,0.984,9661,yes,yes,1.0,JUDGE,2.6,0.11,1.02,3.89
+wristB,6,bottle,0.98,9554,yes,yes,1.0,JUDGE,2.59,0.11,1.04,3.91
+wristB,7,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.01,1.12
+wristB,8,bottle,0.984,14416,yes,yes,1.0,JUDGE,2.64,0.09,1.0,3.88
+wristB,9,bottle,0.984,13973,yes,yes,1.0,JUDGE,2.63,0.11,0.93,3.84
+wristB,10,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.99,1.1
+wristB,11,bottle,0.984,14620,yes,yes,1.0,JUDGE,2.66,0.08,1.06,3.97
+wristB,12,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.12,1.04,1.16
+wristB,13,bottle,0.758,1406,yes,SKIP,0.5,SKIP,0,0.12,0.96,1.08
+wristB,14,bottle,0.984,12874,yes,yes,1.0,JUDGE,2.64,0.11,1.04,3.95
+wristB,15,bottle,0.984,12887,yes,yes,1.0,JUDGE,2.6,0.08,1.06,3.91
+wristB,16,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.12,1.03,1.15
+wristB,17,bottle,0.98,9678,yes,yes,1.0,JUDGE,2.65,0.11,0.95,3.86
+wristB,18,bottle,0.984,11161,yes,yes,1.0,JUDGE,2.66,0.11,0.99,3.93
+wristB,19,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.99,1.1
+wristB,20,bottle,0.98,11164,yes,yes,1.0,JUDGE,2.66,0.08,1.06,3.97
+wristB,20,bottle,0.98,11164,no,no,0.0,JUDGE,2.7,0.08,1.06,6.67
+wristB,21,bottle,0.98,15256,yes,yes,1.0,JUDGE,2.65,0.11,1.05,3.96
+wristB,22,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.01,1.13
+wristB,23,bottle,0.977,10048,yes,yes,1.0,JUDGE,2.63,0.11,0.95,3.86
+wristB,24,bottle,0.98,9911,yes,yes,1.0,JUDGE,2.63,0.09,1.04,3.94
+wristB,25,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.97,1.09
+wristB,26,bottle,0.98,12248,yes,yes,1.0,JUDGE,2.69,0.11,1.02,3.99
+wristB,27,bottle,0.98,11824,yes,yes,1.0,JUDGE,2.67,0.11,1.02,3.96
+wristB,28,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.12,1.03,1.15
+wristB,29,bottle,0.98,13861,yes,yes,1.0,JUDGE,2.72,0.11,0.94,3.92
+wristB,30,bottle,0.98,13115,yes,yes,1.0,JUDGE,2.71,0.11,0.97,3.95
+wristB,30,bottle,0.98,13115,no,no,0.0,JUDGE,2.7,0.11,0.97,6.66
+wristB,31,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,1.04,1.15
+wristB,32,bottle,0.98,11144,yes,yes,1.0,JUDGE,2.72,0.12,0.91,3.91
+wristB,33,bottle,0.957,9288,yes,yes,1.0,JUDGE,2.74,0.11,0.98,4.01
+wristB,34,bottle,0.809,5002,yes,yes,1.0,JUDGE,2.71,0.11,0.99,3.99
+wristB,35,bottle,0.977,10800,yes,yes,0.9999,JUDGE,2.71,0.11,0.94,3.91
+wristB,36,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.93,1.05
+wristB,37,bottle,0.98,9882,yes,yes,1.0,JUDGE,2.59,0.11,1.05,3.91
+wristB,38,bottle,0.984,13044,yes,yes,1.0,JUDGE,2.64,0.11,1.02,3.93
+wristB,39,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.1,1.04,1.14
+wristB,40,bottle,0.98,10636,yes,yes,1.0,JUDGE,2.68,0.09,1.01,3.95
+wristB,40,bottle,0.98,10636,no,no,0.0,JUDGE,2.73,0.09,1.01,6.68
+wristB,41,bottle,0.98,11546,yes,yes,1.0,JUDGE,2.75,0.11,0.86,3.89
+wristB,42,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.87,0.98
+wristB,43,bottle,0.984,10451,yes,yes,1.0,JUDGE,2.67,0.11,1.04,3.98
+wristB,44,bottle,0.98,10465,yes,yes,1.0,JUDGE,2.66,0.11,1.05,3.97
+wristB,45,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.08,1.05,1.13
+wristB,46,bottle,0.98,9719,yes,yes,1.0,JUDGE,2.66,0.11,0.97,3.9
+wristB,47,bottle,0.98,9289,yes,yes,1.0,JUDGE,2.64,0.11,1.0,3.92
+wristB,48,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.99,1.1
+wristB,49,bottle,0.984,15324,yes,yes,1.0,JUDGE,2.74,0.11,1.05,4.08
+wristB,50,bottle,0,0,yes,NO_MASK,0.5,SKIP,0,0.11,0.98,1.09
