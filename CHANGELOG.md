@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Ran a 500-unique-frame advisory-service test from the laptop over Wi-Fi
+  (250 front + 250 wrist; 1003 ep≥120, 1014, 1015): 0 errors, 412 judge /
+  7 skip / 81 no-mask, p50 2.15 s / p95 3.74 s / max 4.03 s — essentially
+  identical to the loopback run (2.11/3.77/4.02), so the Wi-Fi hop adds
+  ≤0.04 s; service RSS 1,387→2,086 MB then plateau, Qwen plateau; G4
+  p95 <1.5 s still not met. Data
+  `experiments/20261126-agx-orin-stack-probe/data/ds_uniq500_*`.
 - Draft investigation report
   `reports/20261126-ultralytics-repository-review.md` (Ultralytics at
   `v8.4.219` / `3a31e32`: 233 files / 83.6k LOC, 230 tests, AGPL-3.0 +

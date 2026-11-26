@@ -278,6 +278,18 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - **工程含义**：p95 3.77 s 超过 1 Hz 周期 → 接入必须异步、只取最新帧并允许丢帧，不能同步阻塞相机回调（见报告 §9.5）。
 - 数据：[data/ds_advisor_svc500.json](data/ds_advisor_svc500.json)、[data/ds_advisor_svc500.csv](data/ds_advisor_svc500.csv)。
 
+### 500 唯一帧 + 跨机 LAN（2026-11-26 20:18–20:39，S）
+
+- 500 个**互不重复**的帧：250 front + 250 wrist；来自 1003 的 ep≥120（每相机 158）+ 1014（64）+ 1015（28），每 episode 取中点一帧；提示仍为 front 5 词轮换、wrist `bottle`。
+- 客户端在**笔记本**上，经 Wi-Fi `192.168.5.22` 直连 Orin `192.168.5.31:8090`（服务临时绑 `0.0.0.0`，测试后已停）；这是真正的跨机路径，不再只是回环。
+- **0 error**；**412 JUDGE / 7 SKIP / 81 NO_MASK**；front 164 judge + 79 no-mask（31.6%，提示与场景不匹配），wrist 248 judge + 2 no-mask。
+- p50 **2.15 s**、p95 **3.74 s**、max **4.03 s**；front p50 2.09 / p95 3.81，wrist p50 2.16 / p95 3.62。
+- 与回环 500 请求（重复帧）几乎相同：p50 2.11→2.15、p95 3.77→3.74、max 4.02→4.03 → **与回环差异 ≤0.04 s（在噪声范围内），模型时间是主导**；G4 的 p95 <1.5 s 仍未达。
+- RSS：服务冷启动 1,387 → 2,086 MB（max 2,086），**最后 5 min 平台 2,085–2,086**；Qwen 9,296 → 9,277 MB（max 9,315），平台 9,276–9,277；无崩溃。服务 +699 MB 是首次推理缓存，25 s 内完成，不是缓慢泄漏。
+- free 33,849→28,308 MB（min 28,265），下降来自页缓存/其它进程；两进程 RSS 已平台化。
+- **NO_MASK 81 是提示轮换与场景不匹配**（例如无 orange bottle 的货架），不是服务失败；本测试不计算准确率。
+- 数据：[ds_uniq500_requests.csv](data/ds_uniq500_requests.csv)、[ds_uniq500_monitor.csv](data/ds_uniq500_monitor.csv)、[ds_uniq500_summary.json](data/ds_uniq500_summary.json)、[ds_uniq500_analysis.json](data/ds_uniq500_analysis.json)、[ds_uniq500_targets.tsv](data/ds_uniq500_targets.tsv)。
+
 ## 结论与下一步
 
 1. **Qwen3-VL-8B 已部署成功**（llama.cpp CUDA 12.6/sm_87，Q4_K_M + Q8_0 mmproj），1 图 1.95–2.03 s、2 图 2.64 s、2 图 yes/no 1.18 s；`logprobs` 可用（S）。
@@ -293,4 +305,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 11. **顾问式 HTTP 服务**：60 请求 **58 judge / 2 no-mask**，p50 2.04 s / p95 2.08 s，health model/qwen true，无崩溃；RSS 1.39→2.09 GB/220 s（S）。
 12. **30 min soak**：180 请求 / 0 error / 162 judge / 18 no-mask；服务 RSS +3 MB、Qwen +7 MB（平台化），无崩溃（S）。
 13. **500 请求压测**：0 error / 427 judge / 8 skip / 65 no-mask；p50 2.11 s、p95 3.77 s、max 4.02 s；服务 RSS +3 MB、Qwen +12 MB；health true、无崩溃；**G4 的 p95 <1.5 s 未达**（门限保持失败）；200 帧池复用 2.5 轮，不是 500 个唯一帧（S）。
-14. **下一步**：把服务接到感知只发 advisory（异步、取最新帧、可丢帧）；或做 500 个唯一帧的离线稳定性；500 请求压测不等于 24 h 稳定性。
+14. **500 唯一帧 + 跨机 LAN**：0 error / 412 judge / 7 skip / 81 no-mask；p50 2.15 s、p95 3.74 s、max 4.03 s；与回环几乎相同（与回环差异 ≤0.04 s）；服务 1,387→2,086 MB 后平台、Qwen 平台；G4 p95 <1.5 s 仍未达（S）。
+15. **下一步**：接感知异步 latest-frame advisory 节点（单独分支/PR；当前 perception 有未提交 ore-scene 工作）；或 24 h soak；500 唯一帧测试不等于 24 h 稳定性。

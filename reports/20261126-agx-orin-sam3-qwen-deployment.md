@@ -45,6 +45,7 @@
 18. **顾问式 HTTP 服务（S）**：127.0.0.1:8090；60 请求 58 judge / 2 no-mask；p50 **2.04 s** / p95 2.08 s；health model/qwen true；RSS 1.39→2.09 GB/220 s；无崩溃；只发 advisory，无 DDS/运动。
 19. **30 min soak（S）**：180 请求 / 0 error / 162 judge / 18 no-mask；p50 1.04 s、p95 2.32 s；服务 RSS 2,106→2,109 MB、Qwen 9,279→9,286 MB（平台化）；无崩溃；free 下降来自其它进程/缓存。
 20. **500 请求压测（S）**：0 error / 427 judge / 8 skip / 65 no-mask；p50 **2.11 s**、p95 **3.77 s**、max 4.02 s；服务 RSS +3 MB、Qwen +12 MB；health model/qwen true；无崩溃；200 帧池复用 2.5 轮，不是 500 个唯一帧。
+21. **500 唯一帧 + 跨机 LAN（S）**：0 error / 412 judge / 7 skip / 81 no-mask；p50 **2.15 s**、p95 **3.74 s**、max 4.03 s；服务冷启动 1,387→2,086 MB 后平台、Qwen 平台；与回环 500 请求差异 ≤0.04 s（Wi-Fi 不是瓶颈）；G4 p95<1.5 s 仍未达。
 
 ---
 
@@ -327,6 +328,8 @@
 
 **F21. 500 请求压测：服务层无泄漏，延迟上界约 4 s。** 500 个顺序请求（200 帧池 ×2.5 轮，间隔 0.3 s，总 1,273.9 s）：**0 error**，427 judge / 8 skip / 65 no-mask；p50 **2.11 s**、p95 **3.77 s**、max **4.02 s**；服务 RSS 2,109→2,112 MB（+3 MB），Qwen 9,285→9,297 MB（+12 MB）；`/health` model/qwen true；无崩溃。**p95 3.77 s 超过 1 Hz 周期**：接入必须异步、只取最新帧并允许丢帧，不能同步阻塞相机回调。复用帧池，不是 500 个唯一帧 [S]。
 
+**F22. 500 唯一帧 + 跨机 LAN：Wi-Fi 不是瓶颈，G4 仍失败。** 500 个互不重复帧（250 front + 250 wrist；1003 ep≥120 各 158、1014 各 64、1015 各 28），客户端在笔记本经 Wi-Fi 直连 Orin：**0 error**，412 judge / 7 skip / 81 no-mask；p50 **2.15 s**、p95 **3.74 s**、max **4.03 s**（front 2.09/3.81，wrist 2.16/3.62）。与回环 500 请求（2.11/3.77/4.02）差异 **≤0.04 s**（在噪声范围内），说明 Wi-Fi + HTTP 链路开销远小于模型时间。服务冷启动 1,387→2,086 MB（+699 MB 在 25 s 内完成），最后 5 min 平台 2,085–2,086 MB；Qwen 平台 9,276–9,277 MB（max 9,315）；无崩溃。81 NO_MASK 来自提示轮换与场景不匹配，不是服务失败。**G4 的 p95 <1.5 s 仍未达到**；本测试不计算准确率 [S]。
+
 ---
 
 ## 09. Engineering Applicability（工程适用性）
@@ -376,10 +379,10 @@
 ### 9.5 顾问式接入契约（提案，未在产品仓库实施）
 
 - **路径**：笔记本 GPU 节点（与现有 YOLO 同侧）→ Orin `http://192.168.5.31:8090/infer`。Orin 只返回 mask/bbox/score/judge，不加入 41/42/43 域、不打开设备、不调用 `ExecuteMotion`。
-- **服务位置**：Orin `/opt/jcheng/sam3_advisor/server.py`（root 644，手动启动，无 systemd/自启；`client.py` 同目录）；**至今只在 Orin 回环上验证**，跨机网络路径未测。
+- **服务位置**：Orin `/opt/jcheng/sam3_advisor/server.py`（root 644，手动启动，无 systemd/自启；`client.py` 同目录）；**Orin 回环和笔记本→Orin Wi-Fi 直连都已验证**（2026-11-26，500 唯一帧：p50 2.15 s、p95 3.74 s，与回环差异 ≤0.04 s）。
 - **请求**：实验用 `{image_path}`；生产用 `{image_b64, prompt}`。**响应**：`gate`（JUDGE / SKIP / NO_MASK）、`score`、`bbox`、`mask_rle`、`judge`（answer/p_yes）、`timings`。
-- **接入点**：新增 L3 节点订阅相机 image，**异步** 按 1–2 Hz 取最新帧调用（单 worker，忙时丢帧）；结果转成 `Detection2DArray` / `FusedTarget` 的 advisory 字段。超时、非 200、`gate=SKIP` → 丢弃该帧并降级到 YOLO，**绝不阻塞主链路**。500 请求压测 p95 **3.77 s**、max 4.02 s，同步 1–2 Hz 不可行（S）。
-- **网络**：Orin `192.168.5.x` 与机器人 `10.42.0.x` 不同子网；需笔记本中转或双网口，不能假设直连。
+- **接入点**：新增 L3 节点订阅相机 image，**异步** 按 1–2 Hz 取最新帧调用（单 worker，忙时丢帧）；结果转成 `Detection2DArray` / `FusedTarget` 的 advisory 字段。超时、非 200、`gate=SKIP` → 丢弃该帧并降级到 YOLO，**绝不阻塞主链路**。500 唯一帧 p95 **3.74 s**、max 4.03 s，同步 1–2 Hz 不可行（S）。
+- **网络**：Orin `192.168.5.x` 与机器人 `10.42.0.x` 不同子网；笔记本中转已实测可行（Wi-Fi 直连），机器人侧仍需单独路由/双网口。
 - **状态**：`jcheng-perception` 当前在 `feat/ore-scene-s0s1` 有未提交的 ore-scene 工作，本提案**不改产品仓库**；落地需要单独 PR、配置项和一次单独授权的硬件会话。
 
 ## 10. Recommended Approach（推荐方案）
@@ -413,7 +416,7 @@
 
 ## 11. Experimental Design（实验设计）
 
-完整设计见 [experiments/20261126-agx-orin-stack-probe/design.md](../experiments/20261126-agx-orin-stack-probe/design.md)。**MVE-0/1/2 已运行（2026-11-26）；MVE-3 部分完成；MVE-4 部分完成（服务侧，p95 未达 <1.5 s 门限，跨机网络未测）**。
+完整设计见 [experiments/20261126-agx-orin-stack-probe/design.md](../experiments/20261126-agx-orin-stack-probe/design.md)。**MVE-0/1/2 已运行（2026-11-26）；MVE-3 部分完成；MVE-4 部分完成（回环 + 跨机 Wi-Fi 已测，p95 未达 <1.5 s 门限，无 24 h）**。
 
 | MVE | 假设 | 环境 | 指标 | 验收 | 失败判据 | 状态 |
 |---|---|---|---|---|---|---|
@@ -421,7 +424,7 @@
 | **MVE-1** | SAM3 3.0 在 Orin 上 ≤2 s/帧 | Orin；PyTorch 1008 + autocast | 延迟、RAM、掩码 | G1 | OOM/掩码空 | **完成 2026-11-26（S）**：load 16.07 s、encode 0.69 s、prompt 0.202 s、VRAM 5.34 GB；20 次稳定；`orange can` 0.902 |
 | **MVE-2** | 8B 评审 ≤1.5 s；logprobs 可用 | Orin；llama.cpp（Qwen3-VL-8B GGUF） | 延迟、RAM、一致率 | G2 延迟/接口 | 一致率 <75% | **已运行 2026-11-26（S）**：1 图 1.95 s、2 图 2.64 s、yes/no 1.18 s；logprobs 可用；RAM 12.1 GB；质量校准未做 |
 | **MVE-3** | 试点端到端 ≥1 fps | Orin；固定短语 | 吞吐、可用率 | G3 | <0.5 fps | **部分完成（S/B）**：易分 40/40；无歧义硬负例 60/60；歧义硬负例 47/60；50 帧 56/57；100 帧 front+wrist 97.5%；wrist 100 帧多 episode 88/89（`bottle`）；**judge 模板敏感（12 掩码 × 3 模板：T1 9/11、T2 8/11、T3 7/11），建议 T1+score≥0.8**；吞吐/长期稳定性未测 |
-| **MVE-4** | 顾问服务 30 min 稳定 | Orin + 笔记本 | p95、内存增长 | G4 | 泄漏/崩溃 | **部分完成（S）**：30 min / 180 请求 / 0 error；162 judge / 18 no-mask；p50 1.04 s、p95 2.32 s；服务 RSS +3 MB、Qwen +7 MB；**500 请求 / 0 error / p95 3.77 s / max 4.02 s / RSS +3/+12 MB**；无崩溃；**G4 的 p95 <1.5 s 未达到**；跨机网络未测 |
+| **MVE-4** | 顾问服务 30 min 稳定 | Orin + 笔记本 | p95、内存增长 | G4 | 泄漏/崩溃 | **部分完成（S）**：30 min / 180 请求 / 0 error；162 judge / 18 no-mask；p50 1.04 s、p95 2.32 s；服务 RSS +3 MB、Qwen +7 MB；**500 请求 / 0 error / p95 3.77 s / max 4.02 s / RSS +3/+12 MB**；**500 唯一帧跨机 Wi-Fi / 0 error / p50 2.15 s / p95 3.74 s / RSS 平台**；无崩溃；**G4 的 p95 <1.5 s 未达到**；无 24 h |
 
 **探测命令（复现用，只读）**：
 
@@ -462,6 +465,7 @@ df -h / | tail -1
 15. **200 帧稳定性**：183 judged/182 correct = 99.45%；16 反例全对；1 个高分边缘局部假阴性；无重启，但不代表通用准确率（S/B）。
 16. **顾问服务 30 min soak**：180 请求/0 error，服务 RSS +3 MB、Qwen +7 MB；无泄漏迹象；仍非 24 h 稳定性（S/D）。
 17. **500 请求压测**：0 error、p95 3.77 s、max 4.02 s、服务/Qwen RSS +3/+12 MB；复用 200 帧池 2.5 轮，不是 500 个唯一帧；只测回环，跨机网络与 24 h 稳定性未测（S/D）。
+18. **500 唯一帧 + 跨机 LAN**：0 error、p50 2.15 s、p95 3.74 s、max 4.03 s；服务冷启动 +699 MB 后平台、Qwen 平台；与回环差异 ≤0.04 s；81 NO_MASK 来自提示/场景不匹配；本测试不计算准确率，且仍非 24 h 稳定性（S/D）。
 
 ---
 
