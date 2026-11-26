@@ -13,14 +13,14 @@
 | Content type | Markdown protocol, templates and reports; no runtime code, no vendored code |
 | Tracked third-party code | None |
 | Dependencies | None |
-| Access | Private repository; no external distribution yet |
+| Access | Public repository; no `LICENSE` yet, all rights reserved |
 
 ## 2. Why the review still matters
 
 This repository **quotes and summarizes third-party work** — papers, vendor
 documentation, upstream repositories. Copyright in quoted figures, tables and
-long excerpts is separate from the repository license, and a private repository
-does not remove that obligation.
+long excerpts is separate from the repository license, and publishing the
+repository does not remove that obligation.
 
 Before the review closes, decide:
 

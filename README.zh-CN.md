@@ -7,7 +7,7 @@
 不会被机器人导入、部署或执行。
 
 > 状态：**Experimental** — v0.1.0，2026-11-25。仓库当前只包含调研规范、报告模板和
-> 产出目录约定；**尚无已完成的调研**，因此不构成任何技术结论。仓库为私有，且不在
+> 产出目录约定；**尚无已完成的调研**，因此不构成任何技术结论。仓库为公开，且不在
 > 运行时依赖图中。
 > 本文为英文主文档的中文对照；如有歧义，以英文版为准。
 
@@ -144,7 +144,7 @@ mkdir -p experiments/$(date +%Y%m%d)-<slug>/{data,logs}
 | [`jcheng-manipulation`](https://github.com/JerichoCheng/jcheng-manipulation) | 冻结的 v1.0.0 基线与设计记录 |
 | [`JCHENG-Robotics/.github`](https://github.com/JCHENG-Robotics/.github) | 治理、文档标准、仓库分类 |
 
-本仓库为私有期间，**不**列入公开的仓库分类与组织主页。
+本仓库为公开仓库，已列入仓库分类（RESEARCH），但仍不在运行时依赖图中。
 
 ## 9. 许可证
 
