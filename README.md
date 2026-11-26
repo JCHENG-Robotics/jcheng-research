@@ -9,7 +9,7 @@ runtime code**: nothing here is imported by, shipped to, or executed on the robo
 
 > Status: **Experimental** — v0.1.0 as of 2026-11-25. The repository contains the
 > investigation protocol, the report template and the output-directory contract;
-> **no investigation is complete**, so it makes no technical claim. It is private
+> **no investigation is complete**, so it makes no technical claim. It is public
 > and sits outside the runtime dependency graph.
 > English canonical; the Chinese README is a translation.
 
@@ -156,8 +156,8 @@ here. Details and limitations: [ACCEPTANCE.md](ACCEPTANCE.md).
 | [`jcheng-manipulation`](https://github.com/JerichoCheng/jcheng-manipulation) | Frozen v1.0.0 baseline and design record |
 | [`JCHENG-Robotics/.github`](https://github.com/JCHENG-Robotics/.github) | Governance, documentation standard, taxonomy |
 
-While this repository is private it is deliberately **not** listed in the public
-repository taxonomy or organization profile.
+This repository is public and listed in the repository taxonomy as a RESEARCH
+workspace; it remains outside the runtime dependency graph.
 
 ## 9. License
 

@@ -42,8 +42,8 @@ hardware behaviour.
 
 ## 5. Limitations
 
-- **Private repository.** External reproduction or third-party review is not
-  possible until it is published.
+- **Public repository.** External reproduction and third-party review are
+  possible; the repository still makes no hardware or product claim.
 - **Single-account organization.** Branch protection requires the `research-gate`
   status check and blocks force-push and deletion, but cannot require an
   approving review; self-approval is impossible on GitHub. Any exception must be
