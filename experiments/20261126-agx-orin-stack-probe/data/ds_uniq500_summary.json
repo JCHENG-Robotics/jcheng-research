@@ -1,0 +1,26 @@
+{
+  "requests": 500,
+  "errors": 0,
+  "duration_s": 1282.7,
+  "judge": 412,
+  "skip": 7,
+  "no_mask": 81,
+  "p50_s": 2.15,
+  "p95_s": 3.74,
+  "max_s": 4.03,
+  "src": "laptop->Orin LAN (wlp4s0 192.168.5.22 -> 192.168.5.31:8090)",
+  "front": {
+    "n": 250,
+    "judge": 164,
+    "skip": 7,
+    "no_mask": 79,
+    "p50_s": 2.09
+  },
+  "wrist": {
+    "n": 250,
+    "judge": 248,
+    "skip": 0,
+    "no_mask": 2,
+    "p50_s": 2.17
+  }
+}
