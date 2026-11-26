@@ -1,0 +1,20 @@
+{
+  "requests": 500,
+  "duration_s": 1273.9,
+  "errors": 0,
+  "judge": 427,
+  "skip": 8,
+  "no_mask": 65,
+  "p50_s": 2.11,
+  "p95_s": 3.77,
+  "max_s": 4.02,
+  "svc_rss_start": 2109,
+  "svc_rss_end": 2112,
+  "svc_rss_max": 2112,
+  "qwen_rss_start": 9285,
+  "qwen_rss_end": 9297,
+  "qwen_rss_max": 9297,
+  "free_start": 33239,
+  "free_end": 29757,
+  "free_min": 28679
+}

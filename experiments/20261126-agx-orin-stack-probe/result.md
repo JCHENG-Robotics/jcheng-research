@@ -256,7 +256,7 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - 本地服务 `127.0.0.1:8090`：`/health`、`/infer`；SAM3 只加载一次；T1 + score≥0.8；Qwen 走 `8080`；只返回 mask/bbox/judge。
 - 60 请求（20 front 轮换 + 20 wrist `bottle` + 20 soak，5 s 间隔）：**58 JUDGE / 2 NO_MASK / 0 SKIP**；p50 **2.04 s**、p95 2.08 s；`/health` model/qwen true；无崩溃。
 - RSS 1,386 → 2,088 MB（+702 MB / 220 s）；可能是 PyTorch/Qwen 缓存，未证明泄漏，需要更长 soak。
-- 服务代码在 Orin `/opt/jcheng/sam3_advisor/server.py`（不入 git）；结果 JSON：[data/ds_advisor_service.json](data/ds_advisor_service.json)。
+- 服务代码：Orin `/opt/jcheng/sam3_advisor/server.py`（root 644，手动启动、无 systemd；不入 git；`client.py` 同目录）；结果 JSON：[data/ds_advisor_service.json](data/ds_advisor_service.json)。
 
 ### 30 min 顾问服务 soak（2026-11-26 17:31，S）
 
@@ -266,6 +266,17 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - `/health` model/qwen true；无崩溃。free 33.4→27.9 GB（min 22.3），但服务/Qwen RSS 未涨，下降来自其它进程/缓存。
 - 结论：30 min/180 请求下无泄漏迹象；18 个 NO_MASK 是 wrist 目标不在视野。
 - 数据：[data/ds_advisor_soak30.json](data/ds_advisor_soak30.json)、[data/ds_advisor_soak30.csv](data/ds_advisor_soak30.csv)。
+
+### 500 请求服务压测（2026-11-26 17:40–18:03，S）
+
+- 500 个顺序请求：200 帧池（frontA/frontB/wristA/wristB 各 50）循环 2.5 轮，front 5 个提示轮换，间隔 0.3 s；总 **1,273.9 s**。
+- **0 error**；**427 JUDGE / 8 SKIP / 65 NO_MASK**（NO_MASK 仍集中在 wrist 目标不在视野的帧）。
+- p50 **2.11 s**、p95 **3.77 s**、max **4.02 s**；p50 高于 30 min soak（1.04 s），因为本次序列包含完整 judge、重复/缓存命中更少。
+- 内存平台化：服务 RSS 2,109→2,112 MB（+3 MB，max 2,112）；Qwen 9,285→9,297 MB（+12 MB，max 9,297）；`/health` model/qwen true；无崩溃。
+- free 33,239→29,757 MB（min 28,679），两进程 RSS 未涨，下降来自页缓存/其它进程。
+- **不是 500 个唯一帧**（200 帧池 ×2.5 轮），不能当作独立准确率；它验证的是服务层重复请求下的**延迟上界与内存稳态**。
+- **工程含义**：p95 3.77 s 超过 1 Hz 周期 → 接入必须异步、只取最新帧并允许丢帧，不能同步阻塞相机回调（见报告 §9.5）。
+- 数据：[data/ds_advisor_svc500.json](data/ds_advisor_svc500.json)、[data/ds_advisor_svc500.csv](data/ds_advisor_svc500.csv)。
 
 ## 结论与下一步
 
@@ -281,4 +292,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 10. **200 帧稳定性**：**183 judged / 182 correct = 99.45%**，16/16 反例全对；1 个高分边缘局部假阴性（f21）；30 NO_MASK + 3 低分跳过；无重启（S）。
 11. **顾问式 HTTP 服务**：60 请求 **58 judge / 2 no-mask**，p50 2.04 s / p95 2.08 s，health model/qwen true，无崩溃；RSS 1.39→2.09 GB/220 s（S）。
 12. **30 min soak**：180 请求 / 0 error / 162 judge / 18 no-mask；服务 RSS +3 MB、Qwen +7 MB（平台化），无崩溃（S）。
-13. **下一步**：把服务接到感知只发 advisory；或做 500 帧离线稳定性；30 min 是单服务 soak，不等于 24 h 稳定性。
+13. **500 请求压测**：0 error / 427 judge / 8 skip / 65 no-mask；p50 2.11 s、p95 3.77 s、max 4.02 s；服务 RSS +3 MB、Qwen +12 MB；health true、无崩溃；**G4 的 p95 <1.5 s 未达**（门限保持失败）；200 帧池复用 2.5 轮，不是 500 个唯一帧（S）。
+14. **下一步**：把服务接到感知只发 advisory（异步、取最新帧、可丢帧）；或做 500 个唯一帧的离线稳定性；500 请求压测不等于 24 h 稳定性。
