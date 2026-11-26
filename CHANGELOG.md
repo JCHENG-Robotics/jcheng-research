@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Ran the 200-frame fixed-policy stability test on the Orin (T1 + SAM3
+  score≥0.8, frontA/B + wristA/B): **183 judged / 182 correct = 99.45%**,
+  16/16 wrong pairs, one high-score edge false negative (f21), 30 NO_MASK +
+  3 low-score skips, no reboot. CSV
+  `experiments/20261126-agx-orin-stack-probe/data/ds_stability200.csv`.
 - Validated the fixed judge policy on the Orin: T1 + SAM3 score≥0.8 over
   18 cases (7 easy, 7 hard negatives, 4 partials) gave **15 judged / 15
   correct**, with 3 low-score masks skipped (clear/right-edge). CSV

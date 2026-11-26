@@ -240,6 +240,17 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - 代价：低分 clear bottle 与右边缘透明瓶被跳过，覆盖率 15/18；低分/强局部仍需人工或第二视角兜底。
 - CSV：[data/ds_t1gate.csv](data/ds_t1gate.csv)。
 
+### 200 帧固定策略稳定性（2026-11-26 15:40，S）
+
+- 200 帧：frontA/B + wristA/B 各 50；T1 + SAM3 score≥0.8；每 10 帧一个反例。
+- 216 行：**judged 183、skipped 33**（NO_MASK 30 + score<0.8 3）。
+- 正确对 167：166 yes、1 error（frontA f21 左边缘绿瓶，score 0.91，T1 no）；错误对 16：全部 no。
+- accuracy **182/183 = 99.45%**；frontA 98.08%、frontB/wristA/wristB 100%。
+- e2e p50 **3.93 s** / p95 6.62 s；judge p50 2.68 s；prompt p50 1.0 s；无重启（uptime 1 h 45 min）。
+- 覆盖 183/200 = 91.5%；NO_MASK 30（wrist 25、front 5），低分 3。
+- 结论：固定策略在 200 帧上稳定；唯一失败模式是**高分边缘局部**（f21），score 门禁抓不到。
+- CSV：[data/ds_stability200.csv](data/ds_stability200.csv)。
+
 ## 结论与下一步
 
 1. **Qwen3-VL-8B 已部署成功**（llama.cpp CUDA 12.6/sm_87，Q4_K_M + Q8_0 mmproj），1 图 1.95–2.03 s、2 图 2.64 s、2 图 yes/no 1.18 s；`logprobs` 可用（S）。
@@ -251,4 +262,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 7. **Wrist 100 帧多 episode**：88/89 = 98.9%；25 no-mask；唯一错误是顶边局部（S）。
 8. **Judge 模板敏感性**：12 掩码 × 3 模板，无一对全对；措辞可翻转判决；之前数字均为特定模板结果（S）。建议 T1 + SAM3 score≥0.8 门禁，低分跳过/标 uncertain。
 9. **T1+score≥0.8 策略验证**：18 案例 **15 judged / 15 correct**、3 skipped（低分 clear/right-edge）；当前推荐策略（S）。
-10. **下一步**：固定模板与门禁后重新校准（不跨模板比较），再决定是否值得进 200+ 帧；目前不建议把 judge 当作通用验证器。
+10. **200 帧稳定性**：**183 judged / 182 correct = 99.45%**，16/16 反例全对；1 个高分边缘局部假阴性（f21）；30 NO_MASK + 3 低分跳过；无重启（S）。
+11. **下一步**：边缘/局部处理（双视角或 top-edge/上下文提示）后再扩 500+ 帧；当前策略可用于离线/顾问式，不建议直接进运动链。
