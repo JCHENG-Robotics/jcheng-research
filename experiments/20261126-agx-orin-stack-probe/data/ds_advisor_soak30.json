@@ -1,0 +1,27 @@
+{
+  "duration_s": 1801.2,
+  "requests": 180,
+  "errors": 0,
+  "judge": 162,
+  "skip": 0,
+  "no_mask": 18,
+  "p50_s": 1.04,
+  "p95_s": 2.32,
+  "max_s": 2.77,
+  "svc_rss_start": 2106,
+  "svc_rss_end": 2109,
+  "svc_rss_max": 2109,
+  "qwen_rss_start": 9279,
+  "qwen_rss_end": 9286,
+  "qwen_rss_max": 9286,
+  "free_start": 33378,
+  "free_end": 27874,
+  "free_min": 22256,
+  "health": {
+    "ok": true,
+    "model": true,
+    "qwen": true,
+    "pid": 492512,
+    "uptime_s": 1831.7
+  }
+}

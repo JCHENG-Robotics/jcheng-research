@@ -258,6 +258,15 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - RSS 1,386 → 2,088 MB（+702 MB / 220 s）；可能是 PyTorch/Qwen 缓存，未证明泄漏，需要更长 soak。
 - 服务代码在 Orin `/opt/jcheng/sam3_advisor/server.py`（不入 git）；结果 JSON：[data/ds_advisor_service.json](data/ds_advisor_service.json)。
 
+### 30 min 顾问服务 soak（2026-11-26 17:31，S）
+
+- **1,800 s / 180 请求 / 0 error**；162 JUDGE / 18 NO_MASK / 0 SKIP。
+- p50 **1.04 s**、p95 2.32 s、max 2.77 s（重复帧/前缀缓存使 p50 偏低）。
+- **RSS 平台化**：服务 2,106→2,109 MB（+3 MB，max 2,109）；Qwen 9,279→9,286 MB（+7 MB，max 9,286）。
+- `/health` model/qwen true；无崩溃。free 33.4→27.9 GB（min 22.3），但服务/Qwen RSS 未涨，下降来自其它进程/缓存。
+- 结论：30 min/180 请求下无泄漏迹象；18 个 NO_MASK 是 wrist 目标不在视野。
+- 数据：[data/ds_advisor_soak30.json](data/ds_advisor_soak30.json)、[data/ds_advisor_soak30.csv](data/ds_advisor_soak30.csv)。
+
 ## 结论与下一步
 
 1. **Qwen3-VL-8B 已部署成功**（llama.cpp CUDA 12.6/sm_87，Q4_K_M + Q8_0 mmproj），1 图 1.95–2.03 s、2 图 2.64 s、2 图 yes/no 1.18 s；`logprobs` 可用（S）。
@@ -271,4 +280,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 9. **T1+score≥0.8 策略验证**：18 案例 **15 judged / 15 correct**、3 skipped（低分 clear/right-edge）；当前推荐策略（S）。
 10. **200 帧稳定性**：**183 judged / 182 correct = 99.45%**，16/16 反例全对；1 个高分边缘局部假阴性（f21）；30 NO_MASK + 3 低分跳过；无重启（S）。
 11. **顾问式 HTTP 服务**：60 请求 **58 judge / 2 no-mask**，p50 2.04 s / p95 2.08 s，health model/qwen true，无崩溃；RSS 1.39→2.09 GB/220 s（S）。
-12. **下一步**：30 min soak 确认 RSS 平台；服务只发 advisory，不接运动；或先做 500 帧离线稳定性。
+12. **30 min soak**：180 请求 / 0 error / 162 judge / 18 no-mask；服务 RSS +3 MB、Qwen +7 MB（平台化），无崩溃（S）。
+13. **下一步**：把服务接到感知只发 advisory；或做 500 帧离线稳定性；30 min 是单服务 soak，不等于 24 h 稳定性。
