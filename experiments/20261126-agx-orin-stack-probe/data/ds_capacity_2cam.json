@@ -1,0 +1,37 @@
+{
+  "run_s": 60.0,
+  "hz_per_camera": 1.0,
+  "elapsed_s": 69.3,
+  "cameras": {
+    "front": {
+      "offered": 60,
+      "dropped": 42,
+      "processed": 18,
+      "judge": 13,
+      "empty": 5,
+      "errors": 0,
+      "p50_s": 4.44,
+      "p95_s": 4.5,
+      "max_s": 4.53
+    },
+    "wrist": {
+      "offered": 60,
+      "dropped": 42,
+      "processed": 18,
+      "judge": 17,
+      "empty": 1,
+      "errors": 0,
+      "p50_s": 4.43,
+      "p95_s": 4.52,
+      "max_s": 4.58
+    }
+  },
+  "total_processed": 36,
+  "total_offered": 120,
+  "throughput_req_s": 0.519,
+  "gates": {
+    "JUDGE": 30,
+    "SKIP": 1,
+    "NO_MASK": 5
+  }
+}

@@ -290,6 +290,16 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 - **NO_MASK 81 是提示轮换与场景不匹配**（例如无 orange bottle 的货架），不是服务失败；本测试不计算准确率。
 - 数据：[ds_uniq500_requests.csv](data/ds_uniq500_requests.csv)、[ds_uniq500_monitor.csv](data/ds_uniq500_monitor.csv)、[ds_uniq500_summary.json](data/ds_uniq500_summary.json)、[ds_uniq500_analysis.json](data/ds_uniq500_analysis.json)、[ds_uniq500_targets.tsv](data/ds_uniq500_targets.tsv)。
 
+### 两相机 1 Hz 容量测试（2026-11-27，S）
+
+- 用真实 `AdvisorDetector`（perception 分支）模拟生产双相机：front + wrist 各自 1 Hz 提交 60 s，队列深度 2、满队丢最旧帧；服务临时绑 `0.0.0.0`，测试后已停。
+- **120 offered / 36 processed（30%）/ 84 dropped（70%）**；总吞吐 **0.519 次/s**。
+- 每相机：processed 18、dropped 42；front p50 **4.44 s** / p95 4.50 / max 4.53；wrist p50 **4.43 s** / p95 4.52 / max 4.58；0 error。
+- gate：30 JUDGE / 1 SKIP / 5 NO_MASK。
+- 解释：服务单锁串行，两相机同时打时一个请求等另一个；p50 从单相机的 2.15 s 变成 ~4.4 s。**0.519 次/s 是单服务上限** → 双相机各 1 Hz 只能处理约 0.3 Hz/相机，advisory 帧平均滞后 ~4.4 s。
+- **结论**：单 Orin 服务不能支撑双相机 1–2 Hz；生产应按 **≤0.2–0.3 Hz/相机**（或只接一个相机）规划，或再加一个服务/GPU。队列会丢帧，所以“提交 1–2 Hz”不等于“处理 1–2 Hz”。
+- 数据：[data/ds_capacity_2cam.json](data/ds_capacity_2cam.json)。
+
 ## 结论与下一步
 
 1. **Qwen3-VL-8B 已部署成功**（llama.cpp CUDA 12.6/sm_87，Q4_K_M + Q8_0 mmproj），1 图 1.95–2.03 s、2 图 2.64 s、2 图 yes/no 1.18 s；`logprobs` 可用（S）。
@@ -306,4 +316,5 @@ GPU 99%，峰值 **44.4 W**，最高 53.2 °C，无重启。
 12. **30 min soak**：180 请求 / 0 error / 162 judge / 18 no-mask；服务 RSS +3 MB、Qwen +7 MB（平台化），无崩溃（S）。
 13. **500 请求压测**：0 error / 427 judge / 8 skip / 65 no-mask；p50 2.11 s、p95 3.77 s、max 4.02 s；服务 RSS +3 MB、Qwen +12 MB；health true、无崩溃；**G4 的 p95 <1.5 s 未达**（门限保持失败）；200 帧池复用 2.5 轮，不是 500 个唯一帧（S）。
 14. **500 唯一帧 + 跨机 LAN**：0 error / 412 judge / 7 skip / 81 no-mask；p50 2.15 s、p95 3.74 s、max 4.03 s；与回环几乎相同（与回环差异 ≤0.04 s）；服务 1,387→2,086 MB 后平台、Qwen 平台；G4 p95 <1.5 s 仍未达（S）。
-15. **下一步**：接感知异步 latest-frame advisory 节点（单独分支/PR；当前 perception 有未提交 ore-scene 工作）；或 24 h soak；500 唯一帧测试不等于 24 h 稳定性。
+15. **两相机容量**：1 Hz/相机 × 60 s、队列 2，仅 36/120 = 30% 被处理，70% 被丢弃；总吞吐 0.519 次/s，双相机 p50 ~4.4 s；单服务不能支撑双相机 1–2 Hz，生产按 ≤0.2–0.3 Hz/相机规划（S）。
+16. **下一步**：接感知异步 latest-frame advisory 节点（单独分支/PR；当前 perception 有未提交 ore-scene 工作）；把双相机配置降到 ≤0.2–0.3 Hz/相机或只接一个相机；或 24 h soak。
