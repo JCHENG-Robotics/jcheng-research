@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   ≤0.04 s; service RSS 1,387→2,086 MB then plateau, Qwen plateau; G4
   p95 <1.5 s still not met. Data
   `experiments/20261126-agx-orin-stack-probe/data/ds_uniq500_*`.
+- Added Appendix A to `reports/20261126-ultralytics-repository-review.md`:
+  license-clean detector alternatives (D-FINE-N, RTMDet-tiny, LW-DETR-T,
+  RF-DETR-N/S, PicoDet/NanoDet) with same-harness COCO/T4 numbers, integration
+  and training caveats, and a recommendation. No new experiment was registered.
 - Draft investigation report
   `reports/20261126-ultralytics-repository-review.md` (Ultralytics at
   `v8.4.219` / `3a31e32`: 233 files / 83.6k LOC, 230 tests, AGPL-3.0 +

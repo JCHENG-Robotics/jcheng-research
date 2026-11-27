@@ -69,6 +69,16 @@
 - `LICENSE-REVIEW.md:22` 已标注 AGPL；`:49` 写"existing optional runtime; not a default"，但 `gpu.yaml` 实际默认是 ultralytics（文档/配置不一致）。
 - `deploy/README.md:45`：GPU venv 6.8 GB；镜像不装 `opencv-python`，用 apt `python3-opencv`。
 
+## 平替候选（附录 A，2026-11-27）
+
+- **D-FINE**（Apache-2.0）：<https://github.com/Peterande/D-FINE>；README model zoo：D-FINE-N 42.8 AP / 2.12 ms T4 / 4M 参数；支持 ONNX 导出与 `trtexec`。
+- **RF-DETR**（Apache-2.0：N/S/M/L；Atto/Femto/Pico/XL/2XL 为 PML 1.0）：<https://github.com/roboflow/rf-detr>；SAB 同口径表（T4 TRT FP16、COCO `val2017`）：N 48.4 AP / 2.3 ms / 30.5M / 384，S 53.0 / 3.5 / 32.1 / 512。
+- **RTMDet**（Apache-2.0，MMDetection）：<https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet>；README：RTMDet-tiny 41.1 AP / 2.34 ms T4（TRT 8.4.3）/ 4.8M / 8.1 GFLOPs。
+- **PicoDet**（Apache-2.0，PaddleDetection）：<https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/picodet>；README：M-416 37.5 AP / 12.7 ms CPU，S-416 32.5 AP / 6.6 ms CPU（x86）。
+- **NanoDet**（Apache-2.0）：<https://github.com/RangiLyu/nanodet>；README：Plus-m-1.5x-416 34.1 AP / 25.49 ms（4×A76）/ 2.44M / 2.97 GFLOPs。
+- **LW-DETR**：仅在 RF-DETR 的 SAB 表中引用（T 42.9 AP / 1.9 ms / 12.1M，Apache-2.0 由该表标注）；本次未审仓库。
+- **阅读范围**：各 README benchmark 表、GitHub API 的 license/活跃度字段，2026-11-27；**未训练、未导出、未在本机运行**。
+
 ## 相关
 
 - 报告：[Ultralytics 仓库调研](../../reports/20261126-ultralytics-repository-review.md)
