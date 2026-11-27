@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Measured two-camera capacity with the real `AdvisorDetector`: front +
+  wrist each offered 1 Hz for 60 s, queue depth 2. Only **36/120 (30%)**
+  were processed and 84 dropped; total throughput **0.519 req/s**; per-camera
+  p50 **4.44 s** / p95 4.50 s, 0 errors. One Orin service cannot sustain two
+  cameras at 1–2 Hz; production should plan ≤0.2–0.3 Hz per camera (or one
+  camera), or add a second service/GPU. Data
+  `experiments/20261126-agx-orin-stack-probe/data/ds_capacity_2cam.json`.
 - Ran a 500-unique-frame advisory-service test from the laptop over Wi-Fi
   (250 front + 250 wrist; 1003 ep≥120, 1014, 1015): 0 errors, 412 judge /
   7 skip / 81 no-mask, p50 2.15 s / p95 3.74 s / max 4.03 s — essentially
