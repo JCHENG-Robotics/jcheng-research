@@ -545,3 +545,67 @@ YOLO26 论文作者是厂商；issue 在 30+10 天后自动关闭；open issue �
 - `jcheng-research/references/perception/jetson-agx-orin.md`（JetPack 6.2 / TRT 10.3 / 无 torch / 19V 供电）。
 - 来源记录：[ultralytics-repository.md](../references/perception/ultralytics-repository.md)。
 - 实验设计：[experiments/20261126-ultralytics-runtime-audit/design.md](../experiments/20261126-ultralytics-runtime-audit/design.md)。
+
+---
+
+## 附录 A — 检测器平替候选（2026-11-27 补充）
+
+> 本附录在主报告完成后补充，回答"如果要把检测器换成许可证干净、低延迟、低算力的项目，选什么"。**主报告 §10 的结论不变**（Ultralytics 只做开发期工具，生产跑导出工件）；本附录**不注册新实验**，也不改变 §11 已有的 MVE。
+
+### A.1 先明确基线
+
+- 若基线是 **YOLO26n**（40.1 AP / 2.4 GFLOPs / 2.6M 参数 / 1.7 ms T4）：**"算力更低且精度不掉"基本不存在**——YOLO26n 已在 Pareto 前沿。平替的收益是**许可证**和**同延迟下更高 AP**，不是更省 FLOPs。
+- 若基线是 **YOLOv8n / YOLOv8s**（37.3 / 44.9 AP）：选择空间大；D-FINE-N、RTMDet-tiny、RF-DETR-N 都能做到"精度不降、算力更低"。
+
+### A.2 同口径对比
+
+未标 †/‡ 的 7 行来自 Roboflow SAB 同一套评测（COCO `val2017` 全量 5,000 张、pycocotools、T4 TensorRT FP16、batch 1），**可以直接横比**；† 行来自各自 README（TRT 版本不同，仅作量级参考）；‡ 行来自 Ultralytics 官方表，不能与 SAB 直接比。
+
+| 模型 | 许可 | COCO AP50-95 | 延迟 (ms) | 参数 (M) | 输入 | 备注 |
+|---|---|---:|---:|---:|---:|---|
+| YOLO26-N | AGPL-3.0 | 40.3 | **1.7** | 2.6 | 640 | 当前基线，算力最低 |
+| **D-FINE-N** | **Apache-2.0** | **42.7** | 2.1 | 3.8 | 640 | **最接近的无损平替** |
+| LW-DETR-T | Apache-2.0 | 42.9 | 1.9 | 12.1 | 640 | 同延迟，参数偏大；未审仓库 |
+| **RTMDet-tiny** † | **Apache-2.0** | 41.1 | 2.34 | 4.8 | 640 | 最成熟；MMDetection，TRT 8.4.3 |
+| **RF-DETR-N** | **Apache-2.0** | **48.4** | 2.3 | 30.5 | 384 | 精度最高档，参数大、分辨率低 |
+| RF-DETR-S | Apache-2.0 | 53.0 | 3.5 | 32.1 | 512 | 精度优先 |
+| D-FINE-S | Apache-2.0 | 50.6 | 3.5 | 10.2 | 640 | 精度/参数更均衡 |
+| YOLO11-N | AGPL-3.0 | 37.4 | 2.5 | 2.6 | 640 | 许可证不解决 |
+| YOLOv8n ‡ | AGPL-3.0 | 37.3 | 0.99 | 3.2 | 640 | 8.7 GFLOPs；不同 harness |
+| YOLOv8s ‡ | AGPL-3.0 | 44.9 | 1.20 | 11.2 | 640 | 28.6 GFLOPs；当前烟测模型 |
+| PicoDet-M 416 † | Apache-2.0 | 37.5 | 12.7 (CPU) | 3.46 | 416 | x86 CPU；Pi 会更慢 |
+| PicoDet-S 416 † | Apache-2.0 | 32.5 | 6.6 (CPU) | 1.18 | 416 | x86 CPU |
+| NanoDet-Plus-m-1.5x-416 † | Apache-2.0 | 34.1 | 25.49 (ARM) | 2.44 | 416 | 4×A76 |
+
+### A.3 三个档位
+
+1. **GPU 部署、要"无损换许可"（推荐）**：**D-FINE-N** 首选（42.7 AP、2.1 ms、3.8M、640、ONNX+`trtexec`）；**RTMDet-tiny** 备选（41.1 AP、4.8M、8.1 GFLOPs，生态成熟但 2024-08 后停更）；**LW-DETR-T** 同延迟、参数偏大。
+2. **精度优先**：**RF-DETR-N/S**（48.4/53.0 AP，2.3/3.5 ms，384/512）；**D-FINE-S**（50.6 AP、3.5 ms、10.2M、640）在参数上更均衡。RF-DETR-N 的 30.5M 参数和 6 GB 微调可行性需要先验证。
+3. **Pi 5 CPU 上跑检测（当前架构不需要）**：**NanoDet-Plus-m-1.5x-416**（34.1 AP、2.97 GFLOPs、约 25 ms/4×A76）或 **PicoDet-M/S 416**（37.5/32.5 AP）；代价是相对 YOLOv8n 掉 3–6 AP。
+
+### A.4 隐藏成本
+
+- **解码器适配**：`jcheng-perception` 的 `detectors.py` 目前只解 YOLO 风格输出；D-FINE/LW-DETR/RF-DETR 是 NMS-free DETR 输出，RTMDet 有独立 decode，都需要新的 pre/postprocess 适配器与测试。这是主要集成成本。
+- **训练栈**：D-FINE 依赖 mmengine/mmcv，RTMDet 依赖 MMDetection；6 GB 上 D-FINE-N/S 与 RTMDet-tiny 微调可行，RF-DETR-N 的 30.5M 参数需验证。
+- **分辨率口径**：RF-DETR-N 是 384 输入，和 YOLO 的 640 不是同一条件；矿石/小目标可能吃亏，抬到 640 后延迟会上升。
+- **数据域**：COCO AP 不等于矿石/货架；必须用自有数据微调后重测，排序可能反转。
+- **延迟口径**：表内是 T4 TensorRT FP16；本机 3060（`yolov8s` 9.0 ms FP32）与 Orin（JetPack 6.2 / TRT 10.3）都要实测；DETR 类模型的 INT8 精度损失也可能大于 YOLO。
+
+### A.5 建议
+
+- **先试 D-FINE-N**：Apache-2.0、640 输入、3.8M 参数，精度和延迟都压得住 YOLO26n；用现有矿石/货架数据微调，和当前 YOLOv8n/s 做同帧对比。
+- **备选 RTMDet-tiny**：不想碰 mmengine 训练栈时更稳。
+- **精度优先再上 RF-DETR-N/S**：先确认 6 GB 微调与 384/512 分辨率是否够用。
+- **pose/OBB 不要一起换**：这些平替主要解决 detect；腕部关键点仍建议 MMPose（Apache-2.0）或暂时保留 Ultralytics，OBB 可看 RTMDet-R（Apache-2.0，MMRotate）。
+- **不新增 MVE**：本附录只做选型记录。未来若真要换检测器，沿用主报告 §11 MVE-2 的"同帧、同 `conf`/`iou`、匹配率/延迟"方法即可，不另注册实验。
+
+### A.6 附录来源（2026-11-27）
+
+- D-FINE（Apache-2.0）：<https://github.com/Peterande/D-FINE>；README model zoo（D-FINE-N 42.8 AP / 2.12 ms T4 / 4M，ONNX 导出 + `trtexec`）。
+- RF-DETR（Apache-2.0：N/S/M/L；Atto/Femto/Pico/XL/2XL 为 PML 1.0）：<https://github.com/roboflow/rf-detr>；SAB 同口径表（T4 TRT FP16、COCO `val2017`）。
+- RTMDet（Apache-2.0，MMDetection）：<https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet>；README 表（RTMDet-tiny 41.1 AP / 2.34 ms T4，TRT 8.4.3）。
+- PicoDet（Apache-2.0，PaddleDetection）：<https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/picodet>；README CPU 延迟表。
+- NanoDet（Apache-2.0）：<https://github.com/RangiLyu/nanodet>；README ARM 延迟表。
+- LW-DETR：仅在 RF-DETR 的 SAB 表中引用（T 42.9 AP / 1.9 ms / 12.1M，Apache-2.0 由该表标注）；本次未审仓库。
+- YOLOv8 / YOLO26 官方表：<https://github.com/ultralytics/ultralytics/blob/main/docs/en/models/yolov8.md>。
+- GitHub API 的 license/活跃度字段：访问 2026-11-27。表内数字为各来源的公开 benchmark，**本次未训练、未导出、未在本机运行**。
