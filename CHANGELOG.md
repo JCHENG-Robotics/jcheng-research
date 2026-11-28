@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Draft investigation report
+  `reports/20261128-contact-harness.md` (Contact Harness, arXiv:2611.29377 v1,
+  and `NTUMARS/Contact-Harness` at `5827438`: frozen-VLM agent + textual skills +
+  force-aware motion clipping; 136/150 real connector insertions and 96.7%
+  simulated success are self-reported, the Rokae control stack and
+  15-connector prompt are not released, and the released real-robot path is
+  Franka on ROS 1 Noetic with force only; the method is training-free but
+  prompt-engineered, the soft limit is a bound not a force cap, and the
+  closed-model/token/latency costs are material; JCHENG fit is limited by the
+  5-DoF arm, the missing F/T and compliant control, and the `ExecuteMotion`
+  motion-authority boundary). Adds the source record
+  `references/manipulation/contact-harness.md` and the MVE-0 (Contact-4
+  simulation smoke test on the RTX 3060) / MVE-1 (harness-to-gateway mapping)
+  designs in §11; both are designed, not run.
 - Measured two-camera capacity with the real `AdvisorDetector`: front +
   wrist each offered 1 Hz for 60 s, queue depth 2. Only **36/120 (30%)**
   were processed and 84 dropped; total throughput **0.519 req/s**; per-camera
