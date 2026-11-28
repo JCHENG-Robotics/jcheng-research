@@ -10,6 +10,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Draft investigation report
+  `reports/20261128-contact-harness.md` (Contact Harness, arXiv:2611.29377 v1,
+  and `NTUMARS/Contact-Harness` at `5827438`: frozen-VLM agent + textual skills +
+  force-aware motion clipping; 136/150 real connector insertions and 96.7%
+  simulated success are self-reported, the Rokae control stack and
+  15-connector prompt are not released, and the released real-robot path is
+  Franka on ROS 1 Noetic with force only; the method is training-free but
+  prompt-engineered, the soft limit is a bound not a force cap, and the
+  closed-model/token/latency costs are material; JCHENG fit is limited by the
+  5-DoF arm, the missing F/T and compliant control, and the `ExecuteMotion`
+  motion-authority boundary). Adds the source record
+  `references/manipulation/contact-harness.md` and the MVE-0 (Contact-4
+  simulation smoke test on the RTX 3060) / MVE-1 (harness-to-gateway mapping)
+  designs in §11; both are designed, not run.
+- Measured two-camera capacity with the real `AdvisorDetector`: front +
+  wrist each offered 1 Hz for 60 s, queue depth 2. Only **36/120 (30%)**
+  were processed and 84 dropped; total throughput **0.519 req/s**; per-camera
+  p50 **4.44 s** / p95 4.50 s, 0 errors. One Orin service cannot sustain two
+  cameras at 1–2 Hz; production should plan ≤0.2–0.3 Hz per camera (or one
+  camera), or add a second service/GPU. Data
+  `experiments/20261126-agx-orin-stack-probe/data/ds_capacity_2cam.json`.
+- Ran a 500-unique-frame advisory-service test from the laptop over Wi-Fi
+  (250 front + 250 wrist; 1003 ep≥120, 1014, 1015): 0 errors, 412 judge /
+  7 skip / 81 no-mask, p50 2.15 s / p95 3.74 s / max 4.03 s — essentially
+  identical to the loopback run (2.11/3.77/4.02), so the Wi-Fi hop adds
+  ≤0.04 s; service RSS 1,387→2,086 MB then plateau, Qwen plateau; G4
+  p95 <1.5 s still not met. Data
+  `experiments/20261126-agx-orin-stack-probe/data/ds_uniq500_*`.
+- Recorded the first perception-side advisory client: `jcheng-perception`
+  branch `feat/advisor-client-20261126` (`d0563e1`) adds the `sam3_advisor`
+  backend (only JUDGE -> box, SKIP/NO_MASK empty, errors fail closed), 107
+  tests, repository gate ok, and a two-frame live HTTP smoke (0.961/3.39 s,
+  0.973/2.24 s). Not merged and not deployed; the report §9.5 now says so.
+- Draft investigation report
   `reports/20261126-ultralytics-repository-review.md` (Ultralytics at
   `v8.4.219` / `3a31e32`: 233 files / 83.6k LOC, 230 tests, AGPL-3.0 +
   Enterprise dual licensing, the vendor's public position that even private
