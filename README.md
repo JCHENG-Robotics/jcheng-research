@@ -7,10 +7,12 @@ technology selection, root-cause analysis and pre-registered experiment design f
 the ArmPi Ultra platform. This repository produces **reports and decisions, not
 runtime code**: nothing here is imported by, shipped to, or executed on the robot.
 
-> Status: **Experimental** — v0.1.0 as of 2026-11-25. The repository contains the
-> investigation protocol, the report template and the output-directory contract;
-> **no investigation is complete**, so it makes no technical claim. It is public
-> and sits outside the runtime dependency graph.
+> Status: **Experimental** — v0.1.0 as of 2026-11-26. The repository contains the
+> investigation protocol, the report template, the output-directory contract and
+> **draft investigation reports plus experiments** (Ultralytics review, RLinf/PiPER
+> X data-collection assessment, SAM3/AGX Orin advisory service and T1 gate). The
+> reports are drafts pending review, so no product or hardware claim is made. It
+> is public and sits outside the runtime dependency graph.
 > English canonical; the Chinese README is a translation.
 
 ---

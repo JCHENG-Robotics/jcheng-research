@@ -1,10 +1,10 @@
 # Acceptance — jcheng-research
 
-> Status: **pass (L0 only)** — v0.1.0, 2026-11-25.
+> Status: **pass (L0 only)** — v0.1.0, 2026-11-26.
 > Operator: `JerichoCheng`. Reviewer: `pending`.
-> This report covers repository structure and document gates only. It accepts no
-> research or hardware claim, because the first report is a draft and has not been
-> reviewed.
+> This report covers repository structure and document gates only. Draft reports
+> and experiment results are now recorded, but they are not reviewed and are not
+> accepted as technical claims.
 
 ## 1. Scope
 
@@ -12,6 +12,8 @@ Claims covered:
 
 - the required document set, investigation protocol, report template and output
   directories exist;
+- draft reports and experiment records are present and traceable to their source
+  records; their conclusions are not accepted here;
 - no `LICENSE` is present while the ecosystem license review is open;
 - no secrets, model weights, recorded data or files larger than 5 MB are tracked.
 
@@ -22,7 +24,7 @@ hardware behaviour.
 
 | Gate | Command | Level | Result | Evidence |
 |---|---|---|---|---|
-| Repository gate | `bash scripts/check_repo_gate.sh` | L0 | pass | local run 2026-11-25; CI job `research-gate` |
+| Repository gate | `bash scripts/check_repo_gate.sh` | L0 | pass | local run 2026-11-26; CI job `research-gate` |
 
 ## 3. Verified claims
 
@@ -57,5 +59,5 @@ hardware behaviour.
 
 | Role | Name | Date | Signature |
 |---|---|---|---|
-| Operator | `JerichoCheng` | 2026-11-25 | local gate run |
+| Operator | `JerichoCheng` | 2026-11-26 | local gate run |
 | Reviewer | `pending` | — | — |

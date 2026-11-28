@@ -1,22 +1,23 @@
 # ROADMAP
 
-> Status: v0.1.0, last updated 2026-11-25. English canonical.
+> Status: v0.1.0, last updated 2026-11-26. English canonical.
 
 ## Current state
 
 | Item | State | Evidence |
 |---|---|---|
 | Repository skeleton, protocol, report template, gate | Complete | `scripts/check_repo_gate.sh`; CI `research-gate` |
-| First investigation report | In progress — draft, not reviewed (2026-11-25) | [report](reports/20261125-lingbot-vla-sst-foreground-prompting.md) |
-| First minimum viable experiment | In progress — MVE-0 desk re-analysis run; MVE-1/2 designed, not run | [experiment](experiments/20261125-lingbot-sst-reanalysis/result.md) |
+| Investigation reports | Complete, drafts pending review (2026-11-26) | `reports/20261125-lingbot-vla-sst-foreground-prompting.md`; `reports/20261126-ultralytics-repository-review.md`; `reports/20261126-rlinf-piper-pico-data-collection.md` |
+| AGX Orin / SAM3 advisory-service experiments | Complete; results recorded, review pending (2026-11-26) | `experiments/20261126-agx-orin-stack-probe/` (60/1800 s/500-request runs, 200-frame stability) |
+| Minimum viable experiments | Complete or designed; review pending (2026-11-26) | `experiments/20261125-lingbot-sst-reanalysis/`; `experiments/20261126-ultralytics-runtime-audit/design.md`; `experiments/20261126-rlinf-piper-pico-mve/design.md` |
 
 ## Milestones
 
 | Milestone | Scope | State | Exit criterion | Evidence |
 |---|---|---|---|---|
 | R0 | Protocol, report template, output contract, repository gate | Complete (2026-11-25) | Gate passes locally and in CI | `ACCEPTANCE.md` |
-| R1 | First investigation report | In progress | `reports/` contains a 13-section report whose key conclusions carry S–D grades, whose sources are recorded in `references/`, and which ends in a decision or a minimum viable experiment | — |
-| R2 | First minimum viable experiment | In progress | `experiments/<id>/` contains design, data, logs and result, with the rollback statement and the actual run date | — |
+| R1 | First investigation report | Complete, draft review pending (2026-11-26) | `reports/` contains 13-section reports whose key conclusions carry S–D grades and recorded sources | `reports/20261125-lingbot-vla-sst-foreground-prompting.md`; `reports/20261126-ultralytics-repository-review.md`; `reports/20261126-rlinf-piper-pico-data-collection.md` |
+| R2 | First minimum viable experiment | Complete, review pending (2026-11-26) | `experiments/<id>/` contains design, data, logs and result, with the rollback statement and the actual run date | `experiments/20261125-lingbot-sst-reanalysis/`; `experiments/20261126-agx-orin-stack-probe/` |
 
 ## Next
 
