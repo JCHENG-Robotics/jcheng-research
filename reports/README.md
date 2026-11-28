@@ -8,7 +8,7 @@ draft is never upgraded by appearing here. Themes follow
 
 ## Investigation reports
 
-| Report | Theme | Decision it informs | Status (2026-11-26) | Related experiment |
+| Report | Theme | Decision it informs | Status (2026-11-28) | Related experiment |
 |---|---|---|---|---|
 | [LingBot-VLA 2.0 / SST foreground-prompting evaluation](20261125-lingbot-vla-sst-foreground-prompting.md) | manipulation | whether to adopt the RoboTwin post-training recipe: foreground prompting, module learning rates, data repair | draft; review pending | [MVE-0 desk re-analysis](../experiments/20261125-lingbot-sst-reanalysis/result.md) |
 | [GloVLA factorization assessment](20261125-glovla-hybrid-factorization-eval.md) | manipulation | whether to adopt the geometry-move + local-VLA factorization; GPU and demo prerequisites | reviewed (self-review only); independent review pending | [MVE-0 handoff budget](../experiments/20261125-glovla-handoff-budget/result.md) |
@@ -18,6 +18,7 @@ draft is never upgraded by appearing here. Themes follow
 | [Piper X simulation data map](20261126-piper-x-simulation-data-map.md) | manipulation | which GitHub assets to pin, where they belong, and whether to open a CAN profile contract | draft; review pending | [MVE-0 asset materialisation; MVE-1 run](../experiments/20261126-piper-x-gazebo-plant/result.md) — MVE-1 has an open joint2/3 tracking failure; MVE-2…4 designed, not run |
 | [RLinf PICO→Piper X data-collection assessment](20261126-rlinf-piper-pico-data-collection.md) | manipulation | whether RLinf is a viable PICO VR data-collection path for the AgileX Piper X, and what must be built/verified before a hardware session | draft; review pending | [MVE-0…3 designed](../experiments/20261126-rlinf-piper-pico-mve/design.md); not run |
 | [Ultralytics repository review](20261126-ultralytics-repository-review.md) | perception | whether to keep Ultralytics as the perception detector backend/training tool, and under which license, version and runtime boundary | draft; review pending | [MVE-1…3 designed](../experiments/20261126-ultralytics-runtime-audit/design.md); not run |
+| [RoboUniverse-10K agent-benchmark assessment](20261128-robouniverse-10k-agent-benchmark.md) | datasets-benchmarks (cross: manipulation) | whether to adopt RoboUniverse-10K as an offline coding-agent benchmark, a Piper Isaac Sim asset source, or a design reference only | draft; review pending; MVE-0 partial (one Franka package audited, S), MVE-1/2 not run (no ≥24 GB GPU) | none — MVEs are in-report |
 
 Chinese edition: [GloVLA report DOCX](20261125-glovla-hybrid-factorization-eval.zh-CN.docx);
 the Markdown report remains the traceable version.
@@ -44,8 +45,9 @@ the Markdown report remains the traceable version.
 - [ops/](../references/ops/README.md) — probes, watchdog, self-healing; no
   investigation report yet.
 - [datasets-benchmarks/](../references/datasets-benchmarks/README.md) —
-  cross-cutting; no standalone report, currently cited by the manipulation
-  reports.
+  cross-cutting; standalone report:
+  [RoboUniverse-10K agent-benchmark assessment](20261128-robouniverse-10k-agent-benchmark.md);
+  also cited by the manipulation reports.
 
 ## Adding a report
 
